@@ -29,7 +29,7 @@ export class LoginComponent implements OnInit{
   }
 
   hello(){
-    
+    console.log('hello');
   }
 
 }
