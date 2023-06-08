@@ -1,0 +1,119 @@
+
+.container{
+    color:black;
+    font-family: sans-serif;
+    font-weight: 500;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%; 
+    transform: translate(-50%,-50%);
+}
+
+.container span{
+    display: block;
+    text-transform: uppercase;
+}
+
+.text1{
+    font-size: 30px;
+    letter-spacing: 13px;
+    margin-bottom: 20px;
+    background: inherit;
+    position: relative;
+    animation: te 3s 1;
+}
+
+.text2{
+    font-size: 15px;
+    color: #6ab04c;
+    letter-spacing: 8px;
+    animation: ts 3s 1;
+}
+
+@keyframes te{
+    0%{
+        color: rgb(99, 53, 53);
+        margin-bottom: -20px;
+    }
+    30%{
+        color: rgb(74, 53, 99);
+        letter-spacing: 30px;
+        margin-bottom: -20px;
+    }
+    85%{
+        letter-spacing: 8px;
+        margin-bottom: -20px;
+    }
+}
+@keyframes ts{
+    0%{
+       opacity: 0;
+        margin-bottom: -20px;
+    }
+    30%{
+       opacity: 0;
+        letter-spacing: 30px;
+        margin-bottom: -20px;
+    }
+    60%{
+        opacity: 0;
+    }
+    85%{
+        opacity: 0;
+        letter-spacing: 8px;
+        margin-bottom: -20px;
+    }
+}
+
+.main{
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.head{
+    /* color: #777777; */
+    text-transform: uppercase;
+
+}
+
+.one{
+    color: black;
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 500;
+    letter-spacing: 10px;
+    animation: moveleft 2s ease-out
+}
+
+.two{
+    color: #6ab04c;
+    font-family: sans-serif;
+    display: block;
+    font-size: 1rem;
+    /* font-weight: bold; */
+    text-align: center;
+    letter-spacing: 20px;
+    animation: moveright 3s ease-out;
+}
+
+@keyframes moveleft{
+    0%{
+        opacity: 0;
+        transform: translate(-50px);
+        }
+        50%{
+            opacity: 50;
+        }
+
+}
+
+@keyframes moveright{
+    0%{
+        opacity: 0;
+        transform: translate(50px);
+    }
+}
+

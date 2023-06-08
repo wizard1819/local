@@ -1,0 +1,80 @@
+button {
+  background-color: inherit;
+  border: none;
+  color: azure;
+  padding: 0px 20px;
+  display: inline-block;
+  cursor: pointer;
+}
+
+mat-sidenav-container {
+  height: 100vh;
+
+}
+
+mat-sidenav {
+  width: 200px;
+  background: #6172ab;
+  /* background: url(colo.jpg); */
+}
+
+.components {
+  padding-top: 10px;
+  text-align: center;
+}
+
+mat-sidenav-content {
+  padding: 10px;
+  background: url(..//..//../assets/bg/bg_01.png) repeat-x;
+  background-color: rgb(86, 81, 81);
+  background-position: bottom;
+}
+
+h1 {
+  text-align: center;
+}
+
+
+.btn:hover {
+  background-color: rgb(153, 177, 220);
+}
+
+
+
+.example-button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 120px;
+}
+
+.default {
+  background-color: slategray;
+  color: #fffdfd;
+}
+
+.dark {
+  background-color: #000;
+  color: #fff;
+}
+
+.gray {
+  background-color: rgb(76, 82, 88);
+  color: ghostwhite;
+}
+
+.red{
+ background: url(https://assets.hongkiat.com/uploads/minimalist-dekstop-wallpapers/4k/original/18.jpg?3);
+ color: ghostwhite;
+}
+
+.picture{
+  background: url(https://bs-uploads.toptal.io/blackfish-uploads/components/blog_post_page/content/cover_image_file/cover_image/1279268/retina_1708x683_cover-color-psychology-4d9939eb42de9733917920887b544b71.png);
+  color: whitesmoke;
+}
+
+.nd{
+  position: fixed;
+  top: 88%;
+  left: 88%;
+}

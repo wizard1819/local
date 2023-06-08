@@ -1,0 +1,11 @@
+.grd{
+    display: grid;
+    grid-template-columns: repeat(2, 5fr);
+}
+
+.btn{
+    background: inherit;
+    border: none;
+    color: white;
+    cursor: pointer;
+}

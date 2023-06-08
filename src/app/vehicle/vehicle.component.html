@@ -1,0 +1,114 @@
+<mat-card>
+    <mat-card-content>
+        <div fxLayout="row" fxLayoutAlign="space-between center">
+            <div>
+                <mat-card-title>Vehicles</mat-card-title>
+            </div>
+            <div>
+                <button mat-raised-button color="primary" (click)="openDialog()">
+                    Add vehicle
+                </button>
+            </div>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="center center">
+            <div fxFlex="100">
+                <div *ngIf="!showSpinner; else showLoader;">
+                    <mat-table [dataSource]="dataSource">
+
+
+                        <ng-container matColumnDef="id">
+                            <mat-header-cell *matHeaderCellDef mat-sort-header> <strong>ID</strong>
+                            </mat-header-cell>
+                            <mat-cell *matCellDef="let row"> {{row.id}} </mat-cell>
+                        </ng-container>
+
+                        <ng-container matColumnDef="brand">
+                            <mat-header-cell *matHeaderCellDef mat-sort-header> <strong>Brand</strong>
+                            </mat-header-cell>
+                            <mat-cell *matCellDef="let row" class="caps"> {{row.brand}} </mat-cell>
+                        </ng-container>
+
+                        <ng-container matColumnDef="model">
+                            <mat-header-cell *matHeaderCellDef mat-sort-header> <strong>Model</strong>
+                            </mat-header-cell>
+                            <mat-cell *matCellDef="let row"> {{row.model}} </mat-cell>
+                        </ng-container>
+
+
+
+                        <ng-container matColumnDef="owner">
+                            <mat-header-cell *matHeaderCellDef mat-sort-header> <strong>Owner</strong>
+                            </mat-header-cell>
+                            <mat-cell *matCellDef="let row"> {{row.owner}} </mat-cell>
+                        </ng-container>
+
+                        <ng-container matColumnDef="type">
+                            <mat-header-cell *matHeaderCellDef mat-sort-header> <strong>Type</strong>
+                            </mat-header-cell>
+                            <mat-cell *matCellDef="let row"> {{row.type}} </mat-cell>
+                        </ng-container>
+
+                        <ng-container matColumnDef="status">
+                            <mat-header-cell *matHeaderCellDef mat-sort-header> <strong>status</strong>
+                            </mat-header-cell>
+                            <mat-cell *matCellDef="let row"><mat-slide-toggle
+                                    [checked]="row.status"></mat-slide-toggle></mat-cell>
+                        </ng-container>
+
+                        <ng-container matColumnDef="registerNum">
+                            <mat-header-cell *matHeaderCellDef mat-sort-header> <strong>Register Number</strong>
+                            </mat-header-cell>
+                            <mat-cell *matCellDef="let row"> {{row.registerNum}} </mat-cell>
+                        </ng-container>
+
+
+
+
+
+                        <ng-container matColumnDef="Actions">
+                            <mat-header-cell *matHeaderCellDef mat-sort-header fxLayoutAlign="space-around center">
+                                <strong>Action</strong></mat-header-cell>
+                            <mat-cell *matCellDef="let row">
+                                <div fxLayoutAlign="space-around center">
+                                    <button class="btnn" (click)="update(row)">
+                                        <mat-icon>edit</mat-icon>
+                                    </button>
+                                    <button class="btnn" (click)="deleteById(row.id,row.owner)">
+                                        <mat-icon>delete</mat-icon>
+                                    </button>
+                                </div>
+                            </mat-cell>
+                        </ng-container>
+
+                        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                        <mat-row *matRowDef="let row; columns: displayedColumns;">
+                        </mat-row>
+                    </mat-table>
+
+                    <mat-paginator [pageSize]="pageSize" [pageIndex]="pageIndex" [length]="totalElements"
+                        (page)="nextPageEvent($event)" [pageSizeOptions]="[10, 25, 100]"></mat-paginator>
+
+                </div>
+                <ng-template #showLoader>
+                    <div class="sk-circle">
+                        <div class="sk-circle1 sk-child"></div>
+                        <div class="sk-circle2 sk-child"></div>
+                        <div class="sk-circle3 sk-child"></div>
+                        <div class="sk-circle4 sk-child"></div>
+                        <div class="sk-circle5 sk-child"></div>
+                        <div class="sk-circle6 sk-child"></div>
+                        <div class="sk-circle7 sk-child"></div>
+                        <div class="sk-circle8 sk-child"></div>
+                        <div class="sk-circle9 sk-child"></div>
+                        <div class="sk-circle10 sk-child"></div>
+                        <div class="sk-circle11 sk-child"></div>
+                        <div class="sk-circle12 sk-child"></div>
+                      </div>
+            </ng-template>
+            </div>
+        </div>
+    </mat-card-content>
+
+
+  
+</mat-card>

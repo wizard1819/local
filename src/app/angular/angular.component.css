@@ -1,0 +1,86 @@
+.example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }
+  
+
+
+.oader{
+  border: 20px solid #e7e7ef ;
+  border-top: 20px solid ghostwhite;
+  border-top-style:double ;
+  border-bottom: 20px solid ghostwhite;
+    border-bottom-style:double ;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-radius: 50%;
+  width: 0px;
+  height: 0px;
+  animation: spin 1s linear infinite;
+}
+
+
+
+@keyframes spin {
+  0% { transform: rotate(0deg) }
+  100%{ transform: rotate(360deg);}
+ 
+}
+
+.spin{
+  border: 0px solid white;
+ background-color: white;
+  width: 200px !important;
+  position: fixed;
+  top: 80%;
+ left: 85%;
+ overflow: hidden;
+ -webkit-border-radius: 20px;
+ -moz-border-radius: 20px;
+
+}
+
+.one{
+border: 2px solid orange;
+width: 100px;
+transform: translate(200%);
+animation: load 1s linear  infinite ;
+
+}
+
+@keyframes load {
+  0%{
+    transform: translate(-120px);
+    opacity: 50;
+  }
+ 50%{
+ }
+ 
+
+
+}
+
+
+
+.loaderto{
+  border: 8px solid ghostwhite;
+  border-bottom: 8px solid transparent;
+  border-top: 8px solid transparent;
+  border-left: 8px solid black;
+  border-right: 8px solid black ;
+  border-radius: 50%;
+  border-end-start-radius: 50%;
+  height: 40px;
+  width: 40px;
+  animation: spin 1s linear infinite; 
+  
+}
+
+.djl{
+  display: flex;
+}

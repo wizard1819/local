@@ -1,0 +1,39 @@
+
+   h1{
+    text-align: center;
+  }
+  
+  .btn{
+    width:90%;
+    color: ghostwhite !important;
+    background-color:transparent;
+    padding: 0px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  
+  }
+  .btn:hover{
+    background-color: ghostwhite;
+    color: black !important;
+  }
+  .sh-horizontal-line{    
+    border-top-color: rgb(241, 240, 240);
+    border-top-width: 1px;
+    border-top-style: solid;
+    flex: auto;
+    height: 0;
+    margin: 0.5em 0;
+    min-width: 32px;
+    
+  }
+
+
+.divv{
+  padding: 20px;
+  padding-bottom: 10px;
+  font-family: cursive;
+  color: whitesmoke;
+  text-align: center;
+}
+

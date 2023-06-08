@@ -1,0 +1,98 @@
+<mat-card>
+    <mat-card-content>
+        <div fxLayout="row" fxLayoutAlign="space-between center">
+            <div>
+                <mat-card-title>Food-Org</mat-card-title>
+            </div>
+            <div>
+                <button mat-raised-button color="primary" (click)="openDialog()">
+                    Add Food-org
+                </button>
+            </div>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="center center">
+            <div fxFlex="100">
+                <div *ngIf="!showSpinner; else showLoader;">
+                    <mat-table [dataSource]="dataSource">
+
+
+                        <ng-container matColumnDef="id">
+                            <mat-header-cell *matHeaderCellDef mat-sort-header> <strong>ID</strong>
+                            </mat-header-cell>
+                            <mat-cell *matCellDef="let row"> {{row.id}} </mat-cell>
+                        </ng-container>
+                        <ng-container matColumnDef="avail">
+                            <mat-header-cell *matHeaderCellDef mat-sort-header> <strong>Available</strong>
+                            </mat-header-cell>
+                            <mat-cell *matCellDef="let row">  <section class="example-section">
+                                <mat-checkbox [checked]="row.isavailable"></mat-checkbox>
+                              </section>
+                           </mat-cell>
+                        </ng-container>
+
+                   
+
+
+
+
+                        <ng-container matColumnDef="name">
+                            <mat-header-cell *matHeaderCellDef mat-sort-header> <strong>Name</strong>
+                            </mat-header-cell>
+                            <mat-cell *matCellDef="let row"> {{row.name}} </mat-cell>
+                        </ng-container>
+
+                    
+
+                        <ng-container matColumnDef="seats">
+                            <mat-header-cell *matHeaderCellDef mat-sort-header> <strong> Seats needed</strong>
+                            </mat-header-cell>
+                            <mat-cell *matCellDef="let row"> {{row.noOfSeats}} </mat-cell>
+                        </ng-container>
+                        <ng-container matColumnDef="outlet">
+                            <mat-header-cell *matHeaderCellDef mat-sort-header> <strong>outlet id</strong>
+                            </mat-header-cell>
+                            <mat-cell *matCellDef="let row"> {{row.outletId}} </mat-cell>
+                        </ng-container>
+                        <ng-container matColumnDef="waiter">
+                            <mat-header-cell *matHeaderCellDef mat-sort-header> <strong>Waiterid</strong>
+                            </mat-header-cell>
+                            <mat-cell *matCellDef="let row"> {{row.waiterId}} </mat-cell>
+                        </ng-container>
+
+
+
+
+
+                        <ng-container matColumnDef="Actions">
+                            <mat-header-cell *matHeaderCellDef mat-sort-header fxLayoutAlign="space-around center">
+                                <strong>Action</strong></mat-header-cell>
+                            <mat-cell *matCellDef="let row">
+                                <div fxLayoutAlign="space-around center">
+                                    <button class="btnn" >
+                                        <mat-icon>edit</mat-icon>
+                                    </button>
+                                    <button class="btnn" (click)="deleteById(row.id,row.name)">
+                                        <mat-icon>delete</mat-icon>
+                                    </button>
+                                </div>
+                            </mat-cell>
+                        </ng-container>
+
+                        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                        <mat-row *matRowDef="let row; columns: displayedColumns;">
+                        </mat-row>
+                    </mat-table>
+                    <mat-paginator [pageSize]="pageSize" [pageIndex]="pageIndex" [length]="totalElements"
+                    (page)="nextPageEvent($event)" [pageSizeOptions]="[10, 25, 100]"></mat-paginator>
+
+                
+                </div>
+                <ng-template #showLoader>
+                    <div class="divi">
+                    <div class="loaderto"></div>
+                </div>
+            </ng-template>
+            </div>
+        </div>
+    </mat-card-content>
+</mat-card>

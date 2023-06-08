@@ -1,0 +1,34 @@
+<mat-toolbar  [ngClass]="currentTheme">
+    <mat-toolbar-row >
+        <button (click)="togglesidebar()" ><mat-icon>menu</mat-icon></button>
+        <button  routerLink="/home"  ><mat-icon>home</mat-icon></button>
+        <span>ANGULAR</span>
+        <span fxFlex></span>
+        <div>
+<mat-menu #menu="matMenu" >
+    <button mat-menu-item (click)="setTheme('default')">Default Theme</button>
+  <button mat-menu-item (click)="setTheme('gray')">Gray Theme</button>
+  <button mat-menu-item (click)="setTheme('dark')">Dark Theme</button>
+  <button mat-menu-item (click)="setTheme('red')">Red Theme</button>
+  <button mat-menu-item (click)="setTheme('picture')">pic Theme</button>
+</mat-menu>
+</div>
+    </mat-toolbar-row>
+    </mat-toolbar>
+    
+    <mat-sidenav-container >
+    <mat-sidenav [(opened)]="opened" mode="side" [ngClass]="currentTheme">
+        <app-sidebar></app-sidebar>   
+            
+        </mat-sidenav>
+        <mat-sidenav-content [ngClass]="currentTheme">
+           <router-outlet></router-outlet>
+           <button class="nd" mat-raised-button color="accent" [matMenuTriggerFor]="menu"> <mat-icon>edit</mat-icon> Theme</button>
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+    
+
+  
+    <!-- [style.background]="colorr " -->
+
+    <!-- [ngClass]="currentTheme" -->
