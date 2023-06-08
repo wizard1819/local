@@ -28,8 +28,6 @@ export class LoginComponent implements OnInit{
     document.body
   }
 
-  hello(){
-    console.log('hello');
-  }
+
 
 }
