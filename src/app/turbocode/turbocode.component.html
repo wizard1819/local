@@ -1,4 +1,9 @@
-<h1>WELCOME </h1>
-<h4>chinniampalayam</h4>
-<h3>coimbatore</h3>
-<h1>TURBOCODE TECHNOLOGIES</h1>
+<button mat-raised-button  (click)="increment()">ADD</button>
+{{c}} 
+<app-add></app-add>
+<button mat-raised-button  style="margin-left: 20px;" (click)="clearcount()">Clear</button>
+<br>
+<br><br>
+<div [style.display]="  c>0 ? 'inline' : 'none'">
+<button mat-raised-button >Place Order</button>
+</div>
