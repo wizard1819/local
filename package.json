@@ -27,6 +27,8 @@
     "css-fx-layout": "^3.0.2",
     "form-control": "^1.0.0",
     "form-group": "^3.0.8",
+    "html2canvas": "^1.4.1",
+    "jspdf": "^2.5.1",
     "ng-form-group": "^1.4.2",
     "ng-sidebar": "^9.4.3",
     "rxjs": "~7.8.0",

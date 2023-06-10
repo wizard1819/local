@@ -1,5 +1,8 @@
 import { Component , OnInit} from '@angular/core';
 import { TurbocodeService } from './turbocode.service';
+import * as jspdf from 'jspdf';
+import html2canvas from 'html2canvas';
+
 @Component({
   selector: 'app-turbocode',
   templateUrl: './turbocode.component.html',

@@ -12,6 +12,7 @@ import { ThemeComponent } from './theme/theme.component';
 import { LoginComponent } from './login/login.component';
 import { TurbocodeComponent } from './turbocode/turbocode.component';
 import { NgbComponent } from './ngb/ngb.component';
+import { ExpoComponent } from './expo/expo.component';
 const routes: Routes = [
   {
     path: '',
@@ -65,6 +66,10 @@ const routes: Routes = [
       {
         path:'page',
         component:NgbComponent
+      }, 
+      {
+        path:'expo',
+        component:ExpoComponent
       }, 
       
 

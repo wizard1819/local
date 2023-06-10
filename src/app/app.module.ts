@@ -53,6 +53,7 @@ import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgbComponent } from './ngb/ngb.component';
 import { NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
 import { TurboModule } from './turbocode/turbo.module';
+import { ExpoComponent } from './expo/expo.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -75,6 +76,7 @@ import { TurboModule } from './turbocode/turbo.module';
     ThemeComponent,
     LoginComponent,
     NgbComponent,
+    ExpoComponent,
 
   ],
   imports: [
