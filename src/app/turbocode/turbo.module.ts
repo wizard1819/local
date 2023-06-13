@@ -4,7 +4,7 @@ import { TurbocodeComponent } from './turbocode.component';
 import { TurbocodeService } from './turbocode.service';
 import { AddComponent } from './add/add.component';
 import { MatButtonModule } from '@angular/material/button';
-
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -13,7 +13,8 @@ import { MatButtonModule } from '@angular/material/button';
   ],
   imports: [
     CommonModule,
-    MatButtonModule
+    MatButtonModule,
+    MatSnackBarModule
   ],
   providers:[TurbocodeService]
 })
