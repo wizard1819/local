@@ -12,6 +12,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class TurbocodeComponent implements OnInit{
 c:any;
   countc:any;
+  myString='mnbvcxsdfgthjklkjhgfv'
   constructor(
     private service : TurbocodeService,
     private snackbar :MatSnackBar
