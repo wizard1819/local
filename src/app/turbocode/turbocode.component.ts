@@ -3,6 +3,7 @@ import { TurbocodeService } from './turbocode.service';
 import * as jspdf from 'jspdf';
 import html2canvas from 'html2canvas';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { SnackbarService } from '../snackbar/snackbar.service';
 @Component({
   selector: 'app-turbocode',
   templateUrl: './turbocode.component.html',
@@ -15,7 +16,8 @@ c:any;
   myString='mnbvcxsdfgthjklkjhgfv'
   constructor(
     private service : TurbocodeService,
-    private snackbar :MatSnackBar
+    private snackbar :MatSnackBar,
+    private snack : SnackbarService
   ){}
     
   ngOnInit(): void {
@@ -36,6 +38,10 @@ c:any;
   setInterval(() => {
     this.c=this.service.count;
   }, 1);
+ }
+
+ opensnack(){
+  this.snack.show('TURBOCODE TECHNOLOGIES');
  }
 
 

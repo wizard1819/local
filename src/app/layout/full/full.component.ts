@@ -38,7 +38,7 @@ mykey:any;
     this.mobileQuery.removeListener(this._mobileQueryListener);
   }
   ngAfterViewInit() {}
-  opened=false;
+  opened=true;
 
   togglesidebar(){
     this.opened = ! this.opened;

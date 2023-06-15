@@ -1,7 +1,7 @@
-<button mat-raised-button color="warn" style="margin-right: 10px;" (click)="increment()">ADD</button>
+<button mat-raised-button color="primary" style="margin-right: 10px;" (click)="increment()">ADD</button>
 {{c}} 
 <app-add style="padding-left: 10px;"></app-add>
-<button mat-raised-button color="warn"  style="margin-left: 20px;" (click)="clearcount()">Clear</button>
+<button mat-raised-button color="link"  style="margin-left: 20px;" (click)="clearcount()">Clear</button>
 <br>
 <br><br>
 <div [style.display]="  c>0 ? 'inline' : 'none'">
@@ -12,3 +12,7 @@
 <button mat-raised-button color="accent" (click)="open()">Open snackbar</button>
 
 <p appCustom [stringToSlice]="myString" [maxLength]="8">{{myString}}</p>
+
+<button mat-raised-button color="accent" (click)="opensnack()">Open snackbar</button>
+
+<p appColor>hello</p>

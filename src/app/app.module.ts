@@ -54,6 +54,7 @@ import { NgbComponent } from './ngb/ngb.component';
 import { NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
 import { TurboModule } from './turbocode/turbo.module';
 import { ExpoComponent } from './expo/expo.component';
+import { SnackbarModule } from './snackbar/snackbar.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -77,10 +78,12 @@ import { ExpoComponent } from './expo/expo.component';
     LoginComponent,
     NgbComponent,
     ExpoComponent,
+    
 
   ],
   imports: [
     BrowserModule,
+    SnackbarModule,
     TurboModule,
     MatMenuModule,
     NgbPaginationModule,
