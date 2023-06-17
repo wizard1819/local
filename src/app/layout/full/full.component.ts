@@ -16,7 +16,7 @@ mykey:any;
   colorrr:any={bg:'gray',nav:'black',sb:'lightgrey'}
 
   private _mobileQueryListener: () => void;
-  publicRoute: boolean = true;
+  publicRoute: boolean = false;
   constructor(
     changeDetectorRef: ChangeDetectorRef,
     media: MediaMatcher,
@@ -53,11 +53,7 @@ mykey:any;
   }
 
  
-  ngDoCheck(): void {
-  if(this._router.url === '/login' && !this.publicRoute){
-    this._router.navigate(['/user']);
-  }
-  }
+  
  
 
 

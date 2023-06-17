@@ -1,9 +1,9 @@
 export interface Hero {
-    // id: number;
+    id: number;
     name: string;
-    // age: number;
-    // gender: string;
-    // status : string;
+    age: number;
+    gender: string;
+    status : boolean;
     // stat: boolean;
   }
 

@@ -2,14 +2,16 @@ import { Hero, colors } from './hero';
 import { Vehicle } from './hero';
 export const HEROES: Hero[] = [
 
-  {  name: 'Dr. Nice'},
-  {  name: 'guna'},
-  {  name: 'naveen'},
-  {  name: 'tharun'},
-  {  name: 'suganth'},
-  {  name: 'praveen'},
-  {  name: 'velu'},
-  {  name: 'rathees'},
+ {id:1,name:'user',age:20,gender:'male',status:true},
+ {id:1,name:'user',age:20,gender:'male',status:true},
+ {id:1,name:'user',age:20,gender:'male',status:true},
+ {id:1,name:'user',age:20,gender:'male',status:true},
+ {id:1,name:'user',age:20,gender:'male',status:true},
+ {id:1,name:'user',age:20,gender:'male',status:true},
+ {id:1,name:'user',age:20,gender:'male',status:true},
+ {id:1,name:'user',age:20,gender:'male',status:true},
+ {id:1,name:'user',age:20,gender:'male',status:true},
+ {id:1,name:'user',age:20,gender:'male',status:true},
 ];
 
 
