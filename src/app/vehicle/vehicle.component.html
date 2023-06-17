@@ -5,6 +5,9 @@
                 <mat-card-title>Vehicles</mat-card-title>
             </div>
             <div>
+                <!-- <button mat-raised-button class="px-4" color="primary" (click)="addvehicle()">
+                    Add component
+                </button> -->
                 <button mat-raised-button color="primary" (click)="openDialog()">
                     Add vehicle
                 </button>
@@ -70,7 +73,7 @@
                                 <strong>Action</strong></mat-header-cell>
                             <mat-cell *matCellDef="let row">
                                 <div fxLayoutAlign="space-around center">
-                                    <button class="btnn" (click)="update(row)">
+                                    <button class="btnn" (click)="openAddvehicleComponent(row)">
                                         <mat-icon>edit</mat-icon>
                                     </button>
                                     <button class="btnn" (click)="deleteById(row.id,row.owner)">

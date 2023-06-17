@@ -3,16 +3,10 @@
 <div class="sh-horizontal-line"></div>
 </div>
 
-<div style="justify-content: center;text-align: center;" class="grd">
-    <button mat-button routerLink="/bike" style="margin-top: 20px;" class="btn"><mat-icon>motorcycle</mat-icon><b>VEHICLES</b></button>
-    <button mat-button routerLink="/hero" style="margin-top: 20px;" class="btn"><mat-icon>perm_identity</mat-icon><b>HERO</b></button>
-    <button mat-button routerLink="/text" style="margin-top: 20px;" class="btn"><mat-icon>style</mat-icon><b>Text Animation</b></button>
-    <button mat-button routerLink="/angular" style="margin-top: 20px;" class="btn"><mat-icon>local_library</mat-icon><b>COMPONENTS</b></button>
-    <button mat-button routerLink="/spinner" style="margin-top: 20px;" class="btn"><mat-icon> donut_large </mat-icon><b>SPINNER</b></button>
-    <button mat-button routerLink="/food-org" style="margin-top: 20px;" class="btn"><mat-icon> restaurant_menu </mat-icon><b>FOOD</b></button>
-    <button mat-button routerLink="/turbo" style="margin-top: 20px;" class="btn"><mat-icon>style</mat-icon><b>TurboCode</b></button>
-    <button mat-button routerLink="/expo" style="margin-top: 20px;" class="btn"><mat-icon>style</mat-icon><b>EXPO</b></button>
-    
+<div style="justify-content: center;text-align: center;" class="grd" *ngFor="let side of sidebarmenu">
+
+    <button mat-button routerLink="{{side.routerlink}}" style="margin-top: 20px;" class="btn"><mat-icon>{{side.icon}}</mat-icon><b>{{side.name}}</b></button>
+   
 </div>
 <div class="divv">
 <div class="sh-horizontal-line"></div>

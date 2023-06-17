@@ -42,6 +42,7 @@ export class UpdateDialogComponent implements OnInit{
       ]),
     })
    this.populateDataOnEdit()
+   console.log('dialog box data',this.data);
   }
   populateDataOnEdit(){
     if(this.data){

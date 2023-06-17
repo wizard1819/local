@@ -9,10 +9,11 @@ export class SnackbarService {
   constructor(public snackbar: MatSnackBar) { }
 
   show(data?:any){
-    this.snackbar.openFromComponent(SnackbarComponent,{
+   const snackbar= this.snackbar.openFromComponent(SnackbarComponent,{
       data:data,
       panelClass:'custom',
       duration:2000,
     })
+
   }
 }

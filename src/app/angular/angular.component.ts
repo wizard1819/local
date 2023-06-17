@@ -28,8 +28,6 @@ export class AngularComponent implements OnInit {
 
   ngOnInit() {
 this.persistedimg();
-console.log('hello');
-console.log(this.bg)
     
   }
 

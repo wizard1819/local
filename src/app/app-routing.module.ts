@@ -9,10 +9,13 @@ import { FullComponent } from './layout/full/full.component';
 import { SpinnerComponent } from './spinner/spinner.component';
 import { FoodOrgComponent } from './food-org/food-org.component';
 import { ThemeComponent } from './theme/theme.component';
-import { LoginComponent } from './login/login.component';
 import { TurbocodeComponent } from './turbocode/turbocode.component';
 import { NgbComponent } from './ngb/ngb.component';
 import { ExpoComponent } from './expo/expo.component';
+import { LoginComponent } from './login/login.component';
+import { AddvehicleComponent } from './vehicle/addvehicle/addvehicle.component';
+import { SenderComponent } from './sender/sender.component';
+import { ReceiverComponent } from './sender/receiver/receiver.component';
 const routes: Routes = [
   {
     path: '',
@@ -30,6 +33,10 @@ const routes: Routes = [
       {
         path:'bike',
         component: VehicleComponent
+      },
+      {
+        path:'login',
+        component:LoginComponent
       },
       {
         path:'home',
@@ -56,11 +63,12 @@ const routes: Routes = [
         component:ThemeComponent
       }, 
       {
-        path:'login',
-        component:LoginComponent
+        path:'addvehicle',
+        component:AddvehicleComponent
       }, 
+
       {
-        path:'turbo',
+        path:'tbs',
         component:TurbocodeComponent
       }, 
       {
@@ -70,6 +78,14 @@ const routes: Routes = [
       {
         path:'expo',
         component:ExpoComponent
+      }, 
+      {
+        path:'sender',
+        component:SenderComponent
+      }, 
+      {
+        path:'receiver',
+        component:ReceiverComponent
       }, 
       
 

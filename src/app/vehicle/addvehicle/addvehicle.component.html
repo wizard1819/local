@@ -1,0 +1,65 @@
+<div fxLayout="row" fxLayoutAlign="center center">
+    <div fxFlex="100" style="padding: 1em; text-align: center;">
+        <br>
+        <h2 style="font-weight: bolder;">Update Vehicle</h2>
+    </div>
+</div>
+<div>
+    <form [formGroup]="form" class="d-flex">
+        <div>
+            <div>
+                <mat-form-field appearance="outline">
+                    <input matInput type="text" placeholder="Brand" formControlName='brand' />
+                    <mat-label>Brand</mat-label>
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field appearance="outline">
+                    <input matInput type="text" placeholder="Owner" formControlName='owner' />
+                    <mat-label>Owner</mat-label>
+                </mat-form-field>
+            </div>
+        </div>
+        <div>
+            <div>
+                <mat-form-field appearance="outline">
+                    <input matInput type="text" placeholder="Model" formControlName='model' />
+                    <mat-label>Model</mat-label>
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field appearance="outline">
+                    <input matInput type="text" placeholder="Register Number" formControlName='registerNum' />
+                    <mat-label>Register Number</mat-label>
+                </mat-form-field>
+            </div>
+        </div>
+        <div >
+            <div>
+                <mat-form-field appearance="outline">
+                    <mat-select formControlName='type'>
+                        <mat-option value="Bike">Bike</mat-option>
+                        <mat-option value="Car">Car</mat-option>
+                        <mat-option value="Scooty">Scooty</mat-option>
+                        <mat-option value="Heavy Vehicle">Heavy Vehicle</mat-option>
+                    </mat-select>
+                    <mat-label>Type</mat-label>
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field appearance="outline">
+                    <mat-select formControlName='status'>
+                        <mat-option value="true">Active</mat-option>
+                        <mat-option value="false">In Active</mat-option>
+                    </mat-select>
+                    <mat-label>Status</mat-label>
+                </mat-form-field>
+            </div>
+        </div>
+        <div>
+            <div style="padding-bottom: 30px;">
+                <button mat-raised-button color="primary" class="btnn" (click)="submit()">Submit</button>
+            </div>
+        </div>
+    </form>
+</div>

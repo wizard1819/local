@@ -112,19 +112,31 @@ vehicleee:any;
 }
 
 openDialog(){
-  this.dialog.open(VehicleDialogComponent),{
+  let dialogRef =  this.dialog.open(VehicleDialogComponent)
+  dialogRef.afterClosed().subscribe({
+    next:(d)=>{
+      this.findAll();
+    }
   }
-
-  
+  )
 }
 update(data?: any) {
   let dialogRef = this.dialog.open(UpdateDialogComponent, {
-    data: data 
+    data: data ,
   },);
 
-
+  dialogRef.afterClosed().subscribe({
+    next:(d)=>{
+      this.findAll();
+    }
+  }
+  )
 }
 
+openAddvehicleComponent(data?:any){
 
+  this.router.navigate(['/addvehicle'], { queryParams: { data:JSON.stringify(data) } })
+
+}
 
 }

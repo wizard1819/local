@@ -15,5 +15,8 @@ constructor(
 
 ngOnInit(): void {
   
+  this.snackbar.afterOpened().subscribe(()=>{
+    console.log('opened');
+  })
 }
 }

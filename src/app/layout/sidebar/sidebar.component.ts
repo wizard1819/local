@@ -1,10 +1,30 @@
 import { Component } from '@angular/core';
 
+export interface sidebar {
+  name: any,
+  icon: any,
+  routerlink: any
+}
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
   styleUrls: ['./sidebar.component.css']
 })
+
+
 export class SidebarComponent {
+
+  //sidebarmenu
+  sidebarmenu: sidebar[] = [
+    { name: 'Vehicle',       icon: 'motorcycle', routerlink: '/bike' },
+    { name: 'Hero',          icon: 'perm_identity', routerlink: '/hero' },
+    // { name: 'Text Animation', icon: 'style', routerlink: '/text' },
+    // { name: 'COMPONENTS', icon: 'local_library', routerlink: '/angular' },
+    { name: 'SPINNER', icon: 'donut_large', routerlink: '/spinner' },
+    { name: 'FOOD', icon: 'restaurant_menu', routerlink: '/food-org' },
+    { name: 'Examples', icon: 'style', routerlink: '/tbs' },
+    { name: 'EXPO', icon: 'style', routerlink: '/expo' },
+    { name: 'Sender', icon: 'style', routerlink: '/sender' },
+  ]
 
 }

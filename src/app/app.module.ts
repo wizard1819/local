@@ -55,6 +55,9 @@ import { NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
 import { TurboModule } from './turbocode/turbo.module';
 import { ExpoComponent } from './expo/expo.component';
 import { SnackbarModule } from './snackbar/snackbar.module';
+import { AddvehicleComponent } from './vehicle/addvehicle/addvehicle.component';
+import { SenderComponent } from './sender/sender.component';
+import { ReceiverComponent } from './sender/receiver/receiver.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -78,6 +81,9 @@ import { SnackbarModule } from './snackbar/snackbar.module';
     LoginComponent,
     NgbComponent,
     ExpoComponent,
+    AddvehicleComponent,
+    SenderComponent,
+    ReceiverComponent,
     
 
   ],

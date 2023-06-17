@@ -30,8 +30,6 @@ mykey:any;
 
     localStorage.setItem('this.mykey', JSON.stringify(this.colorrr));
     let mk=localStorage.getItem('this.myey');
-    console.log('hello');
-    console.log(mk);
   
   }
   ngOnDestroy(): void {
