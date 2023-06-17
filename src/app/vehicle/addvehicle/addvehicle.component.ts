@@ -24,7 +24,7 @@ export class AddvehicleComponent implements OnInit {
 
   ngOnInit() {
     this.route.queryParams.subscribe(params => {
-      const data = JSON.parse(params['data']);
+      const data = JSON.parse(params['vehicles']);
       this.receivedData = data;
     });
 

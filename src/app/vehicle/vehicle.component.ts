@@ -135,7 +135,7 @@ update(data?: any) {
 
 openAddvehicleComponent(data?:any){
 
-  this.router.navigate(['/addvehicle'], { queryParams: { data:JSON.stringify(data) } })
+  this.router.navigate(['/addvehicle'], { queryParams: { vehicles:JSON.stringify(data) } })
 
 }
 
