@@ -57,8 +57,7 @@ vehicleee:any;
         this.dataSource = new MatTableDataSource(datas);
         console.log(d.response.content);
         this.totalElements = d.response.page.totalElements;
-       this.vehicleee=d.response.content;
-       console.log(this.vehicleee);
+       
       },
       error:(e)=>{
         console.log(e.name);
@@ -136,7 +135,6 @@ update(data?: any) {
 openAddvehicleComponent(data?:any){
 
   this.router.navigate(['/addvehicle'], { queryParams: { vehicles:JSON.stringify(data) } })
-
 }
 
 }

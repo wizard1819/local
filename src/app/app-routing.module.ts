@@ -16,6 +16,8 @@ import { LoginComponent } from './login/login.component';
 import { AddvehicleComponent } from './vehicle/addvehicle/addvehicle.component';
 import { SenderComponent } from './sender/sender.component';
 import { ReceiverComponent } from './sender/receiver/receiver.component';
+import { CartComponent } from './study/cart/cart.component';
+import { ProductComponent } from './study/product/product.component';
 const routes: Routes = [
   {
     path: '',
@@ -86,6 +88,14 @@ const routes: Routes = [
       {
         path:'receiver',
         component:ReceiverComponent
+      }, 
+      {
+        path:'cart',
+        component:CartComponent
+      }, 
+      {
+        path:'prod',
+        component:ProductComponent
       }, 
       
 

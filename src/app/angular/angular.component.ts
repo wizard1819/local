@@ -11,45 +11,22 @@ import { HEROES } from '../mock-heroes';
   styleUrls: ['./angular.component.css']
 })
 export class AngularComponent implements OnInit {
-  guna='kk';
-  bg='';
-  pageSize: number = 10;
-  pageIndex: number = 0;
-  colorrr:any={bg:'gray',nav:'black',sb:'lightgrey'}
-  constructor(
-    private service: VehicleService
-  ) { }
-  myControl = new FormControl('');
-  options: string[] = [];
-  heroo: Hero[] = HEROES;
-  vehicles: any[] = [];
-  vehi: any[] = [];
-  filteredOptions!: Observable<string[]>;
-
-  ngOnInit() {
-this.persistedimg();
-    
-  }
-
+  message = "I'm read only!";
+  canEdit = false;
+  fontColor = 'blue';
+  sayHelloId = 0;
  
-
-  getimg() {
-    return this.bg;
-  }
-
-  setimg(img: any) {
-this.bg=img;
-localStorage.setItem("bg",img);
-// localStorage.setItem('bg', JSON.stringify(img));
-  }
-
-  persistedimg(){
-    const persis=localStorage.getItem('bg');
-
-    if(persis){
-      this.bg=persis;
+  onEditClick() {
+    this.canEdit = !this.canEdit;
+    if (this.canEdit) {
+      this.message = 'You can edit me!';
+    } else {
+      this.message = "I'm read only!";
     }
   }
+ngOnInit(): void {
+  
+}
 
 
 

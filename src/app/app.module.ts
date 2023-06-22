@@ -58,6 +58,8 @@ import { SnackbarModule } from './snackbar/snackbar.module';
 import { AddvehicleComponent } from './vehicle/addvehicle/addvehicle.component';
 import { SenderComponent } from './sender/sender.component';
 import { ReceiverComponent } from './sender/receiver/receiver.component';
+import { CartComponent } from './study/cart/cart.component';
+import { ProductComponent } from './study/product/product.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -84,6 +86,8 @@ import { ReceiverComponent } from './sender/receiver/receiver.component';
     AddvehicleComponent,
     SenderComponent,
     ReceiverComponent,
+    CartComponent,
+    ProductComponent,
     
 
   ],

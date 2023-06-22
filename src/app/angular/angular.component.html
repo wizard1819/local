@@ -1,55 +1,19 @@
-<div [style.background]="bg">
-<form class="example-form">
-    <mat-form-field class="example-full-width" appearance="fill">
-      <mat-label>Number</mat-label>
-      <input type="text"
-             placeholder="Pick one"
-             aria-label="Number"
-             matInput
-             [formControl]="myControl"
-             [matAutocomplete]="auto">
-      <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
-        <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
-          {{option}}
-        </mat-option>
-      </mat-autocomplete>
-    </mat-form-field>
-  </form>
+<h2>Hello World: ngIf!</h2>
 
-  <div>
-    <mat-form-field class="example-full-width" appearance="fill">
-      <mat-label>Number</mat-label>
-      <input type="text"
-             placeholder="Pick one"
-             aria-label="Number"
-             matInput
-             [matAutocomplete]="auto">
-      <mat-autocomplete  #auto="matAutocomplete">
-        <mat-option *ngFor="let option of filteredOptions | async" >
-          {{option}}
-        </mat-option>
-      </mat-autocomplete>
-    </mat-form-field>
-  </div>
+<button mat-raised-button type="button" (click)="onEditClick()">Make text editable!</button>
 
- <div class="oader"></div>
- <br>
-<div class="spin">
-  <div class="one"></div>
-</div>
- 
-
-<div class="loaderto"></div>
-
-<div class="djl" >
-  A paragraph is defined as “a group of sentences or a single sentence that forms a unit” (Lunsford and Connors 116). Length and appearance do not determine whether a section in a paper is a paragraph. For instance, in some styles of writing, particularly journalistic styles, a paragraph can be just one sentence long.
-  A paragraph is defined as “a group of sentences or a single sentence that forms a unit” (Lunsford and Connors 116). Length and appearance do not determine whether a section in a paper is a paragraph. For instance, in some styles of writing, particularly journalistic styles, a paragraph can be just one sentence long.
-  A paragraph is defined as “a group of sentences or a single sentence that forms a unit” (Lunsford and Connors 116). Length and appearance do not determine whether a section in a paper is a paragraph. For instance, in some styles of writing, particularly journalistic styles, a paragraph can be just one sentence long.
-  A paragraph is defined as “a group of sentences or a single sentence that forms a unit” (Lunsford and Connors 116). Length and appearance do not determine whether a section in a paper is a paragraph. For instance, in some styles of writing, particularly journalistic styles, a paragraph can be just one sentence long.
-  A paragraph is defined as “a group of sentences or a single sentence that forms a unit” (Lunsford and Connors 116). Length and appearance do not determine whether a section in a paper is a paragraph. For instance, in some styles of writing, particularly journalistic styles, a paragraph can be just one sentence long.
-  A paragraph is defined as “a group of sentences or a single sentence that forms a unit” (Lunsford and Connors 116). Length and appearance do not determine whether a section in a paper is a paragraph. For instance, in some styles of writing, particularly journalistic styles, a paragraph can be just one sentence long.
+<div *ngIf="canEdit; else noEdit">
+    <p>You can edit the following paragraph.</p>
 </div>
 
-<button (click)="setimg('blue')"> img</button>
+<ng-template #noEdit>
+    <p>The following paragraph is read only. Try clicking the button!</p>
+</ng-template>
 
-</div>
+<p [contentEditable]="canEdit">{{ message }}</p>
+
+<p
+  [id]="sayHelloId"
+  [style.color]="fontColor">
+  You can set my color in the component!
+</p>
