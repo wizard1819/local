@@ -42,7 +42,7 @@
                         <ng-container matColumnDef="owner">
                             <mat-header-cell *matHeaderCellDef mat-sort-header> <strong>Owner</strong>
                             </mat-header-cell>
-                            <mat-cell *matCellDef="let row"> {{row.owner}} </mat-cell>
+                            <mat-cell *matCellDef="let row" (click)="detail(row)"> {{row.owner}} </mat-cell>
                         </ng-container>
 
                         <ng-container matColumnDef="type">

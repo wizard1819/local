@@ -27,4 +27,12 @@ export class GlobalstateService {
     return this.status$.getValue();
   }
 
+  set accesstoken(token:string){
+    localStorage.setItem('accesstoken', token);
+  }
+
+  get accesstoken(){
+  return  localStorage.getItem('accesstoken') ?? '';
+  }
+
 }

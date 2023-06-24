@@ -60,6 +60,12 @@ import { SenderComponent } from './sender/sender.component';
 import { ReceiverComponent } from './sender/receiver/receiver.component';
 import { CartComponent } from './study/cart/cart.component';
 import { ProductComponent } from './study/product/product.component';
+import { FormstudyComponent } from './study/formstudy/formstudy.component';
+import { CycleComponent } from './study/cycle/cycle.component';
+import { InfoDialogComponent } from './info-dialog/info-dialog.component';
+import { ChildComponent } from './study/cycle/child/child.component';
+import {MatExpansionModule} from '@angular/material/expansion';
+import { ChipsComponent } from './chips/chips.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -88,6 +94,11 @@ import { ProductComponent } from './study/product/product.component';
     ReceiverComponent,
     CartComponent,
     ProductComponent,
+    FormstudyComponent,
+    CycleComponent,
+    InfoDialogComponent,
+    ChildComponent,
+    ChipsComponent,
     
 
   ],
@@ -101,6 +112,7 @@ import { ProductComponent } from './study/product/product.component';
     MatProgressSpinnerModule,
     MatCheckboxModule,
     MatAutocompleteModule,
+    MatExpansionModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,

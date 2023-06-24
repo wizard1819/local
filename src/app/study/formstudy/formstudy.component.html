@@ -1,0 +1,12 @@
+<form [formGroup]="checkoutForm">
+    <div fxLayout="column">
+    <mat-form-field appearance="outline">
+        <input matInput type="text" placeholder="name" formControlName='name' />
+        <mat-label>Name</mat-label>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+        <input matInput type="text" placeholder="addredd" formControlName='address' />
+        <mat-label>Address</mat-label>
+    </mat-form-field>   
+</div>
+</form>

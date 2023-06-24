@@ -18,6 +18,9 @@ import { SenderComponent } from './sender/sender.component';
 import { ReceiverComponent } from './sender/receiver/receiver.component';
 import { CartComponent } from './study/cart/cart.component';
 import { ProductComponent } from './study/product/product.component';
+import { FormstudyComponent } from './study/formstudy/formstudy.component';
+import { CycleComponent } from './study/cycle/cycle.component';
+import { ChipsComponent } from './chips/chips.component';
 const routes: Routes = [
   {
     path: '',
@@ -94,8 +97,20 @@ const routes: Routes = [
         component:CartComponent
       }, 
       {
+        path:'cycle',
+        component:CycleComponent
+      }, 
+      {
+        path:'chips',
+        component:ChipsComponent
+      }, 
+      {
         path:'prod',
         component:ProductComponent
+      }, 
+      {
+        path:'forms',
+        component:FormstudyComponent
       }, 
       
 

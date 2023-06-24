@@ -20,4 +20,14 @@ export class ThemeService {
       this.currentTheme = persistedTheme;
     }
   }
+
+
+  set token(tok:any){
+    localStorage.setItem('token',tok);
+  }
+
+  get token(){
+    return localStorage.getItem('token');
+  }
+
 }

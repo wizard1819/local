@@ -28,8 +28,8 @@ mykey:any;
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
     this.mobileQuery.addListener(this._mobileQueryListener);
 
-    localStorage.setItem('this.mykey', JSON.stringify(this.colorrr));
-    let mk=localStorage.getItem('this.myey');
+    // localStorage.setItem('this.mykey', JSON.stringify(this.colorrr));
+    // let mk=localStorage.getItem('this.myey');
   
   }
   ngOnDestroy(): void {

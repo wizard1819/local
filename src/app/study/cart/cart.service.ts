@@ -7,19 +7,28 @@ export class CartService {
 
 
   items:any[]=[];
+  item=[];
   constructor() { }
 
   addtocart(product:any){
+    console.log(product);
     this.items.push(product);
   }
 
-  getitems(){
+ get getitems(){
+  console.log(this.items);
     return this.items;
   }
+  
 
-  clearCart() {
-    this.items = [];
-    return this.items;
+   clearCart() {
+    console.log(this.items);
+   this.items.pop;
+   console.log(this.items);
+  return this.items;
+
+
+   
   }
   
 }

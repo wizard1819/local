@@ -1,0 +1,36 @@
+<mat-card style="padding: 20px">
+    <mat-card-title fxLayout="row" fxLayoutAlign="center center">Info</mat-card-title>
+    <div fxLayout="row" fxLayoutAlign="space-between center">
+        <div>
+            <img style="width: 100px;height: 100px;" src="{{srcc}}" alt="car">
+        </div>
+        <div>
+            <table>
+                <tr>
+                    <td>Id</td>
+                    <td>{{data.id}}</td>
+                </tr>
+                <tr>
+                    <td>name</td>
+                    <td>{{data.owner}}</td>
+                </tr>
+                <tr>
+                    <td>Brand</td>
+                    <td>{{data.brand}}</td>
+                </tr>
+                <tr>
+                    <td>Model</td>
+                    <td>{{data.model}}</td>
+                </tr>
+                <tr>
+                    <td>Number</td>
+                    <td>{{data.registerNum}}</td>
+                </tr>
+                <tr>
+                    <td>Status</td>
+                    <td>{{(data.status)=='true' ? 'Active':'Inactive'}}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</mat-card>

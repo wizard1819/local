@@ -1,4 +1,4 @@
-import { Component , OnInit, ViewChild} from '@angular/core';
+import { Component , OnDestroy, OnInit, ViewChild} from '@angular/core';
 import { VehicleService } from './vehicle.service';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator, PageEvent } from '@angular/material/paginator';
@@ -9,6 +9,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { UpdateDialogComponent } from './update-dialog/update-dialog.component';
 import { ConfirmDialogComponent } from '../confirm-dialog/confirm-dialog.component';
 import { Router } from '@angular/router';
+import { InfoDialogComponent } from '../info-dialog/info-dialog.component';
 
 @Component({
 
@@ -16,7 +17,7 @@ import { Router } from '@angular/router';
   templateUrl: './vehicle.component.html',
   styleUrls: ['./vehicle.component.css']
 })
-export class VehicleComponent {
+export class VehicleComponent  {
   // Message :any[]=[];
   // info:any;
   pageSize: number = 10;
@@ -62,7 +63,6 @@ vehicleee:any;
       error:(e)=>{
         console.log(e.name);
         this.snack.openSnack(e.name);
-        this.router.navigate(['home']);
       },
       complete:()=>{
         this.showSpinner = false;
@@ -130,6 +130,12 @@ update(data?: any) {
     }
   }
   )
+}
+
+detail(data?:any){
+  this.dialog.open(InfoDialogComponent,{
+    data:data
+  })
 }
 
 openAddvehicleComponent(data?:any){

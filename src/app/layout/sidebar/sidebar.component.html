@@ -1,12 +1,13 @@
 <div class="divv">
 <div>Menu</div>
+
 <div class="sh-horizontal-line"></div>
 </div>
 
 <div style="justify-content: center;text-align: center;" class="grd" *ngFor="let side of sidebarmenu">
 
     <button mat-button routerLink="{{side.routerlink}}" style="margin-top: 20px;" class="btn"><mat-icon>{{side.icon}}</mat-icon><b>{{side.name}}</b></button>
-   
+    
 </div>
 <div class="divv">
 <div class="sh-horizontal-line"></div>
