@@ -3,6 +3,7 @@ import { MediaMatcher } from '@angular/cdk/layout';
 import {ChangeDetectorRef,OnDestroy,AfterViewInit} from '@angular/core';
 import { ThemeService } from 'src/app/theme/theme.service';
 import { Router } from '@angular/router';
+import { LoginService } from 'src/app/login/login.service';
 @Component({
   selector: 'app-full',
   templateUrl: './full.component.html',
@@ -22,7 +23,8 @@ mykey:any;
     media: MediaMatcher,
     private service : ThemeService,
     private _router : Router,
-    private renderer : Renderer2
+    private renderer : Renderer2,
+    private logout : LoginService
   ){
     this.mobileQuery = media.matchMedia('(min-width: 768px)');
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
@@ -53,7 +55,9 @@ mykey:any;
   }
 
  
-  
+  signout(){
+    this.logout.signout();
+  }
  
 
 

@@ -21,103 +21,120 @@ import { ProductComponent } from './study/product/product.component';
 import { FormstudyComponent } from './study/formstudy/formstudy.component';
 import { CycleComponent } from './study/cycle/cycle.component';
 import { ChipsComponent } from './chips/chips.component';
+import { LoginGuard } from './guards/login.guard';
 const routes: Routes = [
   {
     path: '',
-    component: FullComponent,
-    children:[
+    children: [
       {
-        path:'',
-        redirectTo:'/home',
-        pathMatch:'full'
+        path: '',
+        redirectTo: '/login',
+        pathMatch: 'full',
       },
       {
-        path:'hero',
-        component:HeroesComponent
+        path: 'login',
+        component: LoginComponent
       },
       {
-        path:'bike',
-        component: VehicleComponent
-      },
-      {
-        path:'login',
-        component:LoginComponent
-      },
-      {
-        path:'home',
-        component:HomeComponent
-      },
-      {
-        path:'text',
-        component:TextanimationsComponent
-      },
-      {
-        path:'angular',
-        component:AngularComponent
-      }, 
-      {
-        path:'spinner',
-        component:SpinnerComponent
-      }, 
-      {
-        path:'food-org',
-        component:FoodOrgComponent
-      }, 
-      {
-        path:'theme',
-        component:ThemeComponent
-      }, 
-      {
-        path:'addvehicle',
-        component:AddvehicleComponent
-      }, 
+        path: '',
+        canActivate: [LoginGuard],
+        canActivateChild:[LoginGuard],
+        component: FullComponent,
+        children: [
+          {
+            path: '',
+            redirectTo: '/home',
+            pathMatch: 'full'
+          },
+          {
+            path: 'hero',
+            component: HeroesComponent
+          },
+          {
+            path: 'bike',
+            component: VehicleComponent
+          },
+          {
+            path: 'login',
+            component: LoginComponent
+          },
+          {
+            path: 'home',
+            component: HomeComponent
+          },
+          {
+            path: 'text',
+            component: TextanimationsComponent
+          },
+          {
+            path: 'angular',
+            component: AngularComponent
+          },
+          {
+            path: 'spinner',
+            component: SpinnerComponent
+          },
+          {
+            path: 'food-org',
+            component: FoodOrgComponent
+          },
+          {
+            path: 'theme',
+            component: ThemeComponent
+          },
+          {
+            path: 'addvehicle',
+            component: AddvehicleComponent
+          },
 
-      {
-        path:'tbs',
-        component:TurbocodeComponent
-      }, 
-      {
-        path:'page',
-        component:NgbComponent
-      }, 
-      {
-        path:'expo',
-        component:ExpoComponent
-      }, 
-      {
-        path:'sender',
-        component:SenderComponent
-      }, 
-      {
-        path:'receiver',
-        component:ReceiverComponent
-      }, 
-      {
-        path:'cart',
-        component:CartComponent
-      }, 
-      {
-        path:'cycle',
-        component:CycleComponent
-      }, 
-      {
-        path:'chips',
-        component:ChipsComponent
-      }, 
-      {
-        path:'prod',
-        component:ProductComponent
-      }, 
-      {
-        path:'forms',
-        component:FormstudyComponent
-      }, 
-      
+          {
+            path: 'tbs',
+            component: TurbocodeComponent
+          },
+          {
+            path: 'page',
+            component: NgbComponent
+          },
+          {
+            path: 'expo',
+            component: ExpoComponent
+          },
+          {
+            path: 'sender',
+            component: SenderComponent
+          },
+          {
+            path: 'receiver',
+            component: ReceiverComponent
+          },
+          {
+            path: 'cart',
+            component: CartComponent
+          },
+          {
+            path: 'cycle',
+            component: CycleComponent
+          },
+          {
+            path: 'chips',
+            component: ChipsComponent
+          },
+          {
+            path: 'prod',
+            component: ProductComponent
+          },
+          {
+            path: 'forms',
+            component: FormstudyComponent
+          },
 
+        ]
+      },
     ]
   },
-  
- 
+
+
+
 
 ];
 

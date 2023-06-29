@@ -6,26 +6,34 @@ import { Router } from '@angular/router';
 })
 export class LoginService {
 
-  set status(token: string)
-  {
-      localStorage.setItem('tok', token);
-  }
-
-  get status(): string
-  {
-      return localStorage.getItem('tok') ?? '';
-  }
+status:any;
+tok:any;
   constructor(
     private router : Router
   ) { }
 
   check(data?:any){
+     if(data.name=='qqqq'&&data.password=='qqqq'){
+      this.status='xyz123';
+      localStorage.setItem('token',this.status);
+      console.log(localStorage.getItem('token'), 'tok');
+      console.log(this.loggedin(),'logged in')
+      this.router.navigate(['/home']);
+     }
+     else{
+      localStorage.removeItem('token');
+      console.log(localStorage.getItem('token'), 'tok');
+      console.log(this.loggedin(),'logged out');
 
-    this.status=data;
+     }
+  }
+
+  loggedin(){
+    this.tok=localStorage.getItem('token');
+    return this.tok!=null;
   }
   
-  signout(){
-   
+  signout(){   
     localStorage.removeItem('tok');
    this.router.navigate(['/login']);
   }

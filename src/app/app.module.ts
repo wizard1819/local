@@ -66,6 +66,8 @@ import { InfoDialogComponent } from './info-dialog/info-dialog.component';
 import { ChildComponent } from './study/cycle/child/child.component';
 import {MatExpansionModule} from '@angular/material/expansion';
 import { ChipsComponent } from './chips/chips.component';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
+import { LoginService } from './login/login.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -105,6 +107,7 @@ import { ChipsComponent } from './chips/chips.component';
   imports: [
     BrowserModule,
     SnackbarModule,
+    MatProgressBarModule,
     TurboModule,
     MatMenuModule,
     NgbPaginationModule,
@@ -140,7 +143,7 @@ import { ChipsComponent } from './chips/chips.component';
     MatTooltipModule,
     NgbModalModule
   ],
-  providers: [],
+  providers: [LoginService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

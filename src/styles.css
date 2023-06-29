@@ -10,3 +10,8 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     padding-bottom: 10px;
     background-color: yellowgreen;
 }
+
+.bl{
+    background-color: rgb(225, 161, 116);
+    border-radius: 15px;
+}

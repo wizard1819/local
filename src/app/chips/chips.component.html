@@ -22,3 +22,9 @@
 <button mat-raised-button (click)="submit()">submit</button>
 <p>
 </p>
+
+<mat-progress-bar  mode="determinate" [value]="calculateProgress()"></mat-progress-bar>
+<br>
+<input type="number" [(ngModel)]="startValue" >
+<br>
+<p>{{startValue}}</p>

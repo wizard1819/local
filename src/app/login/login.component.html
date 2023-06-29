@@ -1,12 +1,28 @@
-<form>
-    <div>
-      <label>Username:</label>
-      <input type="text" name="username" [(ngModel)]="username">
-    </div>
-    <div>
-      <label>Password:</label>
-      <input type="password" name="password" [(ngModel)]="password">
-    </div>
-    <button (click)="login()">Login</button>
-  </form>
-
+<div fxLayout="row" fxLayoutAlign="center center" style="margin-top: 160px;">
+  <div fxFlex="50">
+    <mat-card >
+      <mat-card-content class="bl">
+        <div fxLayout="row" fxLayoutAlign="center center">
+          <div>
+              <mat-card-title>Login</mat-card-title>
+          </div>
+      </div>
+        <form [formGroup]="checkoutForm">
+          <div fxLayout="column">
+            <mat-form-field appearance="outline">
+              <input matInput type="text" placeholder="name" formControlName='name' />
+              <mat-label>Name</mat-label>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+              <input matInput type="text" placeholder="addredd" formControlName='password' />
+              <mat-label>Password</mat-label>
+            </mat-form-field>
+          </div>
+          <div fxLayoutAlign="center center">
+            <button mat-raised-button color="primary" (click)="login()">Login</button>
+          </div>
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

@@ -8,7 +8,8 @@ import { UntypedFormControl, UntypedFormGroup, } from '@angular/forms';
   styleUrls: ['./chips.component.css']
 })
 export class ChipsComponent implements OnInit {
-  keywords=[''];
+  keywords=['one'];
+  vall:any;
   public form: UntypedFormGroup = Object.create(null);
   announcer = inject(LiveAnnouncer);
 
@@ -42,5 +43,15 @@ export class ChipsComponent implements OnInit {
 
   submit(){
     console.log(this.form.value);
+  }
+
+  startValue: number = 100;
+  endValue: number = 150;
+
+  calculateProgress(): number {
+    // Calculate the progress value based on the start and end values
+    const progress = this.endValue -(this.endValue-this.startValue);
+    // const progress = 100-(this.endValue-star);
+    return progress // Ensure the progress is within the valid range (0-100)
   }
 }
