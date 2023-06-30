@@ -6,7 +6,7 @@ import { LoginService } from '../login/login.service';
 @Injectable({
   providedIn: 'root'
 })
-export class LoginGuard implements CanActivate, CanActivateChild {
+export class LoginGuard implements CanActivate {
 
   constructor(
     private service : LoginService,
@@ -18,14 +18,35 @@ export class LoginGuard implements CanActivate, CanActivateChild {
       if(this.service.loggedin()){
         console.log('inn');
         return true;
-      }  
+      }  else{
+        this.router.navigate(['/login']);
+        return false;
+      }
   }
+
+}
+
+@Injectable({
+  providedIn: 'root'
+})
+export class childguard implements  CanActivateChild {
+
+  constructor(
+    private service : LoginService,
+    private router : Router
+  ){}
+ 
   canActivateChild(
     childRoute: ActivatedRouteSnapshot,
     state: RouterStateSnapshot):any{
+     
       if(this.service.loggedin()){
-        return true
-      }  
+        console.log('inn');
+        return true;
+      }  else{
+        this.router.navigate(['/login']);
+        return false;
+      }
   }
   
 }

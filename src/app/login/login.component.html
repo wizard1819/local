@@ -1,20 +1,23 @@
 <div fxLayout="row" fxLayoutAlign="center center" style="margin-top: 160px;">
   <div fxFlex="50">
-    <mat-card >
+    <mat-card>
       <mat-card-content class="bl">
-        <div fxLayout="row" fxLayoutAlign="center center">
+        <div style="margin-bottom: 2em;" fxLayout="row" fxLayoutAlign="center center">
           <div>
-              <mat-card-title>Login</mat-card-title>
+            <mat-card-title>Login</mat-card-title>
           </div>
-      </div>
+        </div>
         <form [formGroup]="checkoutForm">
           <div fxLayout="column">
             <mat-form-field appearance="outline">
-              <input matInput type="text" placeholder="name" formControlName='name' />
+              <input matInput type="text" placeholder="name" [(ngModel)]="us" formControlName='name' />
               <mat-label>Name</mat-label>
             </mat-form-field>
             <mat-form-field appearance="outline">
-              <input matInput type="text" placeholder="addredd" formControlName='password' />
+              <input matInput [(ngModel)]="pass" type="{{this.showPassword ? 'text' : 'password'}}" placeholder=""
+                formControlName='password' />
+              <mat-icon matSuffix color="primary" (click)="toggleShow()">{{this.showPassword ?
+                'visibility_off' : 'visibility'}}</mat-icon>
               <mat-label>Password</mat-label>
             </mat-form-field>
           </div>

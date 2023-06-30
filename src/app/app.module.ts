@@ -68,6 +68,8 @@ import {MatExpansionModule} from '@angular/material/expansion';
 import { ChipsComponent } from './chips/chips.component';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import { LoginService } from './login/login.service';
+import {MatBottomSheetModule} from '@angular/material/bottom-sheet';
+import {MatTabsModule} from '@angular/material/tabs';
 @NgModule({
   declarations: [
     AppComponent,
@@ -106,6 +108,8 @@ import { LoginService } from './login/login.service';
   ],
   imports: [
     BrowserModule,
+    MatTabsModule,
+    MatBottomSheetModule,
     SnackbarModule,
     MatProgressBarModule,
     TurboModule,
