@@ -7,15 +7,21 @@
             <mat-card-title>Login</mat-card-title>
           </div>
         </div>
-        <form [formGroup]="checkoutForm">
+        <form [formGroup]="form">
           <div fxLayout="column">
             <mat-form-field appearance="outline">
-              <input matInput type="text" placeholder="name" [(ngModel)]="us" formControlName='name' />
+              <input matInput type="text" placeholder="name" [(ngModel)]="us" formControlName='userName' />
               <mat-label>Name</mat-label>
+              <mat-error>
+                <div *ngIf="form.get('userName')?.errors && form.get('userName')?.errors">UserName is Required</div>
+              </mat-error>
             </mat-form-field>
             <mat-form-field appearance="outline">
               <input matInput [(ngModel)]="pass" type="{{this.showPassword ? 'text' : 'password'}}" placeholder=""
                 formControlName='password' />
+                <mat-error>
+                  <div *ngIf="form.get('password')?.errors && form.get('password')?.errors">Password is required</div>
+                </mat-error>
               <mat-icon matSuffix color="primary" (click)="toggleShow()">{{this.showPassword ?
                 'visibility_off' : 'visibility'}}</mat-icon>
               <mat-label>Password</mat-label>

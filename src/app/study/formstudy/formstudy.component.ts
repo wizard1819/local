@@ -6,6 +6,7 @@ import { Component , OnInit} from '@angular/core';
 })
 export class FormstudyComponent implements OnInit{
 
+  accent='red';
   header:any={
     C_1:'1',
     C_2:'2',

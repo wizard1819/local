@@ -1,24 +1,24 @@
 <mat-card-content>
-    <div fxLayout="row" fxLayoutAlign="center center">
+    <div style="padding-top: 20px;" fxLayout="row" fxLayoutAlign="center center">
         <div fxFlex="100" style="text-align: center;">
             <h3 style="font-weight: 600;">{{header || 'Confirmation!'}}</h3>
-            <mat-card-subtitle>{{message  || 'Are you sure?'}}</mat-card-subtitle>
+            <mat-card-subtitle>{{message|| 'Are you sure'}}</mat-card-subtitle>
         </div>
     </div>
-    <div fxLayout="row" fxLayoutAlign="center center" style="padding-top: 30px;">
-    <div fxLayout="row" fxLayoutAlign="center center" class="p-t-5">
-        <div style="padding: 0.5em 2.5em; text-align: center;">
-            <button mat-raised-button color="warn" class="button" (click)="accept()">
-                <mat-icon>done</mat-icon>Okay <span> </span>
-            </button>
+    <div fxLayout="row" fxLayoutAlign="center center" style="padding-top: 30px;padding-bottom: 20px;">
+        <div fxLayout="row" fxLayoutAlign="center center" class="p-t-5">
+            <div style="padding: 0.5em 2.5em; text-align: center;">
+                <button mat-raised-button color="warn" class="button" (click)="accept()">
+                    <mat-icon>done</mat-icon>Okay <span> </span>
+                </button>
+            </div>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="center center" class="p-t-5">
+            <div style="padding: 0.5em 2.5em; text-align: center;">
+                <button mat-raised-button color="primary" class="button" (click)="close()">
+                    <mat-icon>close</mat-icon>Cancel
+                </button>
+            </div>
         </div>
     </div>
-    <div fxLayout="row" fxLayoutAlign="center center" class="p-t-5">
-        <div  style="padding: 0.5em 2.5em; text-align: center;">
-            <button mat-raised-button color="primary" class="button" (click)="close()">
-                <mat-icon>close</mat-icon>Cancel
-            </button>
-        </div>
-    </div>
-</div>
 </mat-card-content>

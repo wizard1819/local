@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Form, FormBuilder, FormGroup } from '@angular/forms';
+import { UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
+
 import { LoginService } from './login.service';
 @Component({
   selector: 'app-login',
@@ -9,31 +11,39 @@ import { LoginService } from './login.service';
 })
 export class LoginComponent implements OnInit {
   showPassword: boolean = false;
+  public form: UntypedFormGroup = Object.create(null);
 
   us='guna';
   pass='1234';
-
+  formSubmitted: boolean = false;
   constructor(
     private formBuilder: FormBuilder,
     private router: Router,
     private service: LoginService
   ) { }
-  checkoutForm = this.formBuilder.group({
-    name: '',
-    password: ''
-  });
+
+
 
   toggleShow() {
     this.showPassword = !this.showPassword;
   }
   login() {
-    console.log(this.checkoutForm.value);
-    this.service.check(this.checkoutForm.value);
+    console.log(this.form.value);
+    this.service.check(this.form.value);
 
   }
 
   ngOnInit(): void {
-    console.log(localStorage.getItem('token'), 'ontoken');
+     this.form = new UntypedFormGroup({
+      userName: new UntypedFormControl(null, [
+        Validators.required,
+        // Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")
+      ]),
+      password: new UntypedFormControl(null, [
+        Validators.required,
+        // Validators.pattern("^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$")
+      ]),
+    });
   }
 
 

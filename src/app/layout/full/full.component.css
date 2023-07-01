@@ -13,7 +13,7 @@ mat-sidenav-container {
 }
 
 mat-sidenav {
-  width: 200px;
+  width: 250px;
   background: #6172ab;
   /* background: url(colo.jpg); */
 }

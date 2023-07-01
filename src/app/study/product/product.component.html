@@ -1,0 +1,18 @@
+<div *ngIf="user;else nuser">
+    <div *ngFor="let user of user; index as i">
+        <div [ngSwitch]="user.gender">
+            <div class="male" *ngSwitchCase="'male'">
+              {{i}}  {{user.name}}
+            </div>
+            <div class="female" *ngSwitchCase="'female'">
+              {{i}}  {{user.name}}
+            </div>
+            <div *ngSwitchDefault>
+              {{i}}  {{user.name}}
+            </div>
+        </div>
+    </div>
+</div>
+<ng-template #nuser>
+    no User found
+</ng-template>

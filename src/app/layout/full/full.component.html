@@ -9,7 +9,7 @@
             <button routerLink="/home"><mat-icon>home</mat-icon></button>
             <span>ANGULAR</span>
             <span fxFlex></span>
-            <div (click)="signout()"><mat-icon>power_settings_new</mat-icon></div>
+            <div (click)="signout()" style="cursor: pointer;"><mat-icon>power_settings_new</mat-icon></div>
             <div>
                 <mat-menu #menu="matMenu">
                     <button mat-menu-item (click)="setTheme('default')">Default Theme</button>
