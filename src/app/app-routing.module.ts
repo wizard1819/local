@@ -21,7 +21,7 @@ import { ProductComponent } from './study/product/product.component';
 import { FormstudyComponent } from './study/formstudy/formstudy.component';
 import { CycleComponent } from './study/cycle/cycle.component';
 import { ChipsComponent } from './chips/chips.component';
-import { LoginGuard, childguard } from './guards/login.guard';
+import { LoginGuard, childguard } from './commons/guards/login.guard';
 const routes: Routes = [
   {
     path: '',
@@ -38,7 +38,7 @@ const routes: Routes = [
       {
         path: '',
         canActivate: [LoginGuard],
-       canActivateChild:[childguard],
+      //  canActivateChild:[childguard],
         component: FullComponent,
         children: [
           {

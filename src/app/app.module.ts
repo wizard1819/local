@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeroesComponent } from './heroes/heroes.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { VehicleComponent } from './vehicle/vehicle.component';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -64,12 +64,14 @@ import { FormstudyComponent } from './study/formstudy/formstudy.component';
 import { CycleComponent } from './study/cycle/cycle.component';
 import { InfoDialogComponent } from './info-dialog/info-dialog.component';
 import { ChildComponent } from './study/cycle/child/child.component';
-import {MatExpansionModule} from '@angular/material/expansion';
+import { MatExpansionModule } from '@angular/material/expansion';
 import { ChipsComponent } from './chips/chips.component';
-import {MatProgressBarModule} from '@angular/material/progress-bar';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { LoginService } from './login/login.service';
-import {MatBottomSheetModule} from '@angular/material/bottom-sheet';
-import {MatTabsModule} from '@angular/material/tabs';
+import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
+import { MatTabsModule } from '@angular/material/tabs';
+import { Httpinterceptor } from './commons/interceptors/http.interceptor';
+import {MatBadgeModule} from '@angular/material/badge';
 @NgModule({
   declarations: [
     AppComponent,
@@ -103,11 +105,12 @@ import {MatTabsModule} from '@angular/material/tabs';
     InfoDialogComponent,
     ChildComponent,
     ChipsComponent,
-    
+
 
   ],
   imports: [
     BrowserModule,
+    MatBadgeModule,
     MatTabsModule,
     MatBottomSheetModule,
     SnackbarModule,
@@ -147,7 +150,7 @@ import {MatTabsModule} from '@angular/material/tabs';
     MatTooltipModule,
     NgbModalModule
   ],
-  providers: [LoginService],
+  providers: [LoginService, { provide: HTTP_INTERCEPTORS, useClass: Httpinterceptor, multi: true }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

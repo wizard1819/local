@@ -2,6 +2,7 @@ import { Component, inject , OnInit} from '@angular/core';
 import {MatChipInputEvent} from '@angular/material/chips';
 import {LiveAnnouncer} from '@angular/cdk/a11y';
 import { UntypedFormControl, UntypedFormGroup, } from '@angular/forms';
+import { Observable } from 'rxjs';
 @Component({
   selector: 'app-chips',
   templateUrl: './chips.component.html',
@@ -9,6 +10,7 @@ import { UntypedFormControl, UntypedFormGroup, } from '@angular/forms';
 })
 export class ChipsComponent implements OnInit {
   keywords=['one'];
+  hy=[1,2,3,4,5,6,7]
   vall:any;
   public form: UntypedFormGroup = Object.create(null);
   announcer = inject(LiveAnnouncer);
@@ -54,4 +56,10 @@ export class ChipsComponent implements OnInit {
     // const progress = 100-(this.endValue-star);
     return progress // Ensure the progress is within the valid range (0-100)
   }
+
+ 
+
+ 
+ 
+ 
 }

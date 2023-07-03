@@ -3,4 +3,31 @@
     <mat-tab label="Second"> Content 2 </mat-tab>
     <mat-tab label="Third"> Content 3 </mat-tab>
   </mat-tab-group>
-  
+
+  <div matBadge="4" matBadgeOverlap="false" class="demo-section">Text with a badge</div>
+
+  <div matBadge="1" matBadgeSize="large" class="demo-section">Text with large badge</div>
+
+<div class="demo-section">
+  Button with a badge on the left
+  <button mat-raised-button color="primary"
+      matBadge="hello"  matBadgeColor="accent">
+    Action
+  </button>
+</div>
+
+<button mat-raised-button color="primary"
+    matBadge="8" matBadgePosition="before" matBadgeColor="accent">
+  Action
+</button>
+
+<div matBadge="4" matBadgeOverlap="false" class="demo-section">Text with a badge</div>
+
+<div matBadge="1" matBadgeSize="large" class="demo-section">Text with large badge</div>
+
+  <div *ngFor="let user of userr">
+    <div>{{user.name}}</div>
+  </div>
+
+<button mat-raised-button (click)="checks()">check</button> <br> <br>
+<button mat-raised-button (click)="rev()">rev</button>

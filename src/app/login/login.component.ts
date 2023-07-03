@@ -13,8 +13,8 @@ export class LoginComponent implements OnInit {
   showPassword: boolean = false;
   public form: UntypedFormGroup = Object.create(null);
 
-  us='guna';
-  pass='1234';
+  us='xoxo';
+  pass='xoxo';
   formSubmitted: boolean = false;
   constructor(
     private formBuilder: FormBuilder,
@@ -29,7 +29,9 @@ export class LoginComponent implements OnInit {
   }
   login() {
     console.log(this.form.value);
-    this.service.check(this.form.value);
+    this.service.submit(this.form.value).subscribe((data:any)=>{
+      console.log(data,'hloo');
+    });
 
   }
 
@@ -44,6 +46,8 @@ export class LoginComponent implements OnInit {
         // Validators.pattern("^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$")
       ]),
     });
+
+    // this.form.disable();
   }
 
 
