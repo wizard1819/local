@@ -1,0 +1,18 @@
+img {
+    height: 300px;
+    width: 300px;
+}
+
+h1 {
+    font-weight: 900;
+}
+
+mat-card{
+    margin: 3em 3em 3em 3em;
+    padding: 2em 2em 2em 2em;
+}
+
+.bgm{
+    background-image: url('../../assets/error-bg/bg1.jpg');
+}
+

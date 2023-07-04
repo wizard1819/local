@@ -22,6 +22,7 @@ import { FormstudyComponent } from './study/formstudy/formstudy.component';
 import { CycleComponent } from './study/cycle/cycle.component';
 import { ChipsComponent } from './chips/chips.component';
 import { LoginGuard, childguard } from './commons/guards/login.guard';
+import { ErrorComponent } from './error/error.component';
 const routes: Routes = [
   {
     path: '',
@@ -38,12 +39,11 @@ const routes: Routes = [
       {
         path: '',
         canActivate: [LoginGuard],
-      //  canActivateChild:[childguard],
+        //  canActivateChild:[childguard],
         component: FullComponent,
         children: [
           {
             path: '',
-            
             redirectTo: '/home',
             pathMatch: 'full'
           },
@@ -129,7 +129,8 @@ const routes: Routes = [
       },
     ]
   },
-
+  { path: '**', redirectTo: '/error', pathMatch: 'full' },
+  { path: 'error', component: ErrorComponent }
 
 
 

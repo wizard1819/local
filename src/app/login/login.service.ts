@@ -21,19 +21,16 @@ export class LoginService {
     private dialog: MatDialog,
   ) { }
 
-  check(data?: any) {
+  check(data?: any):any {
     if (data.userName == 'guna' && data.password == '1234') {
       this.status = 'xyz123';
       localStorage.setItem('token', this.status);
-      console.log(localStorage.getItem('token'), 'tok');
-      console.log(this.loggedin(), 'logged in')
       this.router.navigate(['/home']);
       this.snackbarservice.show('Logged In SuccessFully!!');
+      return of(this.log);
     }
     else {
       localStorage.removeItem('token');
-      console.log(localStorage.getItem('token'), 'tok');
-      console.log(this.loggedin(), 'logged out');
       this.snackbarservice.show('Invalid UserName/Password');
 
     }
@@ -60,7 +57,6 @@ export class LoginService {
         if (result && result.data) {
           localStorage.removeItem('token');
           this.tok = localStorage.setItem('token', 'abcdef');
-          console.log(this.tok, 'ook');
           this.router.navigate(['/login']);
         }
       }
@@ -73,16 +69,13 @@ export class LoginService {
     if (foundUser?.name == data.userName && foundUser?.password == data.password) {
       this.status = 'xyz123';
       localStorage.setItem('token', this.status);
-      console.log(localStorage.getItem('token'), 'tok');
-      console.log(this.loggedin(), 'logged in')
       this.router.navigate(['/home']);
       this.snackbarservice.show('Logged In SuccessFully!!');
       return of(this.log);
     } else {
       localStorage.removeItem('token');
-      console.log(localStorage.getItem('token'), 'tok');
-      console.log(this.loggedin(), 'logged out');
       this.snackbarservice.show('Invalid UserName/Password');
+      return of(!(this.log));
 
     }
   }

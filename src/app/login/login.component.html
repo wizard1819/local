@@ -1,37 +1,43 @@
-<div fxLayout="row" fxLayoutAlign="center center" style="margin-top: 160px;">
-  <div fxFlex="50">
-    <mat-card>
-      <mat-card-content class="bl">
-        <div style="margin-bottom: 2em;" fxLayout="row" fxLayoutAlign="center center">
-          <div>
-            <mat-card-title>Login</mat-card-title>
-          </div>
+<div fxLayout="row" fxLayoutAlign="center center" class="bgm" style="height: 100vh;">
+  <mat-card fxFlex="50">
+    <mat-card-content>
+      <div style="margin-bottom: 2em;" fxLayout="row" fxLayoutAlign="center center">
+        <div>
+          <mat-card-title>Login</mat-card-title>
         </div>
-        <form [formGroup]="form">
+      </div>
+      <div fxLayout="row" fxLayoutAlign="center center">
+        <form [formGroup]="form" fxFlex="89">
           <div fxLayout="column">
             <mat-form-field appearance="outline">
-              <input matInput type="text" placeholder="name" [(ngModel)]="us" formControlName='userName' />
+              <input matInput type="text" placeholder="name" formControlName='userName' />
               <mat-label>Name</mat-label>
               <mat-error>
                 <div *ngIf="form.get('userName')?.errors && form.get('userName')?.errors">UserName is Required</div>
               </mat-error>
             </mat-form-field>
             <mat-form-field appearance="outline">
-              <input matInput [(ngModel)]="pass" type="{{this.showPassword ? 'text' : 'password'}}" placeholder=""
+              <input matInput type="{{this.showPassword ? 'text' : 'password'}}" placeholder=""
                 formControlName='password' />
-                <mat-error>
-                  <div *ngIf="form.get('password')?.errors && form.get('password')?.errors">Password is required</div>
-                </mat-error>
+              <mat-error>
+                <div *ngIf="form.get('password')?.errors && form.get('password')?.errors">Password is required</div>
+              </mat-error>
               <mat-icon matSuffix color="primary" (click)="toggleShow()">{{this.showPassword ?
                 'visibility_off' : 'visibility'}}</mat-icon>
               <mat-label>Password</mat-label>
             </mat-form-field>
           </div>
           <div fxLayoutAlign="center center">
-            <button mat-raised-button color="primary" (click)="login()">Login</button>
+            <button  mat-raised-button color="primary" (click)="login()">Login</button>
           </div>
         </form>
-      </mat-card-content>
-    </mat-card>
-  </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
 </div>
+
+<!-- <div fxLayoutAlign="center center" class="bgm">
+  <mat-card fxFlex="50">
+    <mat-card-content></mat-card-content>
+  </mat-card>
+</div> -->

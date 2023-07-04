@@ -29,7 +29,7 @@ export class LoginComponent implements OnInit {
   }
   login() {
     console.log(this.form.value);
-    this.service.submit(this.form.value).subscribe((data:any)=>{
+    this.service.check(this.form.value).subscribe((data:any)=>{
       console.log(data,'hloo');
     });
 

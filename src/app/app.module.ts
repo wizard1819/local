@@ -8,6 +8,7 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { VehicleComponent } from './vehicle/vehicle.component';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatRippleModule} from '@angular/material/core';
 import { SidebarModule } from 'ng-sidebar';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
@@ -72,6 +73,7 @@ import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
 import { MatTabsModule } from '@angular/material/tabs';
 import { Httpinterceptor } from './commons/interceptors/http.interceptor';
 import {MatBadgeModule} from '@angular/material/badge';
+import { ErrorComponent } from './error/error.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -105,12 +107,14 @@ import {MatBadgeModule} from '@angular/material/badge';
     InfoDialogComponent,
     ChildComponent,
     ChipsComponent,
+    ErrorComponent,
 
 
   ],
   imports: [
     BrowserModule,
     MatBadgeModule,
+    MatRippleModule,
     MatTabsModule,
     MatBottomSheetModule,
     SnackbarModule,
