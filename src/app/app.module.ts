@@ -53,7 +53,6 @@ import { LoginComponent } from './login/login.component';
 import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgbComponent } from './ngb/ngb.component';
 import { NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
-import { TurboModule } from './turbocode/turbo.module';
 import { ExpoComponent } from './expo/expo.component';
 import { SnackbarModule } from './snackbar/snackbar.module';
 import { AddvehicleComponent } from './vehicle/addvehicle/addvehicle.component';
@@ -74,6 +73,7 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { Httpinterceptor } from './commons/interceptors/http.interceptor';
 import {MatBadgeModule} from '@angular/material/badge';
 import { ErrorComponent } from './error/error.component';
+import { TurbocodeComponent } from './turbocode/turbocode.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -119,7 +119,6 @@ import { ErrorComponent } from './error/error.component';
     MatBottomSheetModule,
     SnackbarModule,
     MatProgressBarModule,
-    TurboModule,
     MatMenuModule,
     NgbPaginationModule,
     MatChipsModule,

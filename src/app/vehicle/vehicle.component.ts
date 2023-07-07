@@ -10,6 +10,7 @@ import { UpdateDialogComponent } from './update-dialog/update-dialog.component';
 import { ConfirmDialogComponent } from '../confirm-dialog/confirm-dialog.component';
 import { Router } from '@angular/router';
 import { InfoDialogComponent } from '../info-dialog/info-dialog.component';
+import { GlobalstateService } from '../globalService/globalstate.service';
 
 @Component({
 
@@ -35,7 +36,8 @@ vehicleee:any;
     private service : VehicleService,
     private snack : CustomsService,
     private dialog : MatDialog,
-    private router : Router
+    private router : Router,
+    private gobalStateService: GlobalstateService
     ){
     
   }
@@ -139,8 +141,8 @@ detail(data?:any){
 }
 
 openAddvehicleComponent(data?:any){
-
-  this.router.navigate(['/addvehicle'], { queryParams: { vehicles:JSON.stringify(data) } })
+  this.gobalStateService.setState(data);
+  this.router.navigate(['/addvehicle']);
 }
 
 }

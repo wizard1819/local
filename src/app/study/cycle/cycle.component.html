@@ -1,6 +1,9 @@
-<input type="text" (change)="handleChange($event)" />
+<app-child></app-child>
 
-<app-child [item]="currentItem"></app-child>
-<label for="item-input">Add an item:</label>
-<input type="text" id="item-input" #newItem>
-<button type="button" (click)="addNewItem(newItem.value)">Add to parent's list</button>
+<div *ngIf="count>=1;else shownone">
+<button mat-raised-button >Place order</button>
+</div>
+
+<ng-template #shownone>
+nothing
+</ng-template>

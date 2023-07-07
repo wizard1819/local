@@ -39,7 +39,7 @@ const routes: Routes = [
       {
         path: '',
         canActivate: [LoginGuard],
-        //  canActivateChild:[childguard],
+         canActivateChild:[childguard],
         component: FullComponent,
         children: [
           {
@@ -124,6 +124,7 @@ const routes: Routes = [
             path: 'forms',
             component: FormstudyComponent
           },
+        
 
         ]
       },

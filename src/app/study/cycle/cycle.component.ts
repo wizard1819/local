@@ -1,25 +1,22 @@
-import { Component , EventEmitter, OnChanges, Output} from '@angular/core';
+import { Component , EventEmitter, OnChanges, Output, OnInit} from '@angular/core';
+import { CycleService } from './cycle.service';
 
 @Component({
   selector: 'app-cycle',
   templateUrl: './cycle.component.html',
   styleUrls: ['./cycle.component.css']
 })
-export class CycleComponent implements OnChanges{
-  currentItem = 'television';
-  @Output() newItemEvent = new EventEmitter<string>();
-  ngOnChanges(data:any) {
+export class CycleComponent  implements OnInit{
 
-  }
+  constructor(
+    private service : CycleService
+  ){}
+  count=0;
 
-  handleChange(event: any) {
-    const value = event.target.value;
-    console.log('Input value changed:', value);
-    // Perform any other desired actions with the changed value
-  }
-
-  addNewItem(value: string) {
-    this.newItemEvent.emit(value);
-  }
-  
+ngOnInit(): void {
+this.service.count$.subscribe((cts)=>{
+  this.count=cts;
+  console.log()
+})
+}
 }

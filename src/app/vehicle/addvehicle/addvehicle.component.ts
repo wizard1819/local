@@ -4,6 +4,7 @@ import { VehicleService } from '../vehicle.service';
 import { UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { from } from 'rxjs';
+import { GlobalstateService } from 'src/app/globalService/globalstate.service';
 
 @Component({
   selector: 'app-addvehicle',
@@ -18,15 +19,17 @@ export class AddvehicleComponent implements OnInit {
   constructor(
     private service: VehicleService,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private globalstate: GlobalstateService,
+
   ) {
   }
 
   ngOnInit() {
-    this.route.queryParams.subscribe(params => {
-      const data = JSON.parse(params['vehicles']);
-      this.receivedData = data;
-    });
+    if (this.globalstate.state != null && this.globalstate.state != undefined) {
+      this.receivedData = this.globalstate.state;
+      console.log(this.receivedData,'received');
+    }
 
 
     this.form = new UntypedFormGroup({
@@ -56,8 +59,9 @@ export class AddvehicleComponent implements OnInit {
   populateDataOnEdit() {
     if (this.receivedData) {
       if (this.form.controls != undefined && this.form.controls != null) {
+        console.log(Object.keys(this.form.controls),'key');
         Object.keys(this.form.controls).forEach(key => {
-          console.log(key,'key');
+          console.log(key,'key',this.form.controls[key]);
           if (this.form.controls[key] != undefined && this.form.controls[key] != null) {
             this.form.controls[key].setValue(this.receivedData[key] || this.receivedData['address'][key]);
             console.log(this.form.controls[key].setValue(this.receivedData[key] || this.receivedData['address'][key]))

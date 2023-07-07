@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { TurbocodeService } from './turbocode.service';
+import { CycleService } from './cycle.service';
 
-describe('TurbocodeService', () => {
-  let service: TurbocodeService;
+describe('CycleService', () => {
+  let service: CycleService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(TurbocodeService);
+    service = TestBed.inject(CycleService);
   });
 
   it('should be created', () => {

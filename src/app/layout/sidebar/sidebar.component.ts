@@ -30,6 +30,7 @@ export class SidebarComponent {
     { name: 'product', icon: 'list', routerlink: '/prod' },
     { name: 'form', icon: 'list', routerlink: '/forms' },
     { name: 'CYCLE', icon: 'list', routerlink: '/cycle' },
+    { name: 'toast', icon: 'list', routerlink: '/toast' },
   ]
 
 }
