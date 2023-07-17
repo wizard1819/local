@@ -1,9 +1,26 @@
 <app-child></app-child>
 
 <div *ngIf="count>=1;else shownone">
-<button mat-raised-button >Place order</button>
+    <button mat-raised-button>Place order</button>
 </div>
 
 <ng-template #shownone>
-nothing
+    nothing
 </ng-template>
+
+<div *ngFor="let name of names">
+    <div *ngIf="name.age==30&&name.nm!==null;else show">
+        <div *ngFor="let data of name.nm">
+            {{data.fn}}
+        </div>
+    </div>
+
+    <ng-template #show>
+        {{name.name}}
+    </ng-template>
+
+</div>
+
+<div id="demo">
+{{paath}}
+</div>

@@ -28,6 +28,7 @@
     "form-control": "^1.0.0",
     "form-group": "^3.0.8",
     "html2canvas": "^1.4.1",
+    "js-sha256": "^0.9.0",
     "jspdf": "^2.5.1",
     "ng-form-group": "^1.4.2",
     "ng-sidebar": "^9.4.3",

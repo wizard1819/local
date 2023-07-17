@@ -53,14 +53,14 @@
 }
 .loaderto{
   border: 8px solid ghostwhite;
-  border-bottom: 8px solid rgb(255, 0, 187);
-  border-top: 8px solid rgb(255, 132, 0);
+  border-bottom: 8px solid transparent;
+  border-top: 8px solid transparent;
   border-left: 8px solid black;
   border-right: 8px solid forestgreen;
   border-radius: 50%;
-  height: 40px;
-  width: 40px;  
-  animation: spin 0.5s linear infinite; 
+  height: 50px;
+  width: 50px;  
+  animation: spin 0.7s linear infinite; 
   
 }
 @keyframes spin {
