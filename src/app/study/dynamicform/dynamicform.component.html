@@ -2,7 +2,7 @@
     <div fxLayoutAlign="center center">
         <div fxLayout="column">
             <div>
-                <form [formGroup]="dynamicForm" (ngSubmit)="onSubmit()">
+                <form [formGroup]="dynamicForm" >
                     <div *ngFor="let field of formFields">
                         <mat-form-field appearance="outline">
                             <input matInput [type]="field === 'age' || field === 'mobilenumber' ? 'number' : 'text'"
@@ -10,10 +10,11 @@
                             <mat-label>{{ field | titlecase }}:</mat-label>
                         </mat-form-field>
                     </div>
+
                 </form>
             </div>
             <div fxLayoutAlign="center center">
-                <button mat-raised-button color="primary" type="submit">Submit</button>
+                <button  mat-raised-button color="primary" (click)="onSubmit()">Submit</button>
             </div>
         </div>
     </div>
