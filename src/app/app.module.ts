@@ -77,6 +77,7 @@ import { TurbocodeComponent } from './turbocode/turbocode.component';
 import { StudyoneobservableComponent } from './study/studyoneobservable/studyoneobservable.component';
 import { StudysubjectComponent } from './study/studysubject/studysubject.component';
 import { TapmapComponent } from './study/tapmap/tapmap.component';
+import { DynamicformComponent } from './study/dynamicform/dynamicform.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -114,7 +115,8 @@ import { TapmapComponent } from './study/tapmap/tapmap.component';
     TurbocodeComponent,
     StudyoneobservableComponent,
     StudysubjectComponent,
-    TapmapComponent
+    TapmapComponent,
+    DynamicformComponent
 
   ],
   imports: [

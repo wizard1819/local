@@ -35,6 +35,7 @@ export class SidebarComponent {
     { name: 'studyone', icon: 'local_library', routerlink: '/studyone' },
     { name: 'subject', icon: 'local_library', routerlink: '/subj' },
     { name: 'tapMap', icon: 'local_library', routerlink: '/tap' },
+    { name: 'Dynamic', icon: 'local_library', routerlink: '/dynamic' },
   ]
 
 }
