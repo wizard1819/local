@@ -74,6 +74,7 @@ import { Httpinterceptor } from './commons/interceptors/http.interceptor';
 import {MatBadgeModule} from '@angular/material/badge';
 import { ErrorComponent } from './error/error.component';
 import { TurbocodeComponent } from './turbocode/turbocode.component';
+import { StudyoneobservableComponent } from './study/studyoneobservable/studyoneobservable.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -108,7 +109,8 @@ import { TurbocodeComponent } from './turbocode/turbocode.component';
     ChildComponent,
     ChipsComponent,
     ErrorComponent,
-
+    TurbocodeComponent,
+    StudyoneobservableComponent
 
   ],
   imports: [

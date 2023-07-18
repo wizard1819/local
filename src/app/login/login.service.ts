@@ -24,7 +24,7 @@ export class LoginService {
   public num: BehaviorSubject<number> = new BehaviorSubject<number>(0);
   public ct = this.num.asObservable();
 
-  check(data: any): any {
+    check(data: any): any {
     if (data.userName == 'guna' && data.password == '1234') {
       this.status = 'xyz123';
       localStorage.setItem('token', this.status);

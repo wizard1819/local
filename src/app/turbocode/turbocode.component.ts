@@ -1,5 +1,5 @@
 import { Component , OnInit, ViewEncapsulation} from '@angular/core';
-import { TurbocodeService } from './turbocode.service';
+import { FormGroup, FormControl, UntypedFormGroup,UntypedFormControl, FormBuilder } from '@angular/forms';
 @Component({
   selector: 'app-turbocode',
   templateUrl: './turbocode.component.html',
@@ -8,10 +8,13 @@ import { TurbocodeService } from './turbocode.service';
 })
 
 export class TurbocodeComponent {
-  constructor(private toastService: TurbocodeService) {}
-  
-  show() {
-    this.toastService.show('This is a toast message.');
+ 
+  age:any;
+
+  form:FormBuilder=new FormBuilder()
+  check(){
+    console.log(this.age,'agee');
   }
+
   }
 

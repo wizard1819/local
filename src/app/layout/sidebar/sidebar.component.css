@@ -33,7 +33,12 @@
   padding: 20px;
   padding-bottom: 10px;
   font-family: cursive;
-  color: whitesmoke;
+  color: whitesmoke;  white-space: pre-wrap;
+  max-height: calc(100vh - 40vh);
   text-align: center;
 }
 
+.grd{
+  height: calc(100vh-20vh);
+ 
+}

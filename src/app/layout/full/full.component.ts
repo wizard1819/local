@@ -46,7 +46,6 @@ mykey:any;
   public ngOnInit(): void {
     this.service.loadPersistedTheme();
     this.currentTheme = this.service.getCurrentTheme();
-    console.log(this.currentTheme);
   }
 
   public setTheme(theme: string): void {

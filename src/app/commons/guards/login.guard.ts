@@ -16,7 +16,6 @@ export class LoginGuard implements CanActivate {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): any{
       if(this.service.loggedin()){
-        console.log('inn');
         return true;
       }  else{
         this.router.navigate(['/login']);
@@ -41,7 +40,6 @@ export class childguard implements  CanActivateChild {
     state: RouterStateSnapshot):any{
      
       if(this.service.loggedin()){
-        console.log('inn');
         return true;
       }  else{
         this.router.navigate(['/login']);

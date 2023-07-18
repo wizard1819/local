@@ -23,6 +23,7 @@ import { CycleComponent } from './study/cycle/cycle.component';
 import { ChipsComponent } from './chips/chips.component';
 import { LoginGuard, childguard } from './commons/guards/login.guard';
 import { ErrorComponent } from './error/error.component';
+import { StudyoneobservableComponent } from './study/studyoneobservable/studyoneobservable.component';
 const routes: Routes = [
   {
     path: '',
@@ -70,6 +71,10 @@ const routes: Routes = [
           {
             path: 'spinner',
             component: SpinnerComponent
+          },
+          {
+            path: 'studyone',
+            component: StudyoneobservableComponent
           },
           {
             path: 'food-org',

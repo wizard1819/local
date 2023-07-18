@@ -23,7 +23,7 @@ export class SidebarComponent {
     { name: 'CHIPS', icon: 'local_library', routerlink: '/chips' },
     { name: 'SPINNER', icon: 'donut_large', routerlink: '/spinner' },
     { name: 'FOOD', icon: 'restaurant_menu', routerlink: '/food-org' },
-    // { name: 'Examples', icon: 'style', routerlink: '/tbs' },
+    { name: 'Examples', icon: 'style', routerlink: '/tbs' },
     { name: 'Spinner-compass', icon: 'style', routerlink: '/expo' },
     { name: 'Sender', icon: 'style', routerlink: '/sender' },
     { name: 'Cart', icon: 'shopping_cart', routerlink: '/cart' },
@@ -32,6 +32,7 @@ export class SidebarComponent {
     { name: 'CYCLE', icon: 'opacity', routerlink: '/cycle' },
     { name: 'toast', icon: 'report_problem', routerlink: '/toast' },
     { name: 'Wifi-spinner', icon: '3d_rotation', routerlink: '/page' },
+    { name: 'studyone', icon: '3d_rotation', routerlink: '/studyone' },
   ]
 
 }
