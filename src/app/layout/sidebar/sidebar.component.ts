@@ -32,7 +32,9 @@ export class SidebarComponent {
     { name: 'CYCLE', icon: 'opacity', routerlink: '/cycle' },
     { name: 'toast', icon: 'report_problem', routerlink: '/toast' },
     { name: 'Wifi-spinner', icon: '3d_rotation', routerlink: '/page' },
-    { name: 'studyone', icon: '3d_rotation', routerlink: '/studyone' },
+    { name: 'studyone', icon: 'local_library', routerlink: '/studyone' },
+    { name: 'subject', icon: 'local_library', routerlink: '/subj' },
+    { name: 'tapMap', icon: 'local_library', routerlink: '/tap' },
   ]
 
 }

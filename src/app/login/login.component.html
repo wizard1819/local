@@ -12,27 +12,22 @@
             <mat-form-field appearance="outline">
               <input matInput type="text" placeholder="name" formControlName='userName' />
               <mat-label>Name</mat-label>
-              <mat-error>
-                <div *ngIf="form.get('userName')?.errors && form.get('userName')?.errors">UserName is Required</div>
-              </mat-error>
+
             </mat-form-field>
             <mat-form-field appearance="outline">
               <input matInput type="{{this.showPassword ? 'text' : 'password'}}" placeholder=""
                 formControlName='password' />
-              <mat-error>
-                <div *ngIf="form.get('password')?.errors && form.get('password')?.errors">Password is required</div>
-              </mat-error>
+
               <mat-icon matSuffix color="primary" (click)="toggleShow()">{{this.showPassword ?
                 'visibility_off' : 'visibility'}}</mat-icon>
               <mat-label>Password</mat-label>
             </mat-form-field>
           </div>
           <div fxLayoutAlign="center center">
-            <button  mat-raised-button color="primary" (click)="login()">Login</button>
+            <button mat-raised-button color="primary" (click)="login()">Login</button>
           </div>
         </form>
       </div>
     </mat-card-content>
   </mat-card>
 </div>
-

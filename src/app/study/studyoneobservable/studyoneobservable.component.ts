@@ -11,18 +11,17 @@ export class StudyoneobservableComponent {
   constructor(
     
   ){
-    // const key$= new Observable(subscriber=>{
-    //   subscriber.next('one');
-    //   subscriber.next('two');
-    //   subscriber.next('three');
-    //   subscriber.next('four');
-    //   // subscriber.error('error occured');
-    //   subscriber.complete();
-    // }) 
-    // key$.subscribe((x)=>{
-    //   console.log(x);
-    // })
-    //fromevent
+   const key$ = new Observable((subscribe)=>{
+    subscribe.next('1')
+    subscribe.next('2')
+    subscribe.next('3')
+    subscribe.error('hello');
+    subscribe.complete();
+    subscribe.next('4');
+   })
+   key$.subscribe((x)=>{
+    console.log(x);
+   })
    this.rem$= this.fromEvent(document.body,'click').subscribe(x=>{
       console.log('clickedd');
     })

@@ -4,7 +4,7 @@ import { SnackbarService } from '../snackbar/snackbar.service';
 import { MatDialog } from '@angular/material/dialog';
 import { ConfirmDialogComponent } from '../confirm-dialog/confirm-dialog.component';
 import { UserTable } from './usertable';
-import { Subscription, Observable, of, BehaviorSubject } from 'rxjs';
+import { Subscription, Observable, of, BehaviorSubject, Subject } from 'rxjs';
 
 
 @Injectable({
@@ -12,7 +12,7 @@ import { Subscription, Observable, of, BehaviorSubject } from 'rxjs';
 })
 export class LoginService {
 
-  log: boolean = true;
+  log: BehaviorSubject<any> = new BehaviorSubject<any>(null);
   status: any;
   tok: any;
   constructor(
@@ -24,17 +24,18 @@ export class LoginService {
   public num: BehaviorSubject<number> = new BehaviorSubject<number>(0);
   public ct = this.num.asObservable();
 
-    check(data: any): any {
+  check(data: any) {
     if (data.userName == 'guna' && data.password == '1234') {
       this.status = 'xyz123';
       localStorage.setItem('token', this.status);
       this.router.navigate(['/home']);
-      this.snackbarservice.show('Logged In SuccessFully!!');
-      return of(this.log);
+      this.log.next(true);
+      return 
     }
     else {
       localStorage.removeItem('token');
-      this.snackbarservice.show('Invalid UserName/Password');
+      this.log.next(false)
+      
     }
   }
 
@@ -43,6 +44,10 @@ export class LoginService {
     if (this.tok == 'xyz123' && this.tok != null && this.tok != undefined) {
       return true;
     }
+  }
+
+  loGIN(): Observable<any> {
+    return <any>(false);
   }
 
   signout() {

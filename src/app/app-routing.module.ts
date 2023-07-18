@@ -24,6 +24,8 @@ import { ChipsComponent } from './chips/chips.component';
 import { LoginGuard, childguard } from './commons/guards/login.guard';
 import { ErrorComponent } from './error/error.component';
 import { StudyoneobservableComponent } from './study/studyoneobservable/studyoneobservable.component';
+import { StudysubjectComponent } from './study/studysubject/studysubject.component';
+import { TapmapComponent } from './study/tapmap/tapmap.component';
 const routes: Routes = [
   {
     path: '',
@@ -40,7 +42,7 @@ const routes: Routes = [
       {
         path: '',
         canActivate: [LoginGuard],
-         canActivateChild:[childguard],
+        canActivateChild: [childguard],
         component: FullComponent,
         children: [
           {
@@ -75,6 +77,15 @@ const routes: Routes = [
           {
             path: 'studyone',
             component: StudyoneobservableComponent
+          },
+          {
+            path: 'subj',
+            component: StudysubjectComponent
+          },
+          {
+            path: 'tap',
+            component: TapmapComponent
+
           },
           {
             path: 'food-org',
@@ -129,7 +140,7 @@ const routes: Routes = [
             path: 'forms',
             component: FormstudyComponent
           },
-        
+
 
         ]
       },

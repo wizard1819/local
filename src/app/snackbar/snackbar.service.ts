@@ -5,7 +5,7 @@ import { SnackbarComponent } from './snackbar.component';
   providedIn: 'root'
 })
 export class SnackbarService {
-  horizontalPosition: MatSnackBarHorizontalPosition = 'end';
+  horizontalPosition: MatSnackBarHorizontalPosition = 'center';
   verticalPosition: MatSnackBarVerticalPosition = 'bottom';
   constructor(public snackbar: MatSnackBar) { }
 

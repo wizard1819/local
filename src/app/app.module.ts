@@ -75,6 +75,8 @@ import {MatBadgeModule} from '@angular/material/badge';
 import { ErrorComponent } from './error/error.component';
 import { TurbocodeComponent } from './turbocode/turbocode.component';
 import { StudyoneobservableComponent } from './study/studyoneobservable/studyoneobservable.component';
+import { StudysubjectComponent } from './study/studysubject/studysubject.component';
+import { TapmapComponent } from './study/tapmap/tapmap.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -110,7 +112,9 @@ import { StudyoneobservableComponent } from './study/studyoneobservable/studyone
     ChipsComponent,
     ErrorComponent,
     TurbocodeComponent,
-    StudyoneobservableComponent
+    StudyoneobservableComponent,
+    StudysubjectComponent,
+    TapmapComponent
 
   ],
   imports: [

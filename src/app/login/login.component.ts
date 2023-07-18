@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Form, FormBuilder, FormGroup } from '@angular/forms';
 import { UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
-
+import { SnackbarService } from '../snackbar/snackbar.service';
 import { LoginService } from './login.service';
 @Component({
   selector: 'app-login',
@@ -17,10 +17,12 @@ export class LoginComponent implements OnInit {
   pass='xoxo';
   formSubmitted: boolean = false;
   constructor(
-    private formBuilder: FormBuilder,
-    private router: Router,
-    private service: LoginService
-  ) { }
+   
+    private service: LoginService,
+    private snackBar : SnackbarService
+  ) {
+  
+   }
 
 
 
@@ -28,11 +30,17 @@ export class LoginComponent implements OnInit {
     this.showPassword = !this.showPassword;
   }
   login() {
-    console.log(this.form.value);
-    this.service.check(this.form.value).subscribe((data:any)=>{
-      console.log(data,'hloo');
-    });
+   console.log(this.form.value);
+    this.service.check(this.form.value);
+    this.service.log.subscribe((data)=>{
+      if(data==true){
+        this.snackBar.show('Logged in Successfully!!');
+      }else{
+        this.snackBar.show('Invalid UserName/Password');
+      }
+    })
 
+   
   }
 
   ngOnInit(): void {
