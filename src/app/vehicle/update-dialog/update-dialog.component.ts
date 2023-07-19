@@ -2,6 +2,7 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { VehicleService } from '../vehicle.service';
 import { UntypedFormControl,UntypedFormGroup,Validators } from '@angular/forms';
+import { SnackbarService } from 'src/app/snackbar/snackbar.service';
 
 @Component({
   selector: 'app-update-dialog',
@@ -10,10 +11,13 @@ import { UntypedFormControl,UntypedFormGroup,Validators } from '@angular/forms';
 })
 export class UpdateDialogComponent implements OnInit{
 
+
+  isEdit:boolean=false;
   public form : UntypedFormGroup = Object.create(null);
   constructor( 
     private dialogRef : MatDialogRef<UpdateDialogComponent>,
     private service : VehicleService,
+    private snackbar : SnackbarService,
     @Inject (MAT_DIALOG_DATA) public data :any
   ){
     this.dialogRef.updateSize("50vw","auto");
@@ -46,6 +50,7 @@ export class UpdateDialogComponent implements OnInit{
   }
   populateDataOnEdit(){
     if(this.data){
+      this.isEdit=true
       if(this.form.controls!=undefined && this.form.controls!=null){
         Object.keys(this.form.controls).forEach(key => {
           if(this.form.controls[key]!=undefined  && this.form.controls[key]!=null){
@@ -59,20 +64,25 @@ export class UpdateDialogComponent implements OnInit{
 
   submit(){
     if(this.form.valid){
-      this.service.update(this.data.id,this.form.value).subscribe({
-        next : (response) =>{
-          console.log(response);
+      this.getFunction().subscribe({
+        next : (d) =>{
+          this.snackbar.show(d.message);
         },
         error: (e)=>{
           console.log(e);
         },
         complete : ()=>{
           this.dialogRef.close();
-          location.reload();
         }
       })
     }else{
       console.log(this.form.errors);
     }
+
+
+  }
+
+  getFunction(){
+    return (this.isEdit!==true)?  this.service.add(this.form.value): this.service.update(this.data.id,this.form.value)
   }
 }

@@ -11,11 +11,11 @@ export class GlobalstateService {
   private status$= new BehaviorSubject<any>("");
   private state$ = new BehaviorSubject<any>("");
 
-  public get state(): string {
+  public get state(): any {
     return this.state$.getValue();
   }
 
-  public setState(newState: string) {
+  public setState(newState: any) {
     this.state$.next(newState);
   }
 

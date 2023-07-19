@@ -27,7 +27,6 @@ import { MatCardModule } from '@angular/material/card';
 import { AngularComponent } from './angular/angular.component';
 import { CustomSnackBarComponent } from './custom-snack-bar/custom-snack-bar.component';
 import { ResponseDialogComponent } from './custom-snack-bar/response-dialog/response-dialog.component';
-import { VehicleDialogComponent } from './vehicle/vehicle-dialog/vehicle-dialog.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -91,7 +90,6 @@ import { FormoneComponent } from './forms/formone/formone.component';
     AngularComponent,
     CustomSnackBarComponent,
     ResponseDialogComponent,
-    VehicleDialogComponent,
     UpdateDialogComponent,
     FullComponent,
     SidebarComponent,

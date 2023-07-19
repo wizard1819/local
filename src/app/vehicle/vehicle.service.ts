@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class VehicleService {
   constructor(private http : HttpClient) { }
-  getAll(pageIndex : number,pageSize : number){   
+  getAll(pageIndex : number,pageSize : number): Observable<any>{   
     return this.http.get<any>("/vehicle?page="+ pageIndex + "&size=" + pageSize);
   }
 

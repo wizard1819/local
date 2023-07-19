@@ -1,46 +1,48 @@
-<form [formGroup]="dynamicForm" (ngSubmit)="onSubmit()">
-    <div *ngFor="let field of formConfig">
-        <!-- Text Input -->
-        <div *ngIf="field.type === 'text'">
-            <mat-form-field appearance="outline">
-                <input matInput [placeholder]="field.name" [type]="field.type" [id]="field.name"
-                    [formControlName]="field.name" />
-            </mat-form-field>
+<mat-card>
+    <mat-card-content>
+        <div fxLayout="row" fxLayoutAlign="center center">
+            <div>
+                <mat-card-title>Vehicles</mat-card-title>
+            </div>
         </div>
+        <form [formGroup]="dynamicForm" (ngSubmit)="onSubmit()">
+            <div *ngFor="let field of formConfig">
+                <!-- Text Input -->
+                <div *ngIf="field.type === 'text'">
+                    <mat-form-field appearance="outline">
+                        <input matInput [placeholder]="field.name" [type]="field.type" [id]="field.name"
+                            [formControlName]="field.name" />
+                    </mat-form-field>
+                </div>
 
-        <!-- Number Input -->
-        <div *ngIf="field.type === 'number'">
-            <mat-form-field appearance="outline">
-                <input matInput [placeholder]="field.name" [type]="field.type" [id]="field.name"
-                    [formControlName]="field.name" />
-            </mat-form-field>
-        </div>
+                <!-- Number Input -->
+                <div *ngIf="field.type === 'number'">
+                    <mat-form-field appearance="outline">
+                        <input matInput [placeholder]="field.name" [type]="field.type" [id]="field.name"
+                            [formControlName]="field.name" />
+                    </mat-form-field>
+                </div>
 
-        <!-- Email Input -->
-        <div *ngIf="field.type === 'email'">
-            <mat-form-field appearance="outline">
-                <input matInput [placeholder]="field.name" [type]="field.type" [id]="field.name"
-                    [formControlName]="field.name" />
-            </mat-form-field>
-        </div>
+                <!-- Email Input -->
+                <div *ngIf="field.type === 'email'">
+                    <mat-form-field appearance="outline">
+                        <input matInput [placeholder]="field.name" [type]="field.type" [id]="field.name"
+                            [formControlName]="field.name" />
+                    </mat-form-field>
+                </div>
 
-        <!-- Dropdown -->
-        <div *ngIf="field.type === 'dropdown'">
-            <mat-form-field appearance="outline">
-                <mat-select [placeholder]="field.name" [id]="field.name" [formControlName]="field.name">
-                    <mat-option *ngFor="let option of field.options" [value]="option">{{ option }}</mat-option>
-                </mat-select>
-            </mat-form-field>
-        </div>
+                <!-- Dropdown -->
+                <div *ngIf="field.type === 'dropdown'">
+                    <mat-form-field appearance="outline">
+                        <mat-select [placeholder]="field.name" [id]="field.name" [formControlName]="field.name">
+                            <mat-option *ngFor="let option of field.options" [value]="option">{{ option }}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
 
-        <!-- Select (Radio buttons) -->
-        <!--
-    <div *ngIf="field.type === 'select'" [formControlName]="field.name">
-      <label *ngFor="let option of field.options">
-        <input [type]="field.type" [value]="option" /> {{ option }}
-      </label>
-    </div>
-    -->
-    </div>
-    <button mat-raised-button color="primary" type="submit">Submit</button>
-</form>
+
+            </div>
+            <button mat-raised-button color="primary" type="submit">Submit</button>
+        </form>
+    </mat-card-content>
+</mat-card>

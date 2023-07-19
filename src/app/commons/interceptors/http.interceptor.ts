@@ -7,7 +7,7 @@ export class Httpinterceptor implements HttpInterceptor{
 
     intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
         const newReq=req.clone({url:"http://localhost:2020/api/vehicle"+req.url,headers:req.headers.set('token','token')})
-        console.log('interceptor',newReq);
+        // console.log('interceptor',newReq);
         return next.handle(newReq);
     }
 }
