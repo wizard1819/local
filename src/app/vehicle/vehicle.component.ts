@@ -63,7 +63,7 @@ export class VehicleComponent {
     this.showSpinner = true;
 
     this.service.getAll(this.pageIndex, this.pageSize).subscribe({
-      next: (d) => {
+      next: (d:any) => {
         var datas: any[] = d.response.content;
         this.dataSource = new MatTableDataSource(datas);
         this.totalElements = d.response.page.totalElements;

@@ -1,32 +1,33 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import { Observable } from 'rxjs';
-
+import { User } from './vehicle';
+import { user } from '../login/usertable';
 
 @Injectable({
   providedIn: 'root'
 })
-export class VehicleService {
+export class VehicleService<T=any> {
   constructor(private http : HttpClient) { }
-  getAll(pageIndex : number,pageSize : number): Observable<any>{   
-    return this.http.get<any>("/vehicle?page="+ pageIndex + "&size=" + pageSize);
+  getAll(pageIndex : number,pageSize : number): Observable<T>{   
+    return this.http.get<T>("/vehicle?page="+ pageIndex + "&size=" + pageSize);
   }
 
-  delete(id: number){
-    return this.http.delete<any>("/vehicle/"+id);
+  delete(id: number):Observable<T>{
+    return this.http.delete<T>("/vehicle/"+id);
   }
 
-  add(data :any):Observable<any>{
-    return this.http.post<any>("/vehicle",data);
+  add(data :any):Observable<T>{
+    return this.http.post<T>("/vehicle",data);
   }
 
-  update(dataId : number, dataToUpdate: any): Observable<string> {
-    return this.http.put<string>("/vehicle/"+dataId,dataToUpdate);
+  update(dataId : number, dataToUpdate: any): Observable<T> {
+    return this.http.put<T>("/vehicle/"+dataId,dataToUpdate);
   }
 
-  // get():Observ able<any>{
-  //  return this.http.get<any>("http://localhost:2020/api/vehicle/student");
-  // }
+  get():Observable<T>{
+   return this.http.get<T>("http://localhost:2020/api/vehicle/student");
+  }
 
 
   
