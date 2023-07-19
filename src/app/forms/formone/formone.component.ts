@@ -6,27 +6,14 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
   templateUrl: './formone.component.html',
   styleUrls: ['./formone.component.css']
 })
-export class FormoneComponent  implements OnInit{
+export class FormoneComponent implements OnInit {
   dynamicForm!: FormGroup;
-  formConfig = [
+  formConfig:any = [
     { type: 'text', label: 'Name', name: 'name', required: true },
-    { type: 'number', label: 'Age', name: 'age', required: true },
-    { type: 'email', label: 'Email', name: 'email', required: true },
-    // { type: 'checkbox', label: 'Subscribe to Newsletter', name: 'subscribe' },
-    {
-      type: 'dropdown',
-      label: 'Country',
-      name: 'country',
-      options: ['USA', 'Canada', 'UK', 'Australia'],
-      required: true
-    },
-    // {
-    //   type: 'select',
-    //   label: 'Gender',
-    //   name: 'gender',
-    //   options: ['Male', 'Female', 'Other'],
-    //   required: true
-    // }
+    // { type: 'number', label: 'Age', name: 'age', required: true },
+    // { type: 'email', label: 'Email', name: 'email', required: true },
+    // { type: 'dropdown', label: 'Country', name: 'country', options: ['USA', 'Canada', 'UK', 'Australia'], required: true },
+    // { type: 'dropdown', label: 'Status', name: 'Status', options: ['true', 'false'], required: true }
   ];
 
   ngOnInit() {
@@ -34,7 +21,7 @@ export class FormoneComponent  implements OnInit{
   }
 
   createForm() {
-    const formGroup:any=[]
+    const formGroup: any = []
     for (const field of this.formConfig) {
       const validators = field.required ? [Validators.required] : [];
       formGroup[field.name] = new FormControl('', validators);
