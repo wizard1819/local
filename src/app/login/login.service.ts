@@ -29,12 +29,12 @@ export class LoginService {
       this.status = 'xyz123';
       localStorage.setItem('token', this.status);
       this.router.navigate(['/home']);
-      this.log.next(true);
+      // this.log.next(true);
       return 
     }
     else {
       localStorage.removeItem('token');
-      this.log.next(false)
+      // this.log.next(false)
       
     }
   }

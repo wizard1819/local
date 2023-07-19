@@ -32,13 +32,13 @@ export class LoginComponent implements OnInit {
   login() {
    console.log(this.form.value);
     this.service.check(this.form.value);
-    this.service.log.subscribe((data)=>{
-      if(data==true){
-        this.snackBar.show('Logged in Successfully!!');
-      }else{
-        this.snackBar.show('Invalid UserName/Password');
-      }
-    })
+    // this.service.log.subscribe((data)=>{
+    //   if(data==true){
+    //     this.snackBar.show('Logged in Successfully!!');
+    //   }else{
+    //     this.snackBar.show('Invalid UserName/Password');
+    //   }
+    // })
 
    
   }

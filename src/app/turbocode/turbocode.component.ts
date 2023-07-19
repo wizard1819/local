@@ -9,11 +9,17 @@ import { FormGroup, FormControl, UntypedFormGroup,UntypedFormControl, FormBuilde
 
 export class TurbocodeComponent {
  
-  age:any;
-
-  form:FormBuilder=new FormBuilder()
-  check(){
-    console.log(this.age,'agee');
+  names:any=['guna','arun','velu','praveen','hari'];
+ 
+  constructor(){
+    this.random()
+  }
+  name:any;
+  random(){
+    setInterval(()=>{
+      this.name=this.names[Math.floor(Math.random()*this.names.length)];
+    },500)
+   
   }
 
   }
