@@ -1,5 +1,5 @@
 import { Component, Input, OnInit, } from '@angular/core';
-import { FormBuilder, FormGroup, FormArray, FormControl, Validators , UntypedFormBuilder, UntypedFormGroup} from '@angular/forms';
+import { FormBuilder, FormGroup, FormArray, FormControl, Validators, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 @Component({
   selector: 'app-dynamicform',
   templateUrl: './dynamicform.component.html',
@@ -8,7 +8,14 @@ import { FormBuilder, FormGroup, FormArray, FormControl, Validators , UntypedFor
 export class DynamicformComponent {
 
   dynamicForm!: UntypedFormGroup;
-  formFields: string[] = ['name', 'age', 'gender', 'mobilenumber','type'];
+  formFields: any[] = [
+    {fieldName:'name'},
+    {fieldName:'age'},
+    {fieldName:'gender'},
+    {fieldName:'mobileNum'},
+    {fieldName:'Address'},
+    {fieldName:'State'},
+  ];
 
   constructor(private formBuilder: UntypedFormBuilder) { }
 
@@ -18,9 +25,8 @@ export class DynamicformComponent {
   }
 
   generateFormControls() {
-    this.formFields.forEach(fieldName => {
-      console.log(fieldName);
-      this.dynamicForm.addControl(fieldName, this.formBuilder.control('', Validators.required));
+    this.formFields.forEach(field => {
+      this.dynamicForm.addControl(field.fieldName, this.formBuilder.control('', Validators.required));
     });
   }
 

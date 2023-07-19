@@ -78,6 +78,7 @@ import { StudyoneobservableComponent } from './study/studyoneobservable/studyone
 import { StudysubjectComponent } from './study/studysubject/studysubject.component';
 import { TapmapComponent } from './study/tapmap/tapmap.component';
 import { DynamicformComponent } from './study/dynamicform/dynamicform.component';
+import { FormaddComponent } from './study/formadd/formadd.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -116,7 +117,8 @@ import { DynamicformComponent } from './study/dynamicform/dynamicform.component'
     StudyoneobservableComponent,
     StudysubjectComponent,
     TapmapComponent,
-    DynamicformComponent
+    DynamicformComponent,
+    FormaddComponent
 
   ],
   imports: [

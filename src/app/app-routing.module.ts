@@ -27,6 +27,7 @@ import { StudyoneobservableComponent } from './study/studyoneobservable/studyone
 import { StudysubjectComponent } from './study/studysubject/studysubject.component';
 import { TapmapComponent } from './study/tapmap/tapmap.component';
 import { DynamicformComponent } from './study/dynamicform/dynamicform.component';
+import { FormaddComponent } from './study/formadd/formadd.component';
 const routes: Routes = [
   {
     path: '',
@@ -82,6 +83,10 @@ const routes: Routes = [
           {
             path: 'subj',
             component: StudysubjectComponent
+          },
+          {
+            path: 'formadd',
+            component: FormaddComponent
           },
           {
             path: 'dynamic',

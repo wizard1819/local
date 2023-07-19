@@ -1,20 +1,21 @@
-<mat-card>
+<mat-card style="padding: 30px;">
     <div fxLayoutAlign="center center">
         <div fxLayout="column">
-            <div>
-                <form [formGroup]="dynamicForm" >
-                    <div *ngFor="let field of formFields">
-                        <mat-form-field appearance="outline">
-                            <input matInput [type]="field === 'age' || field === 'mobilenumber' ? 'number' : 'text'"
-                                [formControlName]="field">
-                            <mat-label>{{ field | titlecase }}:</mat-label>
+            <form [formGroup]="dynamicForm">
+                <div fxLayout="row wrap">
+                    <div *ngFor="let field of formFields" fxFlex="33.33">
+                        <mat-form-field>
+                            <input matInput [type]="field.fieldName === 'age' || field.fieldName === 'mobilenumber' ? 'number' : 'text'"
+                                [formControlName]="field.fieldName">
+                            <mat-label>{{ field.fieldName }}</mat-label>
                         </mat-form-field>
+                        <div *ngIf="f[field.fieldName].invalid && f[field.fieldName].touched" class="error">{{ field.fieldName }} is
+                            required.</div>
                     </div>
-
-                </form>
-            </div>
+                </div>
+            </form>
             <div fxLayoutAlign="center center">
-                <button  mat-raised-button color="primary" (click)="onSubmit()">Submit</button>
+                <button mat-raised-button color="primary" (click)="onSubmit()">Submit</button>
             </div>
         </div>
     </div>
