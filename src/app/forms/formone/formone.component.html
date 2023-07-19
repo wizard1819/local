@@ -1,0 +1,37 @@
+<form [formGroup]="dynamicForm" (ngSubmit)="onSubmit()">
+    <div *ngFor="let field of formConfig">
+        <label [for]="field.name">{{ field.label }}</label>
+        <ng-container [ngSwitch]="field.type">
+            <!-- Text Input -->
+            <div *ngSwitchCase="'text'">
+                <input matInput [type]="field.type" [id]="field.name" [formControlName]="field.name" />
+            </div>
+
+            <!-- Number Input -->
+            <div *ngSwitchCase="'number'">
+                <input matInput [type]="field.type" [id]="field.name" [formControlName]="field.name" />
+            </div>
+
+            <!-- Email Input -->
+            <div *ngSwitchCase="'email'">
+                <input matInput [type]="field.type" [id]="field.name" [formControlName]="field.name" />
+            </div>
+
+
+            <!-- Dropdown -->
+            <div *ngSwitchCase="'dropdown'">
+                <select [id]="field.name" [formControlName]="field.name">
+                    <option *ngFor="let option of field.options" [value]="option">{{ option }}</option>
+                </select>
+            </div>
+
+            <!-- Select (Radio buttons) -->
+            <div *ngSwitchCase="'select'" [formControlName]="field.name">
+                <label *ngFor="let option of field.options">
+                    <input [type]="field.type" [value]="option" /> {{ option }}
+                </label>
+            </div>
+        </ng-container>
+    </div>
+    <button type="submit">Submit</button>
+</form>

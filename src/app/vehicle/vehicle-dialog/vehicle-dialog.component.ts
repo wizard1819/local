@@ -2,7 +2,7 @@ import { Component , Inject, OnInit} from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { VehicleService } from '../vehicle.service';
 import { UntypedFormControl,UntypedFormGroup,Validators } from '@angular/forms';
-
+import { SnackbarService } from 'src/app/snackbar/snackbar.service';
 
 @Component({
   selector: 'app-vehicle-dialog',
@@ -14,6 +14,7 @@ export class VehicleDialogComponent implements OnInit{
   constructor( 
     private dialogRef : MatDialogRef<VehicleDialogComponent>,
     private service : VehicleService,
+    private snackbar : SnackbarService,
     @Inject (MAT_DIALOG_DATA) public data :any
   ){
     this.dialogRef.updateSize("50vw","auto");
@@ -50,8 +51,8 @@ export class VehicleDialogComponent implements OnInit{
     if(this.form.valid){
       const body = this.form.value;
       this.service.add(body).subscribe({
-        next : (response) =>{
-          console.log(response);
+        next : (d) =>{
+          this.snackbar.show(d.message);
         },
         error: (e)=>{
           console.log(e);

@@ -2,12 +2,6 @@
 
 @import '~bootstrap/dist/css/bootstrap.css';
 
-html,
-
-body {
-    margin: 0;
-    font-family: Roboto, "Helvetica Neue", sans-serif;
-}
 
 .btn-success {
     padding-left: 15px;

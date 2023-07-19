@@ -15,8 +15,8 @@
         </div>
         <div fxLayout="row" fxLayoutAlign="center center">
             <div fxFlex="100">
-                <div *ngIf="!showSpinner; else showLoader;">
-                    <mat-table [dataSource]="dataSource">
+                <div class="custom-scrollbar" *ngIf="!showSpinner; else showLoader;">
+                    <mat-table class="tabble" [dataSource]="dataSource">
 
 
                         <ng-container matColumnDef="id">

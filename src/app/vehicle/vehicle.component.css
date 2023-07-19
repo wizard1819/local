@@ -1,48 +1,56 @@
 .table-container {
-    display: flex;
-    flex-direction: column;
-    min-width: 300px;
-  }
-  
-  .table-header {
-    min-height: 64px;
-    padding: 8px 24px 0;
-  }
-  
-  .mat-form-field {
-    font-size: 14px;
-    width: 100%;
-  }
-  
-  .mat-table {
-    overflow: auto;
-    max-height: 500px;
-  }
+  display: flex;
+  flex-direction: column;
+  min-width: 300px;
+}
 
-  .mat-icon{
-    font-size:1.7em;
-    color:rgb(54, 52, 52);
-    padding-top: 5px;
-  }
- 
-  mat-card{
-    box-shadow: 2px 2px 2px 2px rgb(151, 148, 148);
-  }
+.mat-card-content {
+  white-space: nowrap;
+}
 
-.btnn{
+.tabble {
+  white-space: pre-wrap;
+  max-height: calc(100vh - 40vh);
+  overflow: scroll;
+
+}
+
+.table-header {
+  min-height: 64px;
+  padding: 8px 24px 0;
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+
+
+.mat-icon {
+  font-size: 1.7em;
+  color: rgb(54, 52, 52);
+  padding-top: 5px;
+}
+
+mat-card {
+  box-shadow: 2px 2px 2px 2px rgb(151, 148, 148);
+}
+
+.btnn {
   border: none;
   background: inherit;
   cursor: pointer;
 }
 
-.fxLayout{
+.fxLayout {
   display: flex;
   justify-content: space-between;
 }
 
-.caps{
+.caps {
   text-transform: uppercase;
-  
+
 }
 
 .sk-circle {
@@ -51,6 +59,7 @@
   height: 40px;
   position: relative;
 }
+
 .sk-circle .sk-child {
   width: 100%;
   height: 100%;
@@ -58,6 +67,7 @@
   left: 0;
   top: 0;
 }
+
 .sk-circle .sk-child:before {
   content: '';
   display: block;
@@ -67,105 +77,183 @@
   background-color: #333;
   border-radius: 100%;
   -webkit-animation: sk-circleBounceDelay 1.2s infinite ease-in-out both;
-          animation: sk-circleBounceDelay 1.2s infinite ease-in-out both;
+  animation: sk-circleBounceDelay 1.2s infinite ease-in-out both;
 }
+
 .sk-circle .sk-circle2 {
   -webkit-transform: rotate(30deg);
-      -ms-transform: rotate(30deg);
-          transform: rotate(30deg); }
+  -ms-transform: rotate(30deg);
+  transform: rotate(30deg);
+}
+
 .sk-circle .sk-circle3 {
   -webkit-transform: rotate(60deg);
-      -ms-transform: rotate(60deg);
-          transform: rotate(60deg); }
+  -ms-transform: rotate(60deg);
+  transform: rotate(60deg);
+}
+
 .sk-circle .sk-circle4 {
   -webkit-transform: rotate(90deg);
-      -ms-transform: rotate(90deg);
-          transform: rotate(90deg); }
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
 .sk-circle .sk-circle5 {
   -webkit-transform: rotate(120deg);
-      -ms-transform: rotate(120deg);
-          transform: rotate(120deg); }
+  -ms-transform: rotate(120deg);
+  transform: rotate(120deg);
+}
+
 .sk-circle .sk-circle6 {
   -webkit-transform: rotate(150deg);
-      -ms-transform: rotate(150deg);
-          transform: rotate(150deg); }
+  -ms-transform: rotate(150deg);
+  transform: rotate(150deg);
+}
+
 .sk-circle .sk-circle7 {
   -webkit-transform: rotate(180deg);
-      -ms-transform: rotate(180deg);
-          transform: rotate(180deg); }
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
 .sk-circle .sk-circle8 {
   -webkit-transform: rotate(210deg);
-      -ms-transform: rotate(210deg);
-          transform: rotate(210deg); }
+  -ms-transform: rotate(210deg);
+  transform: rotate(210deg);
+}
+
 .sk-circle .sk-circle9 {
   -webkit-transform: rotate(240deg);
-      -ms-transform: rotate(240deg);
-          transform: rotate(240deg); }
+  -ms-transform: rotate(240deg);
+  transform: rotate(240deg);
+}
+
 .sk-circle .sk-circle10 {
   -webkit-transform: rotate(270deg);
-      -ms-transform: rotate(270deg);
-          transform: rotate(270deg); }
+  -ms-transform: rotate(270deg);
+  transform: rotate(270deg);
+}
+
 .sk-circle .sk-circle11 {
   -webkit-transform: rotate(300deg);
-      -ms-transform: rotate(300deg);
-          transform: rotate(300deg); }
+  -ms-transform: rotate(300deg);
+  transform: rotate(300deg);
+}
+
 .sk-circle .sk-circle12 {
   -webkit-transform: rotate(330deg);
-      -ms-transform: rotate(330deg);
-          transform: rotate(330deg); }
+  -ms-transform: rotate(330deg);
+  transform: rotate(330deg);
+}
+
 .sk-circle .sk-circle2:before {
   -webkit-animation-delay: -1.1s;
-          animation-delay: -1.1s; }
+  animation-delay: -1.1s;
+}
+
 .sk-circle .sk-circle3:before {
   -webkit-animation-delay: -1s;
-          animation-delay: -1s; }
+  animation-delay: -1s;
+}
+
 .sk-circle .sk-circle4:before {
   -webkit-animation-delay: -0.9s;
-          animation-delay: -0.9s; }
+  animation-delay: -0.9s;
+}
+
 .sk-circle .sk-circle5:before {
   -webkit-animation-delay: -0.8s;
-          animation-delay: -0.8s; }
+  animation-delay: -0.8s;
+}
+
 .sk-circle .sk-circle6:before {
   -webkit-animation-delay: -0.7s;
-          animation-delay: -0.7s; }
+  animation-delay: -0.7s;
+}
+
 .sk-circle .sk-circle7:before {
   -webkit-animation-delay: -0.6s;
-          animation-delay: -0.6s; }
+  animation-delay: -0.6s;
+}
+
 .sk-circle .sk-circle8:before {
   -webkit-animation-delay: -0.5s;
-          animation-delay: -0.5s; }
+  animation-delay: -0.5s;
+}
+
 .sk-circle .sk-circle9:before {
   -webkit-animation-delay: -0.4s;
-          animation-delay: -0.4s; }
+  animation-delay: -0.4s;
+}
+
 .sk-circle .sk-circle10:before {
   -webkit-animation-delay: -0.3s;
-          animation-delay: -0.3s; }
+  animation-delay: -0.3s;
+}
+
 .sk-circle .sk-circle11:before {
   -webkit-animation-delay: -0.2s;
-          animation-delay: -0.2s; }
+  animation-delay: -0.2s;
+}
+
 .sk-circle .sk-circle12:before {
   -webkit-animation-delay: -0.1s;
-          animation-delay: -0.1s; }
+  animation-delay: -0.1s;
+}
 
 @-webkit-keyframes sk-circleBounceDelay {
-  0%, 80%, 100% {
+
+  0%,
+  80%,
+  100% {
     -webkit-transform: scale(0);
-            transform: scale(0);
-  } 40% {
+    transform: scale(0);
+  }
+
+  40% {
     -webkit-transform: scale(1);
-            transform: scale(1);
+    transform: scale(1);
   }
 }
 
 @keyframes sk-circleBounceDelay {
-  0%, 80%, 100% {
+
+  0%,
+  80%,
+  100% {
     -webkit-transform: scale(0);
-            transform: scale(0);
-  } 40% {
+    transform: scale(0);
+  }
+
+  40% {
     -webkit-transform: scale(1);
-            transform: scale(1);
+    transform: scale(1);
   }
 }
-mat-card-title{
+
+mat-card-title {
   color: black;
+}
+
+/* Style the container to enable scrolling */
+.custom-scrollbar {
+  height: 100%; /* Set a fixed height or adjust as needed */
+  overflow-y: auto; /* Enable vertical scrollbar when content overflows */
+  scrollbar-width: thin; /* Set the width of the scrollbar (supported in some browsers) */
+}
+
+/* Track */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px; /* Set the width of the scrollbar (supported in some browsers) */
+}
+
+/* Handle */
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #888; /* Color of the scrollbar handle */
+  border-radius: 4px; /* Round the edges of the scrollbar handle */
+}
+
+/* On hover, add a darker background color */
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
 }

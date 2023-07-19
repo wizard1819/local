@@ -5,6 +5,7 @@ import { UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms
 import { Router } from '@angular/router';
 import { from } from 'rxjs';
 import { GlobalstateService } from 'src/app/globalService/globalstate.service';
+import { SnackbarService } from 'src/app/snackbar/snackbar.service';
 
 @Component({
   selector: 'app-addvehicle',
@@ -21,6 +22,7 @@ export class AddvehicleComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     private globalstate: GlobalstateService,
+    private snackbar : SnackbarService
 
   ) {
   }
@@ -86,8 +88,9 @@ export class AddvehicleComponent implements OnInit {
   submit() {
     if (this.form.valid) {
       this.service.update(this.receivedData.id, this.form.value).subscribe({
-        next: (response) => {
-          console.log(response);
+        next: (d:any) => {
+          console.log(d,'ress');
+          this.snackbar.show(d.message);
         },
         error: (e) => {
           console.log(e);

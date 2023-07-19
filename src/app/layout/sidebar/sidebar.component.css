@@ -42,3 +42,26 @@
   height: calc(100vh-20vh);
  
 }
+
+/* Style the container to enable scrolling */
+.custom-scrollbar {
+  height: 80vh; /* Set a fixed height to enable scrolling */
+  overflow-y: auto; /* Enable vertical scrollbar when content overflows */
+  scrollbar-width: thin; /* Set the width of the scrollbar (supported in some browsers) */
+}
+
+/* Track */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px; /* Set the width of the scrollbar (supported in some browsers) */
+}
+
+/* Handle */
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #888; /* Color of the scrollbar handle */
+  border-radius: 4px; /* Round the edges of the scrollbar handle */
+}
+
+/* On hover, add a darker background color */
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}

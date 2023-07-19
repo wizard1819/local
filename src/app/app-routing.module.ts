@@ -28,6 +28,7 @@ import { StudysubjectComponent } from './study/studysubject/studysubject.compone
 import { TapmapComponent } from './study/tapmap/tapmap.component';
 import { DynamicformComponent } from './study/dynamicform/dynamicform.component';
 import { FormaddComponent } from './study/formadd/formadd.component';
+import { FormoneComponent } from './forms/formone/formone.component';
 const routes: Routes = [
   {
     path: '',
@@ -91,6 +92,10 @@ const routes: Routes = [
           {
             path: 'dynamic',
             component: DynamicformComponent
+          },
+          {
+            path: 'done',
+            component: FormoneComponent
           },
           {
             path: 'tap',

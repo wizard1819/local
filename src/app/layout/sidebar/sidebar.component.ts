@@ -37,6 +37,7 @@ export class SidebarComponent {
     { name: 'tapMap', icon: 'local_library', routerlink: '/tap' },
     { name: 'Dynamic', icon: 'local_library', routerlink: '/dynamic' },
     { name: 'FormAdd', icon: 'local_library', routerlink: '/formadd' },
+    { name: 'FromOne', icon: 'local_library', routerlink: '/done' },
   ]
 
 }

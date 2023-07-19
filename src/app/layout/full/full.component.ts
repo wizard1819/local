@@ -9,14 +9,12 @@ import { LoginService } from 'src/app/login/login.service';
   templateUrl: './full.component.html',
   styleUrls: ['./full.component.css']
 })
-export class FullComponent implements OnInit,  OnDestroy, AfterViewInit {
+export class FullComponent implements OnInit, AfterViewInit {
   // colorr="black"
   public currentTheme!: string;
-  mobileQuery: MediaQueryList;
 mykey:any;
   colorrr:any={bg:'gray',nav:'black',sb:'lightgrey'}
 
-  private _mobileQueryListener: () => void;
   publicRoute: boolean = false;
   constructor(
     changeDetectorRef: ChangeDetectorRef,
@@ -26,17 +24,12 @@ mykey:any;
     private renderer : Renderer2,
     private logout : LoginService
   ){
-    this.mobileQuery = media.matchMedia('(min-width: 768px)');
-    this._mobileQueryListener = () => changeDetectorRef.detectChanges();
-    this.mobileQuery.addListener(this._mobileQueryListener);
-
+   
     // localStorage.setItem('this.mykey', JSON.stringify(this.colorrr));
     // let mk=localStorage.getItem('this.myey');
   
   }
-  ngOnDestroy(): void {
-    this.mobileQuery.removeListener(this._mobileQueryListener);
-  }
+ 
   ngAfterViewInit() {}
   opened=true;
 
