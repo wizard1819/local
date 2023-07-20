@@ -29,13 +29,15 @@ export class LoginService {
       this.status = 'xyz123';
       localStorage.setItem('token', this.status);
       this.router.navigate(['/home']);
+      this.snackbarservice.show('Logged In Successfully');
       // this.log.next(true);
-      return 
+      return
     }
     else {
       localStorage.removeItem('token');
+      this.snackbarservice.show('Invalid UserName/Password');
       // this.log.next(false)
-      
+
     }
   }
 
