@@ -24,9 +24,8 @@ mykey:any;
     private renderer : Renderer2,
     private logout : LoginService
   ){
-   
-   
-  }
+    console.log('started');
+   }
  
   ngAfterViewInit() {}
   opened=true;
