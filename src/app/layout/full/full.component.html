@@ -1,7 +1,5 @@
-<div *ngIf="publicRoute; else privateComponent;">
-    <router-outlet></router-outlet>
-</div>
-<ng-template #privateComponent>
+
+<div>
 
     <mat-toolbar [ngClass]="currentTheme">
         <mat-toolbar-row>
@@ -34,7 +32,7 @@
                 Theme</button>
         </mat-sidenav-content>
     </mat-sidenav-container>
-</ng-template>
+</div>
 
 
 <!-- [style.background]="colorr " -->

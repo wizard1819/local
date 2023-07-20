@@ -25,9 +25,7 @@ mykey:any;
     private logout : LoginService
   ){
    
-    // localStorage.setItem('this.mykey', JSON.stringify(this.colorrr));
-    // let mk=localStorage.getItem('this.myey');
-  
+   
   }
  
   ngAfterViewInit() {}
