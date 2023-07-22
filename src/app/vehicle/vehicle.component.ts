@@ -123,7 +123,9 @@ export class VehicleComponent {
   update(data?: any) {
     let dialogRef = this.dialog.open(UpdateDialogComponent, {
       data: data,
-    },);
+      panelClass: ['animate__animated', 'animate__slideInRight'],
+    },
+    );
 
     dialogRef.afterClosed().subscribe({
       next: (d) => {

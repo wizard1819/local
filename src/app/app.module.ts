@@ -79,6 +79,10 @@ import { TapmapComponent } from './study/tapmap/tapmap.component';
 import { DynamicformComponent } from './study/dynamicform/dynamicform.component';
 import { FormaddComponent } from './study/formadd/formadd.component';
 import { FormoneComponent } from './forms/formone/formone.component';
+import { Chips2Component } from './chips/chips2/chips2.component';
+import { Chips3Component } from './chips/chips3/chips3.component';
+import { InputComponent } from './o/input/input.component';
+import { OutputComponent } from './o/output/output.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -118,7 +122,11 @@ import { FormoneComponent } from './forms/formone/formone.component';
     TapmapComponent,
     DynamicformComponent,
     FormaddComponent,
-    FormoneComponent
+    FormoneComponent,
+    Chips2Component,
+    Chips3Component,
+    InputComponent,
+    OutputComponent
 
   ],
   imports: [

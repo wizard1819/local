@@ -29,6 +29,10 @@ import { TapmapComponent } from './study/tapmap/tapmap.component';
 import { DynamicformComponent } from './study/dynamicform/dynamicform.component';
 import { FormaddComponent } from './study/formadd/formadd.component';
 import { FormoneComponent } from './forms/formone/formone.component';
+import { Chips2Component } from './chips/chips2/chips2.component';
+import { Chips3Component } from './chips/chips3/chips3.component';
+import { InputComponent } from './o/input/input.component';
+import { OutputComponent } from './o/output/output.component';
 const routes: Routes = [
   {
     path: '',
@@ -154,6 +158,22 @@ const routes: Routes = [
           {
             path: 'forms',
             component: FormstudyComponent
+          },
+          {
+            path: 'chips2',
+            component: Chips2Component
+          },
+          {
+            path: 'chips3',
+            component: Chips3Component
+          },
+          {
+            path: 'input',
+            component: InputComponent
+          },
+          {
+            path: 'outpt',
+            component: OutputComponent
           },
 
 

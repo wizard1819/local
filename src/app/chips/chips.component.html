@@ -6,7 +6,7 @@
 <form [formGroup]="form">
 <mat-form-field class="example-form-field">
   <mat-label>Video keywords</mat-label>
-  <mat-chip-grid #chipGrid aria-label="Enter keywords" formControlName="formControl" >
+  <mat-chip-grid #chipGrid aria-label="Enter keywords" formControlName="names" >
     <mat-chip-row *ngFor="let keyword of keywords" (removed)="removeKeyword(keyword)">
       {{keyword}}
       <button matChipRemove aria-label="'remove ' + keyword">

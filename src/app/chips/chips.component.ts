@@ -17,7 +17,7 @@ export class ChipsComponent implements OnInit {
 
   ngOnInit(): void {
     this.form = new UntypedFormGroup({
-      formControl: new UntypedFormControl(null, [
+      names: new UntypedFormControl(null, [
       ]),})
   }
 

@@ -21,6 +21,8 @@ export class SidebarComponent {
     { name: 'Text Animation', icon: 'style', routerlink: '/text' },
     { name: 'COMPONENTS', icon: 'local_library', routerlink: '/angular' },
     { name: 'CHIPS', icon: 'local_library', routerlink: '/chips' },
+    { name: 'CHIPS2', icon: 'local_library', routerlink: '/chips2' },
+    { name: 'CHIPS3', icon: 'local_library', routerlink: '/chips3' },
     { name: 'SPINNER', icon: 'donut_large', routerlink: '/spinner' },
     { name: 'FOOD', icon: 'restaurant_menu', routerlink: '/food-org' },
     { name: 'Examples', icon: 'style', routerlink: '/tbs' },
@@ -37,6 +39,7 @@ export class SidebarComponent {
     { name: 'tapMap', icon: 'local_library', routerlink: '/tap' },
     { name: 'Dynamic', icon: 'local_library', routerlink: '/dynamic' },
     { name: 'FormAdd', icon: 'local_library', routerlink: '/formadd' },
+    { name: 'op', icon: 'local_library', routerlink: '/outpt' },
   ]
 
 }
