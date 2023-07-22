@@ -1,0 +1,13 @@
+<div>
+    <mat-toolbar color="primary"></mat-toolbar>
+    <mat-sidenav-container>
+        <!-- sidebar  -->
+        <mat-sidenav [(opened)]="opened" mode="side">
+
+        </mat-sidenav>
+        <!-- content  -->
+        <mat-sidenav-content>
+            <router-outlet></router-outlet>
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+</div>

@@ -25,11 +25,19 @@ export class LoginService {
   public ct = this.num.asObservable();
 
   check(data: any) {
-    if (data.userName == 'guna' && data.password == '1234') {
+    if (data.userName == '1111' && data.password == '1111') {
       this.status = 'xyz123';
       localStorage.setItem('token', this.status);
       this.router.navigate(['/home']);
-      this.snackbarservice.show('Logged In Successfully');
+      this.snackbarservice.show('Welcome to Phase-I');
+      // this.log.next(true);
+      return
+    }
+    else if(data.userName == '2222' && data.password == '2222'){
+      this.status = 'xyz123';
+      localStorage.setItem('token', this.status);
+      this.router.navigate(['/dashboard']);
+      this.snackbarservice.show('Welcome to Phase-II');
       // this.log.next(true);
       return
     }

@@ -47,6 +47,11 @@ const routes: Routes = [
         component: LoginComponent
       },
       {
+        path:'',
+        canActivate:[LoginGuard],
+        loadChildren:()=> import('./p-2/layout/layoutt.module').then((m)=>m.LayouttModule)
+      },
+      {
         path: '',
         canActivate: [LoginGuard],
         canActivateChild: [childguard],

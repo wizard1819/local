@@ -126,8 +126,7 @@ import { OutputComponent } from './o/output/output.component';
     Chips2Component,
     Chips3Component,
     InputComponent,
-    OutputComponent
-
+    OutputComponent,
   ],
   imports: [
     BrowserModule,

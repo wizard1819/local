@@ -4,6 +4,7 @@ import { Form, FormBuilder, FormGroup } from '@angular/forms';
 import { UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
 import { SnackbarService } from '../snackbar/snackbar.service';
 import { LoginService } from './login.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -13,16 +14,17 @@ export class LoginComponent implements OnInit {
   showPassword: boolean = false;
   public form: UntypedFormGroup = Object.create(null);
 
-  us='xoxo';
-  pass='xoxo';
+  us = 'xoxo';
+  pass = 'xoxo';
   formSubmitted: boolean = false;
   constructor(
-   
+
     private service: LoginService,
-    private snackBar : SnackbarService
+    private snackBar: SnackbarService,
+    private snack : MatSnackBar
   ) {
-  
-   }
+
+  }
 
 
 
@@ -30,8 +32,13 @@ export class LoginComponent implements OnInit {
     this.showPassword = !this.showPassword;
   }
   login() {
-   console.log(this.form.value);
-    this.service.check(this.form.value);
+    if (this.form.valid) {
+      this.service.check(this.form.value);
+    }else{
+      // this.snackBar.show('UserName and Password is Required');
+      this.snack.open('UserName and Password is Required','Close');
+    }
+
     // this.service.log.subscribe((data)=>{
     //   if(data==true){
     //     this.snackBar.show('Logged in Successfully!!');
@@ -40,11 +47,11 @@ export class LoginComponent implements OnInit {
     //   }
     // })
 
-   
+
   }
 
   ngOnInit(): void {
-     this.form = new UntypedFormGroup({
+    this.form = new UntypedFormGroup({
       userName: new UntypedFormControl(null, [
         Validators.required,
         // Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")
