@@ -30,3 +30,8 @@
     --mdc-protected-button-label-text-color: #000;
     
 }
+
+.bottomsheet{
+    padding: 30px;
+    text-align: center;
+}

@@ -4,7 +4,9 @@ import { LayoutComponent } from './layout.component';
 import {  RouterModule, Routes } from '@angular/router';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
-
+import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 import {route} from './routing'
 const routes:Routes=[
   {
@@ -19,8 +21,11 @@ const routes:Routes=[
   ],
   imports: [
     CommonModule,
+    MatButtonModule,
+    MatIconModule,
     MatToolbarModule,
     MatSidenavModule,
+    MatBottomSheetModule,
     RouterModule.forChild(routes)
   ]
 })
