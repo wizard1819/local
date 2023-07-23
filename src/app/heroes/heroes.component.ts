@@ -9,18 +9,15 @@ import { HeroesService } from './heroes.service';
 })
 export class HeroesComponent {
 
-  heroo:Hero[]=[];
 
-  constructor(private service: HeroesService){}
-
-  findAll(){
-   this.heroo=this.service.getAll();
-  }
+  arra:any[]=[1,2,3,4,5,6];
 
 
 ngOnInit():void{
   console.log("got successfully");
- this.findAll();
+  this.arra.forEach((num)=>{
+    console.log(num);
+  })
 }
 
 }

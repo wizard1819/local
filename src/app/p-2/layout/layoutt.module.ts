@@ -7,7 +7,8 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
-import {route} from './routing'
+import {route} from './routing';
+import { BsComponent } from './bs/bs.component'
 const routes:Routes=[
   {
     path:'',
@@ -17,7 +18,8 @@ const routes:Routes=[
 ]
 @NgModule({
   declarations: [
-    LayoutComponent
+    LayoutComponent,
+    BsComponent
   ],
   imports: [
     CommonModule,
