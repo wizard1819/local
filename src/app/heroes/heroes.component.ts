@@ -1,4 +1,4 @@
-import { Component , OnInit, OnChanges} from '@angular/core';
+import { Component, OnInit, OnChanges } from '@angular/core';
 import { Hero } from '../hero';
 import { HeroesService } from './heroes.service';
 
@@ -10,15 +10,14 @@ import { HeroesService } from './heroes.service';
 export class HeroesComponent {
 
 
-  arra:any[]=[1,2,3,4,5,6];
+  arra: any[] = ['hari', 'guna', 'velu', 'rathees', 'praveen', 'arun'];
 
 
-ngOnInit():void{
-  console.log("got successfully");
-  this.arra.forEach((num)=>{
-    console.log(num);
-  })
-}
+  ngOnInit(): void {
+    this.arra.forEach((num) => {
+      console.log(num, this.arra);
+    })
+  }
 
 }
 

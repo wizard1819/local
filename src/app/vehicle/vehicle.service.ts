@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable ,tap } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -8,7 +8,16 @@ import { Observable } from 'rxjs';
 export class VehicleService<T=any> {
   constructor(private http : HttpClient) { }
   getAll(pageIndex : number,pageSize : number): Observable<T>{   
-    return this.http.get<T>("/vehicle?page="+ pageIndex + "&size=" + pageSize);
+    return this.http.get<T>("/vehicle?page="+ pageIndex + "&size=" + pageSize).pipe(
+      tap(result=>{
+        console.log(result,'res');
+      },
+    
+      error=>{
+        console.log(error);
+      }
+      )
+    );
   }
 
   delete(id: number):Observable<T>{

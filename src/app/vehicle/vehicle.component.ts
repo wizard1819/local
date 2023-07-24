@@ -28,13 +28,13 @@ export class VehicleComponent {
   vehicleee: any;
   displayedColumns = ['id', 'owner', 'model', 'brand', 'type', 'registerNum', 'status', 'Actions'];
   dataSource!: MatTableDataSource<any>;
-  addForm:any[]=[
-    { type: 'text', name: 'model',required:true },
-    { type: 'text', name: 'brand',required:true },
-    { type: 'text', name: 'owner',required:true },
-    { type: 'dropdown', name: 'status', options: [true, false],required:true },
-    { type: 'text', name: 'type' ,required:true},
-    { type: 'text', name: 'registerNum',required:true },
+  addForm: any[] = [
+    { type: 'text', name: 'model', required: true },
+    { type: 'text', name: 'brand', required: true },
+    { type: 'text', name: 'owner', required: true },
+    { type: 'dropdown', name: 'status', options: [true, false], required: true },
+    { type: 'text', name: 'type', required: true },
+    { type: 'text', name: 'registerNum', required: true },
   ];
 
   @ViewChild(MatPaginator) paginator: MatPaginator = Object.create(null);
@@ -63,11 +63,10 @@ export class VehicleComponent {
     this.showSpinner = true;
 
     this.service.getAll(this.pageIndex, this.pageSize).subscribe({
-      next: (d:any) => {
+      next: (d: any) => {
         var datas: any[] = d.response.content;
         this.dataSource = new MatTableDataSource(datas);
         this.totalElements = d.response.page.totalElements;
-
       },
       error: (e) => {
         this.snack.openSnack(e.name);
@@ -146,15 +145,15 @@ export class VehicleComponent {
     this.router.navigate(['/addvehicle']);
   }
 
- async dynamic(data?:any) {
-   await this.gobalStateService.setState(this.addForm);
-    let dialogRef = this.dialog.open(FormoneComponent,{
+  async dynamic(data?: any) {
+    await this.gobalStateService.setState(this.addForm);
+    let dialogRef = this.dialog.open(FormoneComponent, {
       data: data,
-      disableClose:true
+      disableClose: true
     });
-    
-    dialogRef.afterClosed().subscribe((data:any) => {
-      if (data!== null && data.data !== undefined) {
+
+    dialogRef.afterClosed().subscribe((data: any) => {
+      if (data !== null && data.data !== undefined) {
         console.log(data);
         this.service.add(data.data).subscribe({
           next: (d) => {
