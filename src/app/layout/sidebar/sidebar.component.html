@@ -5,10 +5,13 @@
     </div>
   
     <div style="justify-content: center;text-align: center;" class="grd" *ngFor="let side of sidebarmenu">
-      <button mat-button routerLink="{{side.routerlink}}" style="margin-top: 20px;" class="btn">
+      <button mat-button routerLink="{{side.routerlink}}" routerLinkActive="active-link" style="margin-top: 20px;" class="btn">
         <mat-icon>{{side.icon}}</mat-icon><b>{{side.name}}</b>
       </button>
     </div>
+    <button mat-button routerLink="/bike" routerLinkActive="active-link" style="margin-top: 20px;" class="btn">
+      <mat-icon>motorcycle</mat-icon><b>VEHICLE</b>
+    </button>
   
     <div class="divv">
       <div class="sh-horizontal-line"></div>
