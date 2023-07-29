@@ -83,6 +83,7 @@ import { Chips2Component } from './chips/chips2/chips2.component';
 import { Chips3Component } from './chips/chips3/chips3.component';
 import { InputComponent } from './o/input/input.component';
 import { OutputComponent } from './o/output/output.component';
+import { HostDirective } from './directive/host.directive';
 @NgModule({
   declarations: [
     AppComponent,
@@ -94,7 +95,7 @@ import { OutputComponent } from './o/output/output.component';
     AngularComponent,
     CustomSnackBarComponent,
     ResponseDialogComponent,
-    UpdateDialogComponent,
+    UpdateDialogComponent,    
     FullComponent,
     SidebarComponent,
     ConfirmDialogComponent,
@@ -127,6 +128,9 @@ import { OutputComponent } from './o/output/output.component';
     Chips3Component,
     InputComponent,
     OutputComponent,
+    HeroDetailComponent,
+    HeroesComponent,
+    HostDirective
   ],
   imports: [
     BrowserModule,
@@ -171,6 +175,7 @@ import { OutputComponent } from './o/output/output.component';
     NgbModalModule
   ],
   providers: [LoginService, { provide: HTTP_INTERCEPTORS, useClass: Httpinterceptor, multi: true }],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents:[HeroesComponent, HeroDetailComponent]
 })
 export class AppModule { }

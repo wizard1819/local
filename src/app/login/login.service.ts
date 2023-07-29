@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { SnackbarService } from '../snackbar/snackbar.service';
 import { MatDialog } from '@angular/material/dialog';
 import { ConfirmDialogComponent } from '../confirm-dialog/confirm-dialog.component';
@@ -19,19 +19,20 @@ export class LoginService {
     private router: Router,
     private snackbarservice: SnackbarService,
     private dialog: MatDialog,
+    private rout : ActivatedRoute
   ) { }
 
   public num: BehaviorSubject<number> = new BehaviorSubject<number>(0);
   public ct = this.num.asObservable();
 
-  check(data: any) {
+  check(data: any){
     if (data.userName == '1111' && data.password == '1111') {
       this.status = 'xyz123';
       localStorage.setItem('token', this.status);
       this.router.navigate(['/home']);
       this.snackbarservice.show('Welcome to Phase-I');
       // this.log.next(true);
-      return
+      console.log(this.rout,'routtt');
     }
     else if(data.userName == '2222' && data.password == '2222'){
       this.status = 'xyz123';

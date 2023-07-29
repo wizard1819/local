@@ -39,13 +39,7 @@ export class LoginComponent implements OnInit {
       this.snack.open('UserName and Password is Required','Close');
     }
 
-    // this.service.log.subscribe((data)=>{
-    //   if(data==true){
-    //     this.snackBar.show('Logged in Successfully!!');
-    //   }else{
-    //     this.snackBar.show('Invalid UserName/Password');
-    //   }
-    // })
+
 
 
   }

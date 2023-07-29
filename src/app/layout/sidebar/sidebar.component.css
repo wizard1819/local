@@ -48,7 +48,7 @@
 
 /* Track */
 .custom-scrollbar::-webkit-scrollbar {
-  width: 8px; /* Set the width of the scrollbar (supported in some browsers) */
+  width: 4px; /* Set the width of the scrollbar (supported in some browsers) */
 }
 
 /* Handle */

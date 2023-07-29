@@ -1,26 +1,27 @@
-import { Component , OnInit, ViewEncapsulation} from '@angular/core';
-import { FormGroup, FormControl, UntypedFormGroup,UntypedFormControl, FormBuilder } from '@angular/forms';
+import { Component, ViewChild, ComponentFactoryResolver, HostBinding } from '@angular/core';
+import { HostDirective } from '../directive/host.directive';
+import { HeroDetailComponent } from '../hero-detail/hero-detail.component';
+import { HeroesComponent } from '../heroes/heroes.component';
 @Component({
   selector: 'app-turbocode',
   templateUrl: './turbocode.component.html',
   styleUrls: ['./turbocode.component.css'],
-  encapsulation: ViewEncapsulation.None
 })
 
 export class TurbocodeComponent {
- 
-  names:any=['guna','arun','velu','praveen','hari'];
- 
-  constructor(){
-    this.random()
-  }
-  name:any;
-  random(){
-    setInterval(()=>{
-      this.name=this.names[Math.floor(Math.random()*this.names.length)];
-    },500)
-   
-  }
 
+  @ViewChild(HostDirective, { static: true }) childRef!: HostDirective;
+  @HostBinding('style.color') color = 'green';
+  component = [HeroDetailComponent]
+  constructor(
+    public factory: ComponentFactoryResolver) { }
+
+  load(id?: any) {
+    this.childRef.viewRef.clear();
+    const factory= this.factory.resolveComponentFactory(this.component[id]);
+   const comp= this.childRef.viewRef.createComponent(factory);
+   console.log(comp,'comp');
+   comp.instance.data = "Turbocode";
   }
+} 
 
