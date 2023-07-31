@@ -81,6 +81,11 @@ export class LoginService {
 
   }
 
+  signOut(){
+    localStorage.removeItem('token');
+    this.router.navigate(['/login']);
+  }
+
   submit(data?: any): any {
     const foundUser = UserTable.find(user => user.name === data.userName && user.password === data.password);
     if (foundUser?.name == data.userName && foundUser?.password == data.password) {

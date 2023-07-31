@@ -1,5 +1,6 @@
 import { Component, Input, OnInit, } from '@angular/core';
 import { FormBuilder, FormGroup, FormArray, FormControl, Validators, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-dynamicform',
   templateUrl: './dynamicform.component.html',
@@ -9,15 +10,15 @@ export class DynamicformComponent {
 
   dynamicForm!: UntypedFormGroup;
   formFields: any[] = [
-    {fieldName:'name'},
-    {fieldName:'age'},
-    {fieldName:'gender'},
-    {fieldName:'mobileNum'},
-    {fieldName:'Address'},
-    {fieldName:'State'},
+    { fieldName: 'name' },
+    { fieldName: 'age' },
+    { fieldName: 'gender' },
+    { fieldName: 'mobileNum' },
+    { fieldName: 'Address' },
+    { fieldName: 'State' },
   ];
 
-  constructor(private formBuilder: UntypedFormBuilder) { }
+  constructor(private formBuilder: UntypedFormBuilder, private router: Router) { }
 
   ngOnInit() {
     this.dynamicForm = this.formBuilder.group({});
@@ -42,5 +43,18 @@ export class DynamicformComponent {
 
     // Handle form submission
     console.log(this.dynamicForm.value);
+  }
+
+
+
+  canDeactivate() {
+    if (this.dynamicForm.value.name.length<=1) {
+      return true;
+    }
+    else {
+      return new Promise((resolve, reject) => {
+        resolve(confirm('Do you want to navigate??'));
+      });
+    }
   }
 }

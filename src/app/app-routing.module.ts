@@ -21,7 +21,7 @@ import { ProductComponent } from './study/product/product.component';
 import { FormstudyComponent } from './study/formstudy/formstudy.component';
 import { CycleComponent } from './study/cycle/cycle.component';
 import { ChipsComponent } from './chips/chips.component';
-import { LoginGuard, childguard } from './commons/guards/login.guard';
+import { LoginGuard, candeactivate, childguard } from './commons/guards/login.guard';
 import { ErrorComponent } from './error/error.component';
 import { StudyoneobservableComponent } from './study/studyoneobservable/studyoneobservable.component';
 import { StudysubjectComponent } from './study/studysubject/studysubject.component';
@@ -100,7 +100,8 @@ const routes: Routes = [
           },
           {
             path: 'dynamic',
-            component: DynamicformComponent
+            component: DynamicformComponent,
+            canDeactivate:[candeactivate]
           },
           {
             path: 'done',

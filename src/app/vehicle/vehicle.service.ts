@@ -8,17 +8,9 @@ import { Observable ,tap } from 'rxjs';
 export class VehicleService<T=any> {
   constructor(private http : HttpClient) { }
   getAll(pageIndex : number,pageSize : number): Observable<T>{   
-    return this.http.get<T>("/vehicle?page="+ pageIndex + "&size=" + pageSize).pipe(
-      tap(result=>{
-        console.log(result,'res');
-      },
-    
-      error=>{
-        console.log(error);
-      }
-      )
-    );
+    return this.http.get<T>("/vehicle?page="+ pageIndex + "&size=" + pageSize);
   }
+     
 
   delete(id: number):Observable<T>{
     return this.http.delete<T>("/vehicle/"+id);

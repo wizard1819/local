@@ -10,7 +10,8 @@
     padding: 0px 20px;
     border-radius: 4px;
     cursor: pointer;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 14px;
+    font-family: sans-serif;
   
   }
 
@@ -37,6 +38,7 @@
 
 .grd{
   height: calc(100vh-20vh); 
+  font-family: sans-serif;
 }
 
 /* Style the container to enable scrolling */
@@ -63,6 +65,6 @@
 }
 
 .active-link{
-  background-color: #f1f1f2; /* Set the color you want for active buttons */
+  background-color: #68b7f3; /* Set the color you want for active buttons */
   color: #060b01; /* Set the color you want for the text inside active buttons */
 }

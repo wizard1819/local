@@ -12,7 +12,7 @@ import { InfoDialogComponent } from '../info-dialog/info-dialog.component';
 import { GlobalstateService } from '../globalService/globalstate.service';
 import { FormoneComponent } from '../forms/formone/formone.component';
 import { async } from '@angular/core/testing';
-
+import { ActivatedRoute } from '@angular/router';
 @Component({
 
   selector: 'app-vehicle',
@@ -45,7 +45,8 @@ export class VehicleComponent {
     private snack: CustomsService,
     private dialog: MatDialog,
     private router: Router,
-    private gobalStateService: GlobalstateService
+    private gobalStateService: GlobalstateService,
+    public route : ActivatedRoute
   ) {
 
   }
@@ -56,6 +57,7 @@ export class VehicleComponent {
 
   ngOnInit(): void {
     this.findAll();
+    console.log(this.route,'rte');
   }
 
 
@@ -69,7 +71,7 @@ export class VehicleComponent {
         this.totalElements = d.response.page.totalElements;
       },
       error: (e) => {
-        this.snack.openSnack(e.name);
+        // this.snack.openSnack(e.name);
       },
       complete: () => {
         this.showSpinner = false;
