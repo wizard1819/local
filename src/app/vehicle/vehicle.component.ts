@@ -64,14 +64,15 @@ export class VehicleComponent {
   findAll() {
     this.showSpinner = true;
 
-    this.service.getAll(this.pageIndex, this.pageSize).subscribe({
+    this.service.getAll(this.pageIndex, this.pageSize)
+    .subscribe({
       next: (d: any) => {
         var datas: any[] = d.response.content;
         this.dataSource = new MatTableDataSource(datas);
         this.totalElements = d.response.page.totalElements;
       },
       error: (e) => {
-        // this.snack.openSnack(e.name);
+        
       },
       complete: () => {
         this.showSpinner = false;
