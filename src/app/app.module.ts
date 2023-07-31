@@ -84,6 +84,7 @@ import { Chips3Component } from './chips/chips3/chips3.component';
 import { InputComponent } from './o/input/input.component';
 import { OutputComponent } from './o/output/output.component';
 import { HostDirective } from './directive/host.directive';
+import { NameoneDirective } from './nameone.directive';
 @NgModule({
   declarations: [
     AppComponent,
@@ -130,9 +131,11 @@ import { HostDirective } from './directive/host.directive';
     OutputComponent,
     HeroDetailComponent,
     HeroesComponent,
-    HostDirective
+    HostDirective,
+    NameoneDirective
   ],
   imports: [
+    
     BrowserModule,
     MatBadgeModule,
     MatRippleModule,

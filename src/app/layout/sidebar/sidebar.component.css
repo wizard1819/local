@@ -29,7 +29,7 @@
 .divv{
   padding: 20px;
   padding-bottom: 10px;
-  font-family: cursive;
+  font-family: sans-serif;
   color: whitesmoke;  white-space: pre-wrap;
   max-height: calc(100vh - 40vh);
   text-align: center;
@@ -41,7 +41,7 @@
 
 /* Style the container to enable scrolling */
 .custom-scrollbar {
-  height: 80vh; /* Set a fixed height to enable scrolling */
+  height: 90vh; /* Set a fixed height to enable scrolling */
   overflow-y: auto; /* Enable vertical scrollbar when content overflows */
   scrollbar-width: thin; /* Set the width of the scrollbar (supported in some browsers) */
 }

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, HostBinding,HostListener } from '@angular/core';
 import {fromEvent, pipe} from 'rxjs';
 import {tap, map} from 'rxjs/operators'
 @Component({
@@ -8,6 +8,10 @@ import {tap, map} from 'rxjs/operators'
 })
 export class TapmapComponent {
 
+  
+
+ 
+  @Input() name!: string;
 
   constructor(){
     // const click=fromEvent(document,'click');
