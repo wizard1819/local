@@ -48,7 +48,7 @@ h1 {
 }
 
 .default {
-  background-color: slategray;
+  background-color: rgb(48, 62, 89);
   color: #fffdfd;
 }
 
@@ -107,4 +107,9 @@ h1 {
   height: 40px;
   border-radius: 100%;
   margin-right: 20px;
+}
+
+.topbar {
+  position: relative;
+  z-index: 2;
 }

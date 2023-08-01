@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class ThemeService {
-  private currentTheme: string = 'default';
+  private currentTheme: string = 'gray';
 
   public getCurrentTheme(): string {
     return this.currentTheme;
