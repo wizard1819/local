@@ -13,7 +13,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class LoginComponent implements OnInit {
   showPassword: boolean = false;
   public form: UntypedFormGroup = Object.create(null);
-
+  tok: any;
   us = 'xoxo';
   pass = 'xoxo';
   formSubmitted: boolean = false;
@@ -21,9 +21,15 @@ export class LoginComponent implements OnInit {
 
     private service: LoginService,
     private snackBar: SnackbarService,
-    private snack : MatSnackBar
+    private snack : MatSnackBar,
+    private router : Router
   ) {
 
+    console.log(localStorage.getItem('token'), 'tokenss');
+    this.tok=localStorage.getItem('token');
+    if(this.tok == 'xyz123' && this.tok != null && this.tok != undefined){
+      this.router.navigate(['/home']);
+    }
   }
 
 

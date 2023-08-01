@@ -6,7 +6,9 @@
             <span>ANGULAR 15.1.5</span>
             <button mat-button routerLink="/dashboard">Dashboard</button>
             <span fxFlex></span>
-            <div (click)="signout()" style="cursor: pointer;"><mat-icon>power_settings_new</mat-icon></div>
+            <button [matMenuTriggerFor]="men" mat-icon-button class="m-r-5"><mat-icon>power_settings_new</mat-icon></button>
+
+            <!-- <div (click)="signout()" style="cursor: pointer;"><mat-icon>power_settings_new</mat-icon></div> -->
             <div>
                 <mat-menu #menu="matMenu">
                     <button mat-menu-item (click)="setTheme('default')">Default Theme</button>
@@ -15,6 +17,11 @@
                     <button mat-menu-item (click)="setTheme('red')">Red Theme</button>
                     <button mat-menu-item (click)="setTheme('picture')">pic Theme</button>
                     <button mat-menu-item (click)="setTheme('blue')">pic Theme</button>
+                </mat-menu>
+            </div>
+            <div>
+                <mat-menu #men="matMenu">
+                    <button mat-menu-item (click)="signout()">Sign Out</button>
                 </mat-menu>
             </div>
         </mat-toolbar-row>

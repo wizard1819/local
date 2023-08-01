@@ -57,9 +57,6 @@ export class LoginService {
     }
   }
 
-  loGIN(): Observable<any> {
-    return <any>(false);
-  }
 
   signout() {
     let dialogRef = this.dialog.open(ConfirmDialogComponent, {
