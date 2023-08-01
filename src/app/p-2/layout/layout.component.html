@@ -1,13 +1,15 @@
 <div class="height">
     <mat-toolbar color="primary">
         <mat-toolbar-row>
+            <button mat-button  (click)="togglesidebar()"><mat-icon>menu</mat-icon></button>
             <button mat-button  (click)="openBottomSheet()">Switch</button>
+
         </mat-toolbar-row>
     </mat-toolbar>
     <mat-sidenav-container>
         <!-- sidebar  -->
         <mat-sidenav [(opened)]="opened" mode="side">
-            <button mat-button>hello</button>
+            <app-sb></app-sb>
         </mat-sidenav>
         <!-- content  -->
         <mat-sidenav-content>

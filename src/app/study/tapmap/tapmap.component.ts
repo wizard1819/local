@@ -14,11 +14,11 @@ export class TapmapComponent {
   @Input() name!: string;
 
   constructor(){
-    // const click=fromEvent(document,'click');
-    // const positions= click.pipe(
-    //   tap(ev=> console.log(ev)),
-    //   map(ev=> console.log('map'))
-    // )
-    // positions.subscribe(x=> console.log(x));
+    const click=fromEvent(document,'click');
+    const positions= click.pipe(
+      tap(ev=> console.log(ev)),
+      map(ev=> console.log('map'))
+    )
+    positions.subscribe(x=> console.log(x));
   }
 }

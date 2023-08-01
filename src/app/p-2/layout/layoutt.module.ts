@@ -8,7 +8,10 @@ import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import {route} from './routing';
-import { BsComponent } from './bs/bs.component'
+import { BsComponent } from './bs/bs.component';
+import { SbComponent } from './sb/sb.component';
+import {MatListModule} from '@angular/material/list';
+import {MatExpansionModule} from '@angular/material/expansion';
 const routes:Routes=[
   {
     path:'',
@@ -19,16 +22,20 @@ const routes:Routes=[
 @NgModule({
   declarations: [
     LayoutComponent,
-    BsComponent
+    BsComponent,
+    SbComponent
   ],
   imports: [
+    MatListModule,
+    MatExpansionModule,
     CommonModule,
     MatButtonModule,
     MatIconModule,
     MatToolbarModule,
     MatSidenavModule,
     MatBottomSheetModule,
-    RouterModule.forChild(routes)
-  ]
+    RouterModule.forChild(routes),
+    
+  ],
 })
 export class LayouttModule { }

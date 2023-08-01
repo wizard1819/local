@@ -31,6 +31,7 @@
     "js-sha256": "^0.9.0",
     "jspdf": "^2.5.1",
     "ng-form-group": "^1.4.2",
+    "ng-material-multilevel-menu": "^6.0.2",
     "ng-sidebar": "^9.4.3",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",

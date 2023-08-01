@@ -36,3 +36,7 @@
     max-height: 100vh;
     height:  calc(100vh - 20vh);
 }
+
+.mat-sidenav-content{
+    padding: 10px;
+}
