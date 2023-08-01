@@ -1,6 +1,6 @@
 <div class="scrollbar">
-    <h1>Introduction</h1>
-    <p>RxJS is a library for composing asynchronous and event-based programs by using observable sequences. It provides
+    <h1>RxJs Introduction</h1>
+    <p><b style="margin-left: 30px;">RxJS</b> is a library for composing asynchronous and event-based programs by using observable sequences. It provides
         one
         core type, the <b appColor>Observable</b>, satellite types (Observer, Schedulers, Subjects) and operators
         inspired
@@ -11,4 +11,16 @@
             appColor>
             functional programming with collections</b> to fill
         the need for an ideal way of managing sequences of events.</p>
+
+    <p>The essential concepts in RxJS which solve async event management are:</p>
+    <div>
+        <ul>
+            <li><b>Observable-></b> represents the idea of an invokable collection of future values or events.</li>
+            <li><b>Observer-></b>is a collection of callbacks that knows how to listen to values delivered by the <b appColor> Observable</b>.</li>
+            <li><b>Subscription-></b>represents the execution of an Observable, is primarily useful for cancelling the execution.</li>
+            <li><b>Operators-></b>are pure functions that enable a functional programming style of dealing with collections with operations like <b appColor> map, filter, concat, reduce, etc</b>.</li>
+            <li><b>Subject-></b>is equivalent to an EventEmitter, and the only way of multicasting a value or event to multiple Observers.</li>
+            <li><b>Schedulers-></b>are centralized dispatchers to control concurrency, allowing us to coordinate when computation happens on <b appColor> e.g. setTimeout or requestAnimationFrame or others</b>.</li>
+        </ul>
+    </div>
 </div>
