@@ -1,7 +1,8 @@
-<div class="height">
+<div class="custom-scrollbar">
     <mat-toolbar color="primary">
         <mat-toolbar-row>
             <button mat-button  (click)="togglesidebar()"><mat-icon>menu</mat-icon></button>
+            <button mat-button  routerLink="/dashboard"><mat-icon>dashboard</mat-icon></button>
             <button mat-button  (click)="openBottomSheet()">Switch</button>
 
         </mat-toolbar-row>
@@ -12,7 +13,7 @@
             <app-sb></app-sb>
         </mat-sidenav>
         <!-- content  -->
-        <mat-sidenav-content>
+        <mat-sidenav-content >
             <router-outlet></router-outlet>
         </mat-sidenav-content>
     </mat-sidenav-container>

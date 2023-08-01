@@ -132,7 +132,8 @@ import { NameoneDirective } from './nameone.directive';
     HeroDetailComponent,
     HeroesComponent,
     HostDirective,
-    NameoneDirective
+    NameoneDirective,
+    
   ],
   imports: [
     

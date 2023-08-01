@@ -23,7 +23,8 @@ const routes:Routes=[
   declarations: [
     LayoutComponent,
     BsComponent,
-    SbComponent
+    SbComponent,
+    
   ],
   imports: [
     MatListModule,

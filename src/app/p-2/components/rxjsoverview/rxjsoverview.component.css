@@ -1,6 +1,6 @@
 /* Style the container to enable scrolling */
 .custom-scrollbar {
-    height: 100vh;
+    height: calc(100vh - 13vh);
     /* Set a fixed height to enable scrolling */
     overflow-y: auto;
     /* Enable vertical scrollbar when content overflows */
@@ -25,14 +25,4 @@
 /* On hover, add a darker background color */
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
     background-color: #555;
-}
-
-
-.mat-sidenav-content {
-    padding: 10px;
-    height: calc(100vh - 10vh);
-}
-
-.mat-toolbar {
-    position: static;
 }

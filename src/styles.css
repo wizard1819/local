@@ -35,3 +35,35 @@
     padding: 30px;
     text-align: center;
 }
+
+.center{
+    text-align: center;
+}
+
+.scrollbar {
+    height: calc(100vh - 13vh);
+    /* Set a fixed height to enable scrolling */
+    overflow-y: auto;
+    /* Enable vertical scrollbar when content overflows */
+    scrollbar-width: thin;
+    /* Set the width of the scrollbar (supported in some browsers) */
+}
+
+/* Track */
+.scrollbar::-webkit-scrollbar {
+    width: 5px;
+    /* Set the width of the scrollbar (supported in some browsers) */
+}
+
+/* Handle */
+.scrollbar::-webkit-scrollbar-thumb {
+    background-color: gray;
+    /* Color of the scrollbar handle */
+    border-radius: 4px;
+    /* Round the edges of the scrollbar handle */
+}
+
+/* On hover, add a darker background color */
+.scrollbar::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+}
