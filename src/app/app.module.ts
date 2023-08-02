@@ -85,6 +85,8 @@ import { InputComponent } from './o/input/input.component';
 import { OutputComponent } from './o/output/output.component';
 import { HostDirective } from './directive/host.directive';
 import { NameoneDirective } from './nameone.directive';
+import {MatStepperModule} from '@angular/material/stepper';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -176,7 +178,8 @@ import { NameoneDirective } from './nameone.directive';
     MatSelectModule,
     ClipboardModule,
     MatTooltipModule,
-    NgbModalModule
+    NgbModalModule,
+    MatStepperModule
   ],
   providers: [LoginService, { provide: HTTP_INTERCEPTORS, useClass: Httpinterceptor, multi: true }],
   bootstrap: [AppComponent],

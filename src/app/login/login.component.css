@@ -1,7 +1,11 @@
 .bgm{
-     background-image: url('../../assets/error-bg/bg8.jpg');
+     background-image: url('./../images/cl.avif');
 }
 
 .img{
     height: 100vh;
+}
+
+.custo{
+    background-color: brown;
 }

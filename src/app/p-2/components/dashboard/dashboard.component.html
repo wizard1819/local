@@ -34,26 +34,41 @@
 
 <div style="background-color: rgb(217, 216, 216);">
     <mat-tab-group>
-        <mat-tab label="Component"><ng-container style="padding: 10px;"
-                *ngTemplateOutlet="templateRef"></ng-container></mat-tab>
-        <mat-tab label="Second"> Content 2 </mat-tab>
+        <mat-tab label="Component">
+            <p *ngTemplateOutlet="templateRef"></p>
+        </mat-tab>
+        <mat-tab label="Template">
+            <p *ngTemplateOutlet="template"></p>
+        </mat-tab>
         <mat-tab label="Third"> Content 3 </mat-tab>
     </mat-tab-group>
 </div>
 <ng-template #templateRef>
-    <h1>Components</h1>
+    <h1>Component</h1>
     <p>Components are the building blocks that compose an application. A component includes a TypeScript class with a
         <span appColor>@Component()</span> decorator, an HTML template, and styles. The <span
             appColor>@Component()</span> decorator specifies the following
         Angular-specific information:
     </p>
     <ul>
-        <li>A <span appColor>CSS selector</span>  that defines how the component is used in a template. HTML elements in your template that
+        <li>A <span appColor>CSS selector</span> that defines how the component is used in a template. HTML elements in
+            your template that
             match this selector become instances of the component.</li>
-        <li>An  <span appColor>HTML template</span> that instructs Angular how to render the component</li>
-        <li>An  optional set of <span appColor>CSS styles</span>  that define the appearance of the template's HTML elements</li>
+        <li>An <span appColor>HTML template</span> that instructs Angular how to render the component</li>
+        <li>An optional set of <span appColor>CSS styles</span> that define the appearance of the template's HTML
+            elements</li>
     </ul>
 </ng-template>
+<ng-template #template>
+    <h1>Template</h1>
+    <p>Every component has an HTML template that declares how that component renders. You define this template either
+        inline or by file path.</p>
+    <p>Angular adds syntax elements that extend HTML so you can insert dynamic values from your component. Angular
+        automatically updates the rendered DOM when your component's state changes. One application of this feature is
+        inserting dynamic text, as shown in the following example.</p>
+
+</ng-template>
+
 <h1>Understanding Angular</h1>
 <p>To understand the capabilities of the Angular framework, you need to learn about the following:</p>
 <ul>

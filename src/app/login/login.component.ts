@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { Router } from '@angular/router';
 import { Form, FormBuilder, FormGroup } from '@angular/forms';
 import { UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
@@ -8,7 +8,8 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
+  encapsulation: ViewEncapsulation.None
 })
 export class LoginComponent implements OnInit {
   showPassword: boolean = false;
@@ -42,7 +43,9 @@ export class LoginComponent implements OnInit {
       this.service.check(this.form.value);
     }else{
       // this.snackBar.show('UserName and Password is Required');
-      this.snack.open('UserName and Password is Required','Close');
+      this.snack.open('UserName and Password is Required','Close',{
+        panelClass:'custo'
+      });
     }
 
 
