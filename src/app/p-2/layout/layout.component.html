@@ -1,4 +1,4 @@
-<div class="custom-scrollbar">
+<div>
     <mat-toolbar color="primary">
 
         <button mat-button (click)="togglesidebar()"><mat-icon>menu</mat-icon></button>
@@ -13,7 +13,7 @@
             <app-sb></app-sb>
         </mat-sidenav>
         <!-- content  -->
-        <mat-sidenav-content>
+        <mat-sidenav-content class="scrollbar">
             <router-outlet></router-outlet>
         </mat-sidenav-content>
     </mat-sidenav-container>

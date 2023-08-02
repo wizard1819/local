@@ -1,7 +1,64 @@
 <h1 class="center">Introduction to the Angular docs</h1>
-<p>Angular is an application-design framework and development platform for creating efficient and sophisticated
+<p> <span style="margin-left: 50px;" appColor>Angular</span> is an application-design framework and development platform
+    for creating efficient and sophisticated
     single-page apps.
 
     These Angular docs help you learn and use the Angular framework and development platform, from your first
     application to optimizing complex single-page applications for enterprises. Tutorials and guides include
     downloadable examples to help you start your projects.</p>
+
+<h1>Assumptions</h1>
+<p> <span style="margin-left: 50px;">These</span> docs assume that you are already familiar with <span appColor>HTML,
+        CSS, JavaScript,</span> and some of the tools from the latest
+    standards, such as classes and modules. The code samples are written using <span appColor>TypeScript</span> . Most
+    Angular code can be
+    written with just the latest JavaScript, using types for dependency injection, and using <span appColor>decorators
+        for metadata.</span>
+</p>
+
+<h1>What is Angular?</h1>
+<p>This topic can help you understand Angular: what Angular is, what advantages it provides, and what you might expect
+    as you start to build your applications.</p>
+<p><span appColor>Angular</span> is a development platform, built on <span appColor>TypeScript</span>. As a platform,
+    Angular includes:</p>
+<ul>
+    <li>A component-based framework for building scalable web applications</li>
+    <li>A collection of well-integrated libraries that cover a wide variety of features, including routing, forms
+        management, client-server communication, and more</li>
+    <li>A suite of developer tools to help you develop, build, test, and update your code</li>
+</ul>
+<p>With Angular, you're taking advantage of a platform that can scale from single-developer projects to enterprise-level
+    applications. Angular is designed to make updating as straightforward as possible, so take advantage of the latest
+    developments with minimal effort. Best of all, the Angular ecosystem consists of a diverse group of over 1.7 million
+    developers, library authors, and content creators.</p>
+
+<div style="background-color: rgb(217, 216, 216);">
+    <mat-tab-group>
+        <mat-tab label="Component"><ng-container style="padding: 10px;"
+                *ngTemplateOutlet="templateRef"></ng-container></mat-tab>
+        <mat-tab label="Second"> Content 2 </mat-tab>
+        <mat-tab label="Third"> Content 3 </mat-tab>
+    </mat-tab-group>
+</div>
+<ng-template #templateRef>
+    <h1>Components</h1>
+    <p>Components are the building blocks that compose an application. A component includes a TypeScript class with a
+        <span appColor>@Component()</span> decorator, an HTML template, and styles. The <span
+            appColor>@Component()</span> decorator specifies the following
+        Angular-specific information:
+    </p>
+    <ul>
+        <li>A <span appColor>CSS selector</span>  that defines how the component is used in a template. HTML elements in your template that
+            match this selector become instances of the component.</li>
+        <li>An  <span appColor>HTML template</span> that instructs Angular how to render the component</li>
+        <li>An  optional set of <span appColor>CSS styles</span>  that define the appearance of the template's HTML elements</li>
+    </ul>
+</ng-template>
+<h1>Understanding Angular</h1>
+<p>To understand the capabilities of the Angular framework, you need to learn about the following:</p>
+<ul>
+    <li>Components</li>
+    <li>Templates</li>
+    <li>Directives</li>
+    <li>Dependency injection</li>
+</ul>

@@ -4,6 +4,7 @@ import { ObservablComponent } from '../components/observabl/observabl.component'
 import { RouterModule, Routes } from '@angular/router';
 import { RxjsoverviewComponent } from './rxjsoverview/rxjsoverview.component';
 import { ColorDirective } from 'src/app/directive';
+import { bdirr } from 'src/app/directive';
 export const route : Routes=([
   {
     path:'obb',
@@ -19,7 +20,8 @@ export const route : Routes=([
   declarations: [
     ObservablComponent,
     RxjsoverviewComponent,
-    ColorDirective
+    ColorDirective,
+    bdirr
   ],
   imports: [
     CommonModule,
