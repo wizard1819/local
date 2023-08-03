@@ -1,11 +1,8 @@
 <div>
     <mat-toolbar color="primary">
-
         <button mat-button (click)="togglesidebar()"><mat-icon>menu</mat-icon></button>
         <button mat-button routerLink="/dashboard"><mat-icon>dashboard</mat-icon></button>
         <button mat-button (click)="openBottomSheet()">Switch</button>
-
-
     </mat-toolbar>
     <mat-sidenav-container>
         <!-- sidebar  -->
@@ -13,7 +10,7 @@
             <app-sb></app-sb>
         </mat-sidenav>
         <!-- content  -->
-        <mat-sidenav-content class="scrollbar">
+        <mat-sidenav-content [ngStyle]="{ 'height': contentHeight }" class="scrollbar">
             <router-outlet></router-outlet>
         </mat-sidenav-content>
     </mat-sidenav-container>
