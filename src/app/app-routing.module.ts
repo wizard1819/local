@@ -33,6 +33,7 @@ import { Chips2Component } from './chips/chips2/chips2.component';
 import { Chips3Component } from './chips/chips3/chips3.component';
 import { InputComponent } from './o/input/input.component';
 import { OutputComponent } from './o/output/output.component';
+import { NewformComponent } from './study/newform/newform.component';
 const routes: Routes = [
   {
     path: '',
@@ -180,6 +181,10 @@ const routes: Routes = [
           {
             path: 'outpt',
             component: OutputComponent
+          },
+          {
+            path: 'newForm',
+            component: NewformComponent
           },
 
 

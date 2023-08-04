@@ -3,17 +3,27 @@
 <button mat-raised-button type="button" (click)="onEditClick()">Make text editable!</button>
 
 <div *ngIf="canEdit; else noEdit">
-    <p>You can edit the following paragraph.</p>
+  <p>You can edit the following paragraph.</p>
 </div>
 
 <ng-template #noEdit>
-    <p>The following paragraph is read only. Try clicking the button!</p>
+  <p>The following paragraph is read only. Try clicking the button!</p>
 </ng-template>
 
 <p [contentEditable]="canEdit">{{ message }}</p>
 
-<p
-  [id]="sayHelloId"
-  [style.color]="fontColor">
+<p [id]="sayHelloId" [style.color]="fontColor">
   You can set my color in the component!
 </p>
+
+<form [formGroup]="form" >
+  <mat-form-field>
+    <input matInput type="text" placeholder="Name" formControlName='name' />
+  </mat-form-field>
+  <br>
+  <mat-form-field>
+    <input matInput type="text" placeholder="age" formControlName='age' />
+  </mat-form-field>
+  <br>
+  <button mat-raised-button (click)="submit()">Submit</button>
+</form>

@@ -1,6 +1,6 @@
 <form [formGroup]="mainForm">
-    <div formArrayName="formArray">
-        <div *ngFor="let control of formArray.controls; let i = index">
+    <div formArrayName="form">
+        <div *ngFor="let control of form.controls; let i = index">
             <mat-form-field>
                 <input matInput [formControl]="getFormControl(i)">
             </mat-form-field>
