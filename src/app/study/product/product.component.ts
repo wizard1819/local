@@ -1,5 +1,4 @@
 import { Component , Input, Output, EventEmitter} from '@angular/core';
-import { CartService } from '../cart/cart.service';
 @Component({
   selector: 'app-product',
   templateUrl: './product.component.html',

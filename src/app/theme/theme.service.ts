@@ -22,12 +22,6 @@ export class ThemeService {
   }
 
 
-  set token(tok:any){
-    localStorage.setItem('token',tok);
-  }
-
-  get token(){
-    return localStorage.getItem('token');
-  }
+ 
 
 }

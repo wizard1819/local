@@ -9,7 +9,7 @@ import { BsComponent } from './bs/bs.component';
 export class LayoutComponent {
 
   //sidenav
-  opened=false;
+  opened=true;
 
   contentHeight!: string;
   //constructor

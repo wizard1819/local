@@ -3,10 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeroesComponent } from './heroes/heroes.component';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { VehicleComponent } from './vehicle/vehicle.component';
-import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatRippleModule} from '@angular/material/core';
 import { SidebarModule } from 'ng-sidebar';
@@ -40,24 +38,17 @@ import { SidebarComponent } from './layout/sidebar/sidebar.component';
 import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.component';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
-import { SpinnerComponent } from './spinner/spinner.component';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-import { FoodOrgComponent } from './food-org/food-org.component';
-import { AddFoodComponent } from './food-org/add-food/add-food.component';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatChipsModule } from '@angular/material/chips';
 import { ThemeComponent } from './theme/theme.component';
 import { MatMenuModule } from '@angular/material/menu';
 import { LoginComponent } from './login/login.component';
 import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
-import { NgbComponent } from './ngb/ngb.component';
 import { NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
 import { ExpoComponent } from './expo/expo.component';
 import { SnackbarModule } from './snackbar/snackbar.module';
 import { AddvehicleComponent } from './vehicle/addvehicle/addvehicle.component';
-import { SenderComponent } from './sender/sender.component';
-import { ReceiverComponent } from './sender/receiver/receiver.component';
-import { CartComponent } from './study/cart/cart.component';
 import { ProductComponent } from './study/product/product.component';
 import { FormstudyComponent } from './study/formstudy/formstudy.component';
 import { CycleComponent } from './study/cycle/cycle.component';
@@ -91,9 +82,7 @@ import { NewformComponent } from './study/newform/newform.component';
 @NgModule({
   declarations: [
     AppComponent,
-    HeroesComponent,
     VehicleComponent,
-    HeroDetailComponent,
     HomeComponent,
     TextanimationsComponent,
     AngularComponent,
@@ -103,17 +92,10 @@ import { NewformComponent } from './study/newform/newform.component';
     FullComponent,
     SidebarComponent,
     ConfirmDialogComponent,
-    SpinnerComponent,
-    FoodOrgComponent,
-    AddFoodComponent,
     ThemeComponent,
     LoginComponent,
-    NgbComponent,
     ExpoComponent,
     AddvehicleComponent,
-    SenderComponent,
-    ReceiverComponent,
-    CartComponent,
     ProductComponent,
     FormstudyComponent,
     CycleComponent,
@@ -132,8 +114,6 @@ import { NewformComponent } from './study/newform/newform.component';
     Chips3Component,
     InputComponent,
     OutputComponent,
-    HeroDetailComponent,
-    HeroesComponent,
     HostDirective,
     NameoneDirective,
     NewformComponent,
@@ -185,6 +165,5 @@ import { NewformComponent } from './study/newform/newform.component';
   ],
   providers: [LoginService, { provide: HTTP_INTERCEPTORS, useClass: Httpinterceptor, multi: true }],
   bootstrap: [AppComponent],
-  entryComponents:[HeroesComponent, HeroDetailComponent]
 })
 export class AppModule { }

@@ -1,7 +1,12 @@
 .mat-sidenav-content {
     padding: 10px;
+    background-color: rgb(212, 211, 211);
 }
 
 .mat-toolbar {
     position: static;
+}
+
+.mat-sidenav{
+    background-color: rgb(214, 210, 203);
 }
