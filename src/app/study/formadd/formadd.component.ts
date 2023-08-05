@@ -13,19 +13,22 @@ export class FormaddComponent {
 
   ngOnInit() {
     this.mainForm = this.formBuilder.group({
-      // Other form controls can go here if needed
       form: this.formBuilder.array([])
     });
   }
 
   // Helper method to access the form array
-  get form(): FormArray {
+  get form() {
     return this.mainForm.get('form') as FormArray;
   }
 
   // Add a new form control to the form array
   addFormControl() {
-    this.form.push(this.formBuilder.control(name, Validators.required));
+    let grou = this.formBuilder.group({
+      name: [''],
+      age: [''],
+    })
+    this.form.push(grou);
   }
 
   // Remove a form control from the form array

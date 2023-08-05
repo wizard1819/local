@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   templateUrl: './expo.component.html',
   styleUrls: ['./expo.component.css']
 })
-export class ExpoComponent<T> {
+export class ExpoComponent{
  
   constructor(){}
 }
