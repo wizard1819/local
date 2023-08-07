@@ -78,6 +78,7 @@ import { HostDirective } from './directive/host.directive';
 import { NameoneDirective } from './nameone.directive';
 import {MatStepperModule} from '@angular/material/stepper';
 import { NewformComponent } from './study/newform/newform.component';
+import { BuComponent } from './study/bu/bu.component';
 
 @NgModule({
   declarations: [
@@ -117,6 +118,7 @@ import { NewformComponent } from './study/newform/newform.component';
     HostDirective,
     NameoneDirective,
     NewformComponent,
+    BuComponent,
     
   ],
   imports: [

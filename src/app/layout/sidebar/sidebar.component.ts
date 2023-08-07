@@ -41,6 +41,7 @@ export class SidebarComponent {
     { name: 'FormAdd', icon: 'local_library', routerlink: '/formadd' },
     { name: 'op', icon: 'local_library', routerlink: '/outpt' },
     { name: 'New Form', icon: 'local_library', routerlink: '/newForm' },
+    { name: 'BU', icon: 'local_library', routerlink: '/bu' },
   ]
 
 }

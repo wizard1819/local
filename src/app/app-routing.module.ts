@@ -27,6 +27,7 @@ import { Chips3Component } from './chips/chips3/chips3.component';
 import { InputComponent } from './o/input/input.component';
 import { OutputComponent } from './o/output/output.component';
 import { NewformComponent } from './study/newform/newform.component';
+import { BuComponent } from './study/bu/bu.component';
 const routes: Routes = [
   {
     path: '',
@@ -150,6 +151,10 @@ const routes: Routes = [
           {
             path: 'newForm',
             component: NewformComponent
+          },
+          {
+            path: 'bu',
+            component: BuComponent
           },
 
 
