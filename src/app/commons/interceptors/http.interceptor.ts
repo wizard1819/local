@@ -22,7 +22,6 @@ export class Httpinterceptor implements HttpInterceptor {
         error => {
           this.snack.show(error.name);
           if (error.name == "HttpErrorResponse") {
-            // this.login.signOut();
           }
         }
       )
