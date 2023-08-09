@@ -1,5 +1,3 @@
-<div>
-   {{ip.id}}
-   {{ip.name}}
-   {{ip.group}}
-</div>
+<mat-form-field>
+<input matInput type="text" #newItem></mat-form-field>
+<button mat-raised-button (click)="emit(newItem.value)">click</button>

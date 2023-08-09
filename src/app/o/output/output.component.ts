@@ -9,13 +9,16 @@ import { UntypedFormControl, UntypedFormGroup, } from '@angular/forms';
 })
 export class OutputComponent implements OnInit{
  
- day = new Date();
 
+  in=20;
 
-  name='harii';
+  handleevent(event:any){
+    console.log(event);
+  }
+
   ngOnInit(): void {
   }
 
-
+  
   
 }
