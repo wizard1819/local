@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import { Observable ,tap } from 'rxjs';
+import { Observable ,catchError,map,of,retry,tap } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -8,7 +8,17 @@ import { Observable ,tap } from 'rxjs';
 export class VehicleService<T=any> {
   constructor(private http : HttpClient) { }
   getAll(pageIndex : number,pageSize : number): Observable<T>{   
-    return this.http.get<T>("/vehicle?page="+ pageIndex + "&size=" + pageSize);
+    return this.http.get<T>("/vehicle?page="+ pageIndex + "&size=" + pageSize).pipe(
+      // map((res: any) => {
+      //   if (!res.response) {
+      //     console.log('Error occurred.');
+      //     throw new Error('Value expected!');
+      //   }
+      //   return res.response;
+      // }),
+      // // retry(3), // Retry up to 3 times before failing
+     
+    );
   }
      
 

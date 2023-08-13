@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { fromEvent, scan, interval, of, map, pipe, filter, reduce } from 'rxjs';
-
+import { fromEvent, scan, interval, of, map, pipe, filter, reduce, Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'app-expo',
   templateUrl: './expo.component.html',
@@ -8,6 +8,7 @@ import { fromEvent, scan, interval, of, map, pipe, filter, reduce } from 'rxjs';
 })
 export class ExpoComponent {
 
+  ann:any;
   names = [
     { id: 1, age: 10 },
     { id: 2, age: 10 },
@@ -17,8 +18,11 @@ export class ExpoComponent {
     { id: 6, age: 20 },
     { id: 7, age: 20 },
   ]
-  constructor() {
+  constructor(
+    private http : HttpClient
+  ) {
   
+
     const nums = of(this.names);
 
    const idss = this.names.filter(id => id.age>=20).map(id => id.id);
@@ -53,16 +57,25 @@ export class ExpoComponent {
   ]
 
   total(){
-
+   
     const obb = of(this.accounts).pipe(
-      map(obj=> obj.reduce((s,i)=> s +i.money,0))
+      map(obj=> obj.filter((id :any)=> id.money>500), 
+      
     )
-    obb.subscribe((i)=>{
-      console.log(i)
-    } );
+    );
+    
+    
+   
+    
+   obb.subscribe((i)=> console.log(i));
    
     // const bo = this.accounts.filter(obj => obj.money>1000)
     // const obs = bo.reduce((sum, item)=> sum+ item.money,0);
-    // console.log(obs);
+    
+
+   
   }
+
+ 
+  
 }

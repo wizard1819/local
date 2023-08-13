@@ -13,7 +13,7 @@ export class Httpinterceptor implements HttpInterceptor {
   ) { }
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    const newReq = req.clone({ url: "http://localhost:2020/api/vehicle" + req.url, headers: req.headers.set('token', 'token') })
+    const newReq = req.clone({ url: "http://localhost:2020/api/vehicle" + req.url, headers: req.headers.set('token', 'token')})
     return next.handle(newReq).pipe(
       tap(
         result => {
@@ -22,12 +22,13 @@ export class Httpinterceptor implements HttpInterceptor {
         error => {
           this.snack.show(error.name);
         }
-      )
+      ),
 
       // catchError((error) => {
       //   this.snack.show(error.name);
       //   return throwError(error);
       // })
+    
     );
   }
 }
