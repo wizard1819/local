@@ -8,7 +8,10 @@ import { from, map, tap } from 'rxjs';
 })
 export class InputComponent {
   
-  
+  constructor(){
+    this.getData();
+    
+  }
 
   @Input() input:any;
   @Output() output = new EventEmitter<any>();
@@ -23,7 +26,7 @@ export class InputComponent {
     numbers$.pipe(
      tap(
       res=>{
-        console.log(res);
+        console.log(res,res);
       }
      )
     ).subscribe(result => console.log(result));
