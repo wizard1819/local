@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { VehicleService } from '../vehicle.service';
-import { UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
+import { FormControl, FormGroup, UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { from } from 'rxjs';
 import { GlobalstateService } from 'src/app/globalService/globalstate.service';
@@ -26,6 +26,13 @@ export class AddvehicleComponent implements OnInit {
 
   ) {
   }
+
+  vehicle={model:'rapid',brand:'skoda',owner:'guna',status:"true",type:'Car',registerNum:3435, name:{
+    name:'guna',
+    gender:'male',
+    age:20,
+    single:{life:12,years:'years',range:30}
+  }};
 
   ngOnInit() {
     if (this.globalstate.state != null && this.globalstate.state != undefined) {
@@ -53,24 +60,23 @@ export class AddvehicleComponent implements OnInit {
       registerNum: new UntypedFormControl(null, [
         Validators.required,
       ]),
+      name:new FormGroup({
+        name:new FormControl(),
+        age:new FormControl(),
+        gender:new FormControl(),
+        single:new FormGroup({
+          life:new FormControl(),
+          range:new FormControl(),
+          years:new FormControl()
+        })
+      })
     })
     console.log('dialog data', this.receivedData);
     this.populateDataOnEdit();
   }
 
   populateDataOnEdit() {
-    if (this.receivedData) {
-      if (this.form.controls != undefined && this.form.controls != null) {
-        console.log(Object.keys(this.form.controls),'key');
-        Object.keys(this.form.controls).forEach(key => {
-          console.log(key,'key',this.form.controls[key]);
-          if (this.form.controls[key] != undefined && this.form.controls[key] != null) {
-            this.form.controls[key].setValue(this.receivedData[key] || this.receivedData['address'][key]);
-            console.log(this.form.controls[key].setValue(this.receivedData[key] || this.receivedData['address'][key]))
-          }
-        })
-      }
-    }
+   this.form.patchValue(this.vehicle);
   }
 
   showdataonedit(){
@@ -86,21 +92,22 @@ export class AddvehicleComponent implements OnInit {
   }
 
   submit() {
-    if (this.form.valid) {
-      this.service.update(this.receivedData.id, this.form.value).subscribe({
-        next: (d:any) => {
-          console.log(d,'ress');
-          this.snackbar.show(d.message);
-        },
-        error: (e) => {
-          console.log(e);
-        },
-        complete: () => {
-          this.router.navigate(['/bike']);
-        }
-      })
-    } else {
-      console.log(this.form.errors);
-    }
+    console.log(this.form.value,'values');
+    // if (this.form.valid) {
+    //   this.service.update(this.receivedData.id, this.form.value).subscribe({
+    //     next: (d:any) => {
+    //       console.log(d,'ress');
+    //       this.snackbar.show(d.message);
+    //     },
+    //     error: (e) => {
+    //       console.log(e);
+    //     },
+    //     complete: () => {
+    //       this.router.navigate(['/bike']);
+    //     }
+    //   })
+    // } else {
+    //   console.log(this.form.errors);
+    // }
   }
 }

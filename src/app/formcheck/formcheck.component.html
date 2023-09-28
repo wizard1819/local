@@ -1,0 +1,13 @@
+<mat-form-field>
+  <mat-select [formControl]="searchForm">
+    <mat-option *ngFor="let x of leadScore" [value]="x.id">{{x.from}} - {{x.to}}</mat-option>
+    </mat-select>
+</mat-form-field>
+
+<br><br><br><br>
+
+<mat-form-field>
+  <mat-select [formControl]="form">
+    <mat-option *ngFor="let x of gender" [value]="x.id">{{x.gender}}</mat-option>
+    </mat-select>
+</mat-form-field>

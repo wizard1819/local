@@ -79,7 +79,7 @@ import { NameoneDirective } from './nameone.directive';
 import {MatStepperModule} from '@angular/material/stepper';
 import { NewformComponent } from './study/newform/newform.component';
 import { BuComponent } from './study/bu/bu.component';
-
+import { FormcheckComponent } from './formcheck/formcheck.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -119,10 +119,11 @@ import { BuComponent } from './study/bu/bu.component';
     NameoneDirective,
     NewformComponent,
     BuComponent,
+    FormcheckComponent,
     
   ],
   imports: [
-    
+    MatSelectModule,
     BrowserModule,
     MatBadgeModule,
     MatRippleModule,

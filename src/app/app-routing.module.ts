@@ -28,6 +28,7 @@ import { InputComponent } from './o/input/input.component';
 import { OutputComponent } from './o/output/output.component';
 import { NewformComponent } from './study/newform/newform.component';
 import { BuComponent } from './study/bu/bu.component';
+import { FormcheckComponent } from './formcheck/formcheck.component';
 const routes: Routes = [
   {
     path: '',
@@ -72,6 +73,10 @@ const routes: Routes = [
           {
             path: 'angular',
             component: AngularComponent
+          },
+          {
+            path: 'fc',
+            component: FormcheckComponent
           },
           {
             path: 'studyone',

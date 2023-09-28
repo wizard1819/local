@@ -57,6 +57,18 @@
                 </mat-form-field>
             </div>
         </div>
+     
+
+        <div formGroupName="name">
+            <input formControlName="name">
+            <input formControlName="gender">
+            <input formControlName="age">
+            <div formGroupName="single">
+                <input formControlName="life">
+                <input formControlName="range">
+                <input formControlName="years">
+            </div>
+        </div>
         <div fxLayout="row">
             <div fxFlex="100" fxLayoutAlign="center center" style="padding-bottom: 30px;">
                 <button mat-raised-button color="primary" class="btnn" (click)="submit()">Submit</button>

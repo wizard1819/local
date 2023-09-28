@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 
 @Component({
@@ -6,21 +6,17 @@ import { FormControl } from '@angular/forms';
   templateUrl: './textanimations.component.html',
   styleUrls: ['./textanimations.component.css']
 })
-export class TextanimationsComponent {
+export class TextanimationsComponent implements OnInit{
 
-  name:any;
+  constructor(
+  ){
 
-  form:FormControl;
-  constructor(){
-    this.form = new FormControl()
   }
 
-  fileName(event?:any){
-    console.log(event.target.files[0]);
-    this.name = event.target.files[0];
+  timee:any;
+  ngOnInit(): void {
+   
   }
 
-  clear(){
-    this.form.setValue(null);
-  }
 }
+

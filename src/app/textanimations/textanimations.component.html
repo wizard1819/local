@@ -9,12 +9,8 @@
     <span class="two">it's awesome</span>
 </h1>
 </div> -->
-
-<input class="opac" #file type="file" [formControl]="form" (change)="fileName($event)" />
-<button (click)="file.click()">Click</button> <br>
-<div *ngIf="name">
-    <span>{{name?.name}}</span>
-    
-        <button (click)="clear()">Clear</button>
-
-</div>
+<mat-select>
+    <mat-option>Clear</mat-option>
+    <mat-option value="valid">Valid option</mat-option>
+    <mat-option value="invalid">Invalid option</mat-option>
+</mat-select>
