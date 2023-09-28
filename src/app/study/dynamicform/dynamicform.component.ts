@@ -23,6 +23,9 @@ export class DynamicformComponent {
   ngOnInit() {
     this.dynamicForm = this.formBuilder.group({});
     this.generateFormControls();
+    this.dynamicForm.valueChanges.subscribe((res)=>{
+      
+    })
   }
 
   generateFormControls() {
