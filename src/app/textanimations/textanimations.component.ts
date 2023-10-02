@@ -21,27 +21,27 @@ export class TextanimationsComponent implements OnInit {
   timee: any;
   ngOnInit(): void {
     this.searchForm = this.fb.group({
-      audienceListName: new FormControl(null),
-      description: new FormControl(null),
+      audienceListName: new FormControl('giuna'),
+      description: new FormControl('descriptionss'),
 
       //Customer Info
       customerInfo: this.fb.group({
         multi_value_filter: this.fb.group({
-          individualOccupation: new FormControl(null),
-          language: new FormControl(null),
-          monthlyHouseHoldIncome: new FormControl(null),
-          city: new FormControl(null),
-          state: new FormControl(null),
+          individualOccupation: new FormControl('occu'),
+          language: new FormControl('occu'),
+          monthlyHouseHoldIncome: new FormControl('occu'),
+          city: new FormControl('occu'),
+          state: new FormControl('occu'),
         }),
 
         single_value_filter: this.fb.group({
           maritalStatus: new FormControl([]),
           race: new FormControl([]),
-          month: new FormControl(null),
+          month: new FormControl('occu'),
           gender: new FormControl([]),
-          customerClass: new FormControl(null),
-          nationality: new FormControl(null),
-          postalCode: new FormControl(null)
+          customerClass: new FormControl('occu'),
+          nationality: new FormControl('occu'),
+          postalCode: new FormControl('occu')
         }),
         range_filter: this.fb.group({
           customerAgeRange: this.fb.group({
@@ -131,6 +131,22 @@ export class TextanimationsComponent implements OnInit {
 
 
     //cust
+  
+
+    // console.log(this.searchForm.value);
+
+    this.check();
+  }
+  check(){
+    Object.keys(this.searchForm.value).forEach((key:any)=>{
+      console.log(key);
+      Object.keys(this.searchForm.value[key]).forEach((keyone:any)=>{
+         console.log(this.searchForm.value[key][keyone]);
+      })
+    })
+  }
+
+  checkValue(){
     Object.keys(this.searchForm.value.customerInfo.single_value_filter).forEach((key) => {
       if (this.searchForm.value.customerInfo.single_value_filter[key] == null || this.searchForm.value.customerInfo.single_value_filter[key].length == 0) {
         delete this.searchForm.value.customerInfo.single_value_filter[key]
@@ -158,7 +174,6 @@ export class TextanimationsComponent implements OnInit {
     })
 
 
-   //vehicle
     Object.keys(this.searchForm.value.vehicleInfo.range_filter).forEach((key)=>{
       Object.keys(this.searchForm.value.vehicleInfo.range_filter[key]).forEach((k)=>{
         if(this.searchForm.value.vehicleInfo.range_filter[key][k] == null || this.searchForm.value.vehicleInfo.range_filter[key][k] == 'number' || this.searchForm.value.vehicleInfo.range_filter[key][k] == 'date'){
@@ -185,9 +200,7 @@ export class TextanimationsComponent implements OnInit {
       }
     })
 
-    //overfor vehicle
-
-    //sale
+  
     Object.keys(this.searchForm.value.salesInfo.multi_value_filter).forEach((key)=>{
       if (this.searchForm.value.salesInfo.multi_value_filter[key] == null || this.searchForm.value.salesInfo.multi_value_filter[key].length == 0) {
         delete this.searchForm.value.salesInfo.multi_value_filter[key]
@@ -208,30 +221,28 @@ export class TextanimationsComponent implements OnInit {
     })
 
     Object.keys(this.searchForm.value.salesInfo.range_filter).forEach((key)=>{
-      if(this.searchForm.value.salesInfo.range_filter[key].value == undefined || this.searchForm.value.salesInfo.range_filter[key] == null){
+      if(this.searchForm.value.salesInfo.range_filter[key] && this.searchForm.value.salesInfo.range_filter[key] == null){
         delete this.searchForm.value.salesInfo.range_filter[key];
       }
     })
 
     Object.keys(this.searchForm.value.salesInfo).forEach((key)=>{
-      if(this.searchForm.value.salesInfo[key].value== undefined || this.searchForm.value.salesInfo[key].value== null){
+      if(this.searchForm.value.salesInfo[key] && this.searchForm.value.salesInfo[key].value== null){
         delete this.searchForm.value.salesInfo[key];
       }
     })
 
     Object.keys(this.searchForm.value).forEach((key)=>{
-      if(this.searchForm.value[key] == null || this.searchForm.value[key].value == undefined){
+      if(this.searchForm.value[key] == null){
         delete this.searchForm.value[key];
       }
-      // console.log(key);
     })
 
     console.log(this.searchForm.value);
-
-
   }
 
 
+ 
 
 }
 
