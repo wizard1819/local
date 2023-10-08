@@ -5,12 +5,12 @@ import { SnackbarComponent } from './snackbar.component';
   providedIn: 'root'
 })
 export class SnackbarService {
-  horizontalPosition: MatSnackBarHorizontalPosition = 'center';
+  horizontalPosition: MatSnackBarHorizontalPosition = 'right';
   verticalPosition: MatSnackBarVerticalPosition = 'bottom';
   constructor(public snackbar: MatSnackBar) { }
 
   show(data?:any){
-   const snackbar= this.snackbar.openFromComponent(SnackbarComponent,{
+  this.snackbar.openFromComponent(SnackbarComponent,{
       data:data,
       panelClass:'custom',
       duration:2000,

@@ -80,6 +80,8 @@ import {MatStepperModule} from '@angular/material/stepper';
 import { NewformComponent } from './study/newform/newform.component';
 import { BuComponent } from './study/bu/bu.component';
 import { FormcheckComponent } from './formcheck/formcheck.component';
+import {MatRadioModule} from '@angular/material/radio';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -164,7 +166,8 @@ import { FormcheckComponent } from './formcheck/formcheck.component';
     ClipboardModule,
     MatTooltipModule,
     NgbModalModule,
-    MatStepperModule
+    MatStepperModule,
+    MatRadioModule
   ],
   providers: [LoginService, { provide: HTTP_INTERCEPTORS, useClass: Httpinterceptor, multi: true }],
   bootstrap: [AppComponent],
