@@ -81,6 +81,7 @@ import { NewformComponent } from './study/newform/newform.component';
 import { BuComponent } from './study/bu/bu.component';
 import { FormcheckComponent } from './formcheck/formcheck.component';
 import {MatRadioModule} from '@angular/material/radio';
+import { FormDirective } from './formcheck/form.directive';
 
 @NgModule({
   declarations: [
@@ -122,6 +123,7 @@ import {MatRadioModule} from '@angular/material/radio';
     NewformComponent,
     BuComponent,
     FormcheckComponent,
+    FormDirective,
     
   ],
   imports: [
@@ -168,6 +170,9 @@ import {MatRadioModule} from '@angular/material/radio';
     NgbModalModule,
     MatStepperModule,
     MatRadioModule
+  ],
+  exports:[
+    HostDirective
   ],
   providers: [LoginService, { provide: HTTP_INTERCEPTORS, useClass: Httpinterceptor, multi: true }],
   bootstrap: [AppComponent],

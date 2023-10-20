@@ -7,11 +7,11 @@ export class HostdDirective {
 
 
   constructor(public elementRef : ElementRef) {
-    elementRef.nativeElement.style.color= 'green'
+   
    }
 
-  @HostListener('mouseover') function() {
-    this.elementRef.nativeElement.style.color='red'
+  @HostListener('keypress', ['$event']) onk(event:any) {
+    console.log(event.cod);
   }
 
 }

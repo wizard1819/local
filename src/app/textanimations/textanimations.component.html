@@ -9,10 +9,19 @@
     <span class="two">it's awesome</span>
 </h1>
 </div> -->
-<mat-select>
-    <mat-option>Clear</mat-option>
-    <mat-option value="valid">Valid option</mat-option>
-    <mat-option value="invalid">Invalid option</mat-option>
-</mat-select>
+<form [formGroup]="searchForm">
+    <mat-radio-group aria-label="Select an option" formControlName="runtime">
+        <mat-radio-button value="now">Run now</mat-radio-button>
+        <mat-radio-button value="later">Run later</mat-radio-button>
+    </mat-radio-group>
+    <div *ngIf="this.show">
+        <input type="text" formControlName="name" placeholder="name">
+        <input type="text" formControlName="age" placeholder="age">
+    </div>
+    <!-- <div>
+        <input type="text" formControlName="fname" placeholder="fname">
+        <input type="text" formControlName="lname" placeholder="lname">
+    </div> -->
+</form>
 
-<button (click)="check()">changes</button>
+<button (click)="check()">check</button>
