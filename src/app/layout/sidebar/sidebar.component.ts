@@ -17,7 +17,8 @@ export class SidebarComponent {
   //sidebarmenu
   sidebarmenu: sidebar[] = [
     { name: 'Vehicle',       icon: 'motorcycle', routerlink: '/bike' },
-    { name: 'Hero',          icon: 'perm_identity', routerlink: '/hero' },
+    { name: 'one',          icon: 'perm_identity', routerlink: '/a' },
+    { name: 'two',          icon: 'perm_identity', routerlink: '/b' },
     { name: 'Text Animation', icon: 'style', routerlink: '/text' },
     { name: 'COMPONENTS', icon: 'local_library', routerlink: '/angular' },
     { name: 'CHIPS', icon: 'local_library', routerlink: '/chips' },

@@ -82,6 +82,8 @@ import { BuComponent } from './study/bu/bu.component';
 import { FormcheckComponent } from './formcheck/formcheck.component';
 import {MatRadioModule} from '@angular/material/radio';
 import { FormDirective } from './formcheck/form.directive';
+import { GunaComponent } from './test and study/guna/guna.component';
+import { TesingRxjsComponent } from './test and study/tesing-rxjs/tesing-rxjs.component';
 
 @NgModule({
   declarations: [
@@ -124,6 +126,8 @@ import { FormDirective } from './formcheck/form.directive';
     BuComponent,
     FormcheckComponent,
     FormDirective,
+    GunaComponent,
+    TesingRxjsComponent,
     
   ],
   imports: [

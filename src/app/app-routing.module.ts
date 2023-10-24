@@ -29,6 +29,8 @@ import { OutputComponent } from './o/output/output.component';
 import { NewformComponent } from './study/newform/newform.component';
 import { BuComponent } from './study/bu/bu.component';
 import { FormcheckComponent } from './formcheck/formcheck.component';
+import { GunaComponent } from './test and study/guna/guna.component';
+import { TesingRxjsComponent } from './test and study/tesing-rxjs/tesing-rxjs.component';
 const routes: Routes = [
   {
     path: '',
@@ -152,6 +154,14 @@ const routes: Routes = [
           {
             path: 'outpt',
             component: OutputComponent
+          },
+          {
+            path: 'a',
+            component: GunaComponent
+          },
+          {
+            path: 'b',
+            component: TesingRxjsComponent
           },
           {
             path: 'newForm',
