@@ -1,1 +1,10 @@
-<p>tesing-rxjs works!</p>
+<table *ngIf="val">
+    <tr>
+        <td>SR</td>
+        <td *ngFor="let a of header">{{a}}</td>
+    </tr>
+    <tr *ngFor="let c of val;let i = index">
+        <td>{{i+1}}</td>
+        <td *ngFor="let b of keys">{{c[b]}}</td>
+    </tr>
+</table>
