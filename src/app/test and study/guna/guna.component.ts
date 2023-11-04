@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { FormArray, FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { Observable, from, fromEvent } from 'rxjs';
 
 @Component({
   selector: 'app-guna',
@@ -7,4 +9,5 @@ import { Component } from '@angular/core';
 })
 export class GunaComponent {
 
+ 
 }
