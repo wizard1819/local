@@ -171,7 +171,10 @@ const routes: Routes = [
             path: 'bu',
             component: BuComponent
           },
-
+          {
+            path:'test-component',
+            loadChildren: ()=> import('./test/test.module').then((m)=>m.TestModule)
+          }
 
         ]
       },

@@ -12,13 +12,13 @@ import { HEROES } from '../mock-heroes';
 })
 export class AngularComponent implements OnInit {
 
-  data :any={name:'arun',age:21};
-  public form : UntypedFormGroup= Object.create(null);
+  data: any = { name: 'arun', age: 21 };
+  public form: UntypedFormGroup = Object.create(null);
   message = "I'm read only!";
   canEdit = false;
   fontColor = 'blue';
   sayHelloId = 0;
- 
+
   onEditClick() {
     this.canEdit = !this.canEdit;
     if (this.canEdit) {
@@ -27,25 +27,27 @@ export class AngularComponent implements OnInit {
       this.message = "I'm read only!";
     }
   }
-ngOnInit(): void {
-  this.form= new UntypedFormGroup({
-    name: new UntypedFormControl(null,[Validators.required]),
-    age: new UntypedFormControl(null,[Validators.required]),
-  })
-  this.populate();
-}
-
-submit(){
-  console.log(this.form.value);  
-}
-
-populate(){
-  if(this.data){
-    Object.keys(this.form.controls).forEach(key=>{
-      this.form.controls[key].setValue(this.data[key]);
+  ngOnInit(): void {
+    this.form = new UntypedFormGroup({
+      name: new UntypedFormControl(null, [Validators.required]),
+      age: new UntypedFormControl(null, [Validators.required]),
     })
+    this.populate();
   }
-}
+
+
+  
+  submit() {
+    console.log(this.form.value);
+  }
+
+  populate() {
+    if (this.data) {
+      Object.keys(this.form.controls).forEach(key => {
+        this.form.controls[key].setValue(this.data[key]);
+      })
+    }
+  }
 
 
 

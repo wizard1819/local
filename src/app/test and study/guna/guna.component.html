@@ -1,12 +1,10 @@
 <form [formGroup]="form">
     <div formArrayName="val">
         <div *ngFor="let c of a.controls;let i = index" [formGroupName]="i">
-            <input formControlName="name" type="text" placeholder="name"> <button (click)="rem(i)">remove</button>
+            <input formControlName="name" type="text" placeholder="name"> <button (click)="rem(i)">x</button>
         </div>
     </div>
 </form>
 
 <button (click)="showLog()">log</button>
 <button (click)="add()">add</button>
-
-<app-tesing-rxjs [val]="names" [keys]="vals" [header]="head" (give)="getemit($event)"></app-tesing-rxjs>

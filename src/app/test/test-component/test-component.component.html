@@ -1,0 +1,11 @@
+<input (change)="onselect($event)" type="file" #file>
+
+<div *ngIf="engs">
+    <img [src]="engs" alt="" />
+</div>
+
+<button (click)="showLog()">log</button>
+
+<div *ngFor="let a of imges">
+    <img [src]="a" alt="pic">
+</div>

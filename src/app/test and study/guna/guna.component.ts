@@ -1,4 +1,4 @@
-import { Component, OnInit, } from '@angular/core';
+import { Component, OnInit,ViewChild } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, FormGroup, UntypedFormArray, UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 import { Observable, from, fromEvent } from 'rxjs';
 
@@ -8,6 +8,7 @@ import { Observable, from, fromEvent } from 'rxjs';
   styleUrls: ['./guna.component.css']
 })
 export class GunaComponent implements OnInit {
+
 
   form!: UntypedFormGroup
 
