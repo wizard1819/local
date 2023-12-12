@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TestComponentComponent } from './test-component/test-component.component';
 import { RouterModule } from '@angular/router';
-import { AngularEditorModule } from '@kolkov/angular-editor';
 
 
 @NgModule({
@@ -11,7 +10,6 @@ import { AngularEditorModule } from '@kolkov/angular-editor';
   ],
   imports: [
     CommonModule,
-    AngularEditorModule,
     RouterModule.forChild([
       {
         path:'',
@@ -19,8 +17,6 @@ import { AngularEditorModule } from '@kolkov/angular-editor';
       }
     ])
   ],
-  exports:[
-    AngularEditorModule
-  ]
+  
 })
 export class TestModule { }

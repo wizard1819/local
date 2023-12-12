@@ -1,6 +1,5 @@
 import { Component, OnInit, HostListener } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
-import { AngularEditorConfig } from '@kolkov/angular-editor';
 import { TestService } from '../test.service';
 
 @Component({
