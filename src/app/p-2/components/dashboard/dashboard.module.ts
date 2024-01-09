@@ -4,6 +4,7 @@ import { DashboardComponent } from './dashboard.component';
 import { RouterModule } from '@angular/router';
 import { ColorDirective } from 'src/app/directive';
 import {MatTabsModule} from '@angular/material/tabs';
+import { CommonComponentModule } from 'src/app/common/commoncomponent.module';
 @NgModule({
   declarations: [
     DashboardComponent,
@@ -12,6 +13,7 @@ import {MatTabsModule} from '@angular/material/tabs';
   imports: [
     CommonModule,
     MatTabsModule,
+    CommonComponentModule,
     RouterModule.forChild([
       {
         path:'',

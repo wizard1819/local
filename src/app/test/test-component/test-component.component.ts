@@ -10,35 +10,31 @@ import { TestService } from '../test.service';
 export class TestComponentComponent {
 
 
-  engs: any[]=[];
-  imges:any[]=[];
-  datas:any[]=[];
+  a = new Date();
+  b = new Date(2010, 1, 23);
   constructor(
-    private service : TestService
+    private service: TestService
   ) {
+    console.log(this.a, this.b);
+    console.log(this.dateDiffInYears(this.b, this.a));
+
   }
 
-  onselect(event: any) {
-   this.datas = event.target.files;
-    this.datas.forEach((key:any)=>{
-      console.log(this.datas);
-      if(key?.size <= 10485760){
-        const reader = new FileReader();
-        reader.onload = (e) => {
-          this.engs.push(e.target?.result);
-        }
-        reader.readAsDataURL(key);
+  dateDiffInYears(dateold?: any, datenew?: any) {
+    var ynew = datenew.getFullYear();
+    var mnew = datenew.getMonth();
+    var dnew = datenew.getDate();
+    var yold = dateold.getFullYear();
+    var mold = dateold.getMonth();
+    var dold = dateold.getDate();
+    var diff = ynew - yold;
+    if (mold > mnew) { diff--; }
+    else {
+      if (mold == mnew) {
+        if (dold > dnew) { diff--; }
       }
-    })
-   
-  
-  }
-
-
-  showLog(){
-    console.log(this.engs);
-    this.service.setState(this.engs);
-    this.imges.push(this.engs);
+    }
+    return diff;
   }
 
 }
