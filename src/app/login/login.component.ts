@@ -5,6 +5,7 @@ import { UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms
 import { SnackbarService } from '../snackbar/snackbar.service';
 import { LoginService } from './login.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { BehaviorSubject } from 'rxjs';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -18,6 +19,7 @@ export class LoginComponent implements OnInit {
   us = 'xoxo';
   pass = 'xoxo';
   formSubmitted: boolean = false;
+  loader$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
   constructor(
 
     private service: LoginService,
@@ -26,10 +28,12 @@ export class LoginComponent implements OnInit {
     private router : Router
   ) {
 
-    console.log(localStorage.getItem('token'), 'tokenss');
-    this.tok=localStorage.getItem('token');
+    console.log(localStorage.getItem('token-local-app'), 'tokenss');
+    this.tok=localStorage.getItem('token-local-app');
     if(this.tok == 'xyz123' && this.tok != null && this.tok != undefined){
       this.router.navigate(['/home']);
+    }else{
+      this.loader$.next(true);
     }
   }
 

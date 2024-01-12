@@ -28,7 +28,7 @@ export class LoginService {
   check(data: any){
     if (data.userName == '1111' && data.password == '1111') {
       this.status = 'xyz123';
-      localStorage.setItem('token', this.status);
+      localStorage.setItem('token-local-app', this.status);
       this.router.navigate(['/home']);
       this.snackbarservice.show('Welcome to Phase-I');
       // this.log.next(true);
@@ -36,14 +36,14 @@ export class LoginService {
     }
     else if(data.userName == '2222' && data.password == '2222'){
       this.status = 'xyz123';
-      localStorage.setItem('token', this.status);
+      localStorage.setItem('token-local-app', this.status);
       this.router.navigate(['/dashboard']);
       this.snackbarservice.show('Welcome to Phase-II');
       // this.log.next(true);
       return
     }
     else {
-      localStorage.removeItem('token');
+      localStorage.removeItem('token-local-app');
       this.snackbarservice.show('Invalid UserName/Password');
       // this.log.next(false)
 
@@ -51,7 +51,7 @@ export class LoginService {
   }
 
   loggedin(): any {
-    this.tok = localStorage.getItem('token');
+    this.tok = localStorage.getItem('token-local-app');
     if (this.tok == 'xyz123' && this.tok != null && this.tok != undefined) {
       return true;
     }
@@ -70,7 +70,7 @@ export class LoginService {
     dialogRef.afterClosed().subscribe(
       (result) => {
         if (result && result.data) {
-          localStorage.removeItem('token');
+          localStorage.removeItem('token-local-app');
           this.router.navigate(['/login']);
         }
       }
@@ -79,7 +79,7 @@ export class LoginService {
   }
 
   signOut(){
-    localStorage.removeItem('token');
+    localStorage.removeItem('token-local-app');
     this.router.navigate(['/login']);
   }
 
@@ -87,12 +87,12 @@ export class LoginService {
     const foundUser = UserTable.find(user => user.name === data.userName && user.password === data.password);
     if (foundUser?.name == data.userName && foundUser?.password == data.password) {
       this.status = 'xyz123';
-      localStorage.setItem('token', this.status);
+      localStorage.setItem('token-local-app', this.status);
       this.router.navigate(['/home']);
       this.snackbarservice.show('Logged In SuccessFully!!');
       return of(this.log);
     } else {
-      localStorage.removeItem('token');
+      localStorage.removeItem('token-local-app');
       this.snackbarservice.show('Invalid UserName/Password');
       return of(!(this.log));
 

@@ -1,4 +1,4 @@
-<div fxLayout="row" fxLayoutAlign="center center" class="bgm" style="height: 100vh;">
+<div *ngIf="(loader$ | async)" fxLayout="row" fxLayoutAlign="center center" class="bgm" style="height: 100vh;">
   <div fxFlex="30">
     <mat-card-content>
       <div style="margin-bottom: 2em;" fxLayout="row" fxLayoutAlign="center center">
@@ -30,4 +30,7 @@
       </div>
     </mat-card-content>
   </div>
+</div>
+<div *ngIf="!(loader$ | async)" fxLayout="row" fxLayoutAlign="center center" style="height: 100vh;">
+  <app-open-loader></app-open-loader>
 </div>

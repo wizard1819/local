@@ -84,6 +84,7 @@ import {MatRadioModule} from '@angular/material/radio';
 import { FormDirective } from './formcheck/form.directive';
 import { GunaComponent } from './test and study/guna/guna.component';
 import { TesingRxjsComponent } from './test and study/tesing-rxjs/tesing-rxjs.component';
+import { OpenLoaderComponent } from './open-loader/open-loader.component';
 
 @NgModule({
   declarations: [
@@ -128,6 +129,7 @@ import { TesingRxjsComponent } from './test and study/tesing-rxjs/tesing-rxjs.co
     FormDirective,
     GunaComponent,
     TesingRxjsComponent,
+    OpenLoaderComponent,
     
   ],
   imports: [
