@@ -24,16 +24,16 @@ export class LoginComponent implements OnInit {
 
     private service: LoginService,
     private snackBar: SnackbarService,
-    private snack : MatSnackBar,
-    private router : Router
+    private snack: MatSnackBar,
+    private router: Router
   ) {
 
     console.log(localStorage.getItem('token-local-app'), 'tokenss');
-    this.tok=localStorage.getItem('token-local-app');
-    if(this.tok == 'xyz123' && this.tok != null && this.tok != undefined){
+    this.tok = localStorage.getItem('token-local-app');
+    if (this.tok == 'xyz123' && this.tok != null && this.tok != undefined) {
       this.router.navigate(['/home']);
-    }else{
-      this.loader$.next(true);
+    } else {
+        this.loader$.next(true);
     }
   }
 
@@ -45,10 +45,10 @@ export class LoginComponent implements OnInit {
   login() {
     if (this.form.valid) {
       this.service.check(this.form.value);
-    }else{
+    } else {
       // this.snackBar.show('UserName and Password is Required');
-      this.snack.open('UserName and Password is Required','Close',{
-        panelClass:'custo'
+      this.snack.open('UserName and Password is Required', 'Close', {
+        panelClass: 'custo'
       });
     }
 
