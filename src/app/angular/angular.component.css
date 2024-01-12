@@ -12,16 +12,16 @@
 
 .oader{
   border: 20px solid #e7e7ef ;
-  border-top: 20px solid ghostwhite;
-  border-top-style:double ;
-  border-bottom: 20px solid ghostwhite;
-    border-bottom-style:double ;
-  border-left: 20px solid transparent;
-  border-right: 20px solid transparent;
+  border-top: 30px solid ghostwhite;
+  /* border-top-style:double ; */
+  border-bottom: 30px solid ghostwhite;
+    /* border-bottom-style:double ; */
+  border-left: 30px solid transparent;
+  border-right: 30px solid transparent;
   border-radius: 50%;
   width: 0px;
   height: 0px;
-  animation: spin 1s linear infinite;
+  animation: spin 2s linear infinite;
 }
 
 

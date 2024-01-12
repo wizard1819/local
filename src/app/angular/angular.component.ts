@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit } from '@angular/core';
 import { FormControl, UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
@@ -10,7 +10,7 @@ import { HEROES } from '../mock-heroes';
   templateUrl: './angular.component.html',
   styleUrls: ['./angular.component.css']
 })
-export class AngularComponent implements OnInit {
+export class AngularComponent implements OnInit ,AfterViewInit {
 
   data: any = { name: 'arun', age: 21 };
   public form: UntypedFormGroup = Object.create(null);
@@ -18,6 +18,8 @@ export class AngularComponent implements OnInit {
   canEdit = false;
   fontColor = 'blue';
   sayHelloId = 0;
+
+  parts :any='oader';
 
   onEditClick() {
     this.canEdit = !this.canEdit;
@@ -27,14 +29,27 @@ export class AngularComponent implements OnInit {
       this.message = "I'm read only!";
     }
   }
+
+
+  constructor(
+    private ref : ElementRef
+  ){}
   ngOnInit(): void {
+   
     this.form = new UntypedFormGroup({
       name: new UntypedFormControl(null, [Validators.required]),
       age: new UntypedFormControl(null, [Validators.required]),
     })
     this.populate();
   }
-
+  ngAfterViewInit() {
+    // Create a new element using document.createElement
+    const newElement = document.createElement('p');
+    newElement.className = 'oader';
+    console.log(newElement);
+    // Append the new element to the dynamicElement div in the template
+    this.ref.nativeElement.querySelector('div','#load').appendChild(newElement);
+  }
 
   
   submit() {
