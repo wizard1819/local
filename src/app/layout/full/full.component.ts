@@ -4,6 +4,8 @@ import {ChangeDetectorRef,OnDestroy,AfterViewInit} from '@angular/core';
 import { ThemeService } from 'src/app/theme/theme.service';
 import { Router } from '@angular/router';
 import { LoginService } from 'src/app/login/login.service';
+import { MatBottomSheet } from '@angular/material/bottom-sheet';
+import { BslComponent } from '../bsl/bsl.component';
 @Component({
   selector: 'app-full',
   templateUrl: './full.component.html',
@@ -15,6 +17,8 @@ export class FullComponent implements OnInit, AfterViewInit {
 mykey:any;
   colorrr:any={bg:'gray',nav:'black',sb:'lightgrey'}
 
+  items : any;
+  jsonobj : any;
   publicRoute: boolean = false;
   constructor(
     changeDetectorRef: ChangeDetectorRef,
@@ -22,8 +26,12 @@ mykey:any;
     private service : ThemeService,
     private _router : Router,
     private renderer : Renderer2,
-    private logout : LoginService
+    private logout : LoginService,
+    private bs : MatBottomSheet
   ){
+     this.jsonobj = localStorage.getItem('current-user');
+    this.items = JSON.parse(this.jsonobj);
+    console.log(this.items,'items');
    }
  
   ngAfterViewInit() {}
@@ -53,4 +61,10 @@ mykey:any;
     this.renderer.setStyle(document.body, 'background-color', 'red');
     
   }
+
+
+  logOut(){
+    this.bs.open(BslComponent);
+  }
+
 }

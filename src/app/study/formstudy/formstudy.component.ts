@@ -66,8 +66,7 @@ export class FormstudyComponent implements OnInit {
   }
 
   rev() {
-    const rev = UserTable.sort((a, b) => (b.id - a.id));
-    console.log(rev, 'reverse');
+   
   }
 
   searchTerm: string='';

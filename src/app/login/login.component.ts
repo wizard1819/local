@@ -44,7 +44,9 @@ export class LoginComponent implements OnInit {
   }
   login() {
     if (this.form.valid) {
-      this.service.check(this.form.value);
+      this.service.submit(this.form.value).subscribe((res)=>{
+        console.log(res,'res');
+      });
     } else {
       // this.snackBar.show('UserName and Password is Required');
       this.snack.open('UserName and Password is Required', 'Close', {

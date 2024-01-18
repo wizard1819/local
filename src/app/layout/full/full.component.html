@@ -6,7 +6,8 @@
         <span>ANGULAR 15.1.5</span>
         <button mat-button routerLink="/dashboard">Dashboard</button>
         <span fxFlex></span>
-        <button [matMenuTriggerFor]="men" mat-icon-button class="m-r-5"><mat-icon>power_settings_new</mat-icon></button>
+        <span>{{items.fullName}}</span>
+        <button (click)="logOut()" mat-icon-button class="m-r-5"><mat-icon>power_settings_new</mat-icon></button>
 
         <!-- <div (click)="signout()" style="cursor: pointer;"><mat-icon>power_settings_new</mat-icon></div> -->
         <div>
@@ -18,7 +19,7 @@
         </div>
         <div>
             <mat-menu #men="matMenu">
-                <button mat-menu-item (click)="signout()">Sign Out</button>
+                <button mat-menu-item (click)="logOut()">Sign Out</button>
             </mat-menu>
         </div>
 

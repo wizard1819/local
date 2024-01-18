@@ -85,6 +85,7 @@ import { FormDirective } from './formcheck/form.directive';
 import { GunaComponent } from './test and study/guna/guna.component';
 import { TesingRxjsComponent } from './test and study/tesing-rxjs/tesing-rxjs.component';
 import { OpenLoaderComponent } from './open-loader/open-loader.component';
+import { BslComponent } from './layout/bsl/bsl.component';
 
 @NgModule({
   declarations: [
@@ -130,6 +131,7 @@ import { OpenLoaderComponent } from './open-loader/open-loader.component';
     GunaComponent,
     TesingRxjsComponent,
     OpenLoaderComponent,
+    BslComponent,
     
   ],
   imports: [
