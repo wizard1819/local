@@ -33,7 +33,10 @@ export class LoginComponent implements OnInit {
     if (this.tok == 'xyz123' && this.tok != null && this.tok != undefined) {
       this.router.navigate(['/home']);
     } else {
+      setTimeout(() => {
         this.loader$.next(true);
+      }, 2000);
+
     }
   }
 
@@ -44,8 +47,8 @@ export class LoginComponent implements OnInit {
   }
   login() {
     if (this.form.valid) {
-      this.service.submit(this.form.value).subscribe((res)=>{
-        console.log(res,'res');
+      this.service.submit(this.form.value).subscribe((res) => {
+        console.log(res, 'res');
       });
     } else {
       // this.snackBar.show('UserName and Password is Required');
