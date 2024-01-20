@@ -31,6 +31,7 @@ import { BuComponent } from './study/bu/bu.component';
 import { FormcheckComponent } from './formcheck/formcheck.component';
 import { GunaComponent } from './test and study/guna/guna.component';
 import { TesingRxjsComponent } from './test and study/tesing-rxjs/tesing-rxjs.component';
+import { SettingsComponent } from './settings/settings.component';
 const routes: Routes = [
   {
     path: '',
@@ -79,6 +80,10 @@ const routes: Routes = [
           {
             path: 'fc',
             component: FormcheckComponent
+          },
+          {
+            path: 'settings',
+            component: SettingsComponent
           },
           {
             path: 'studyone',

@@ -86,6 +86,8 @@ import { GunaComponent } from './test and study/guna/guna.component';
 import { TesingRxjsComponent } from './test and study/tesing-rxjs/tesing-rxjs.component';
 import { OpenLoaderComponent } from './open-loader/open-loader.component';
 import { BslComponent } from './layout/bsl/bsl.component';
+import { SettingsComponent } from './settings/settings.component';
+import { ShowAllComponent } from './show-all/show-all.component';
 
 @NgModule({
   declarations: [
@@ -132,6 +134,8 @@ import { BslComponent } from './layout/bsl/bsl.component';
     TesingRxjsComponent,
     OpenLoaderComponent,
     BslComponent,
+    SettingsComponent,
+    ShowAllComponent,
     
   ],
   imports: [

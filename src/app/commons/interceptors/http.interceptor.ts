@@ -15,19 +15,19 @@ export class Httpinterceptor implements HttpInterceptor {
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     const newReq = req.clone({ url: "http://localhost:2020/api/vehicle" + req.url, headers: req.headers.set('authentication', 'token')})
     return next.handle(newReq).pipe(
-      tap(
-        result => {
-        console.log(result, 'res');
-      },
-        error => {
-          this.snack.show(error.name);
-        }
-      ),
+      // tap(
+      //   result => {
+      //   console.log(result, 'res');
+      // },
+      //   error => {
+      //     this.snack.show(error.name);
+      //   }
+      // ),
 
-      // catchError((error) => {
-      //   this.snack.show(error.name);
-      //   return throwError(error);
-      // })
+      catchError((error) => {
+        this.snack.show(error.name);
+        return throwError(error);
+      })
     
     );
   }

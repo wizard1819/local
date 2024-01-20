@@ -7,7 +7,7 @@
         <button mat-button routerLink="/dashboard">Dashboard</button>
         <span fxFlex></span>
         <span>{{items.fullName}}</span>
-        <button (click)="logOut()" mat-icon-button class="m-r-5"><mat-icon>power_settings_new</mat-icon></button>
+        <button [matMenuTriggerFor]="men" mat-icon-button class="m-r-5"><mat-icon>settings</mat-icon></button>
 
         <!-- <div (click)="signout()" style="cursor: pointer;"><mat-icon>power_settings_new</mat-icon></div> -->
         <div>
@@ -19,6 +19,7 @@
         </div>
         <div>
             <mat-menu #men="matMenu">
+                <button mat-menu-item routerLink="/settings">Settings</button>
                 <button mat-menu-item (click)="logOut()">Sign Out</button>
             </mat-menu>
         </div>

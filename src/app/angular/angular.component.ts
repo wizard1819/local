@@ -10,7 +10,7 @@ import { HEROES } from '../mock-heroes';
   templateUrl: './angular.component.html',
   styleUrls: ['./angular.component.css']
 })
-export class AngularComponent implements OnInit ,AfterViewInit {
+export class AngularComponent{
 
   data: any = { name: 'arun', age: 21 };
   public form: UntypedFormGroup = Object.create(null);
@@ -34,36 +34,18 @@ export class AngularComponent implements OnInit ,AfterViewInit {
   constructor(
     private ref : ElementRef
   ){}
+
+  names =[
+    {name:'guna',age:20,gender:'Male'},
+    {name:'guna',age:20,gender:'Male'},
+    {name:'guna',age:20,gender:'Male'},
+    {name:'guna',age:20,gender:'Male'},
+    {name:'guna',age:20,gender:'Male'},
+    {name:'guna',age:20,gender:'Male'},
+  ]
   ngOnInit(): void {
    
-    this.form = new UntypedFormGroup({
-      name: new UntypedFormControl(null, [Validators.required]),
-      age: new UntypedFormControl(null, [Validators.required]),
-    })
-    this.populate();
   }
-  ngAfterViewInit() {
-    // Create a new element using document.createElement
-    const newElement = document.createElement('p');
-    newElement.className = 'oader';
-    console.log(newElement);
-    // Append the new element to the dynamicElement div in the template
-    this.ref.nativeElement.querySelector('div','#load').appendChild(newElement);
-  }
-
-  
-  submit() {
-    console.log(this.form.value);
-  }
-
-  populate() {
-    if (this.data) {
-      Object.keys(this.form.controls).forEach(key => {
-        this.form.controls[key].setValue(this.data[key]);
-      })
-    }
-  }
-
 
 
 }
