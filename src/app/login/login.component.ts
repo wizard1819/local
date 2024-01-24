@@ -6,6 +6,7 @@ import { SnackbarService } from '../snackbar/snackbar.service';
 import { LoginService } from './login.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { BehaviorSubject } from 'rxjs';
+import { LOCAL_APP } from '../common/common';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -28,8 +29,8 @@ export class LoginComponent implements OnInit {
     private router: Router
   ) {
 
-    console.log(localStorage.getItem('token-local-app'), 'tokenss');
-    this.tok = localStorage.getItem('token-local-app');
+    console.log(localStorage.getItem(LOCAL_APP.TOKEN), 'tokenss');
+    this.tok = localStorage.getItem(LOCAL_APP.TOKEN);
     if (this.tok == 'xyz123' && this.tok != null && this.tok != undefined) {
       this.router.navigate(['/home']);
     } else {

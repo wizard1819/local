@@ -31,7 +31,6 @@ mykey:any;
   ){
      this.jsonobj = localStorage.getItem('current-user');
     this.items = JSON.parse(this.jsonobj);
-    console.log(this.items,'items');
    }
  
   ngAfterViewInit() {}
@@ -45,7 +44,6 @@ mykey:any;
     this.service.color$.subscribe((res)=>{
       this.currentTheme=res;
     })
-    console.log(this.currentTheme);
   }
 
   public setTheme(theme: string): void {

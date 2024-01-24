@@ -13,12 +13,12 @@ export class ThemeService {
   }
   public setCurrentTheme(theme: any): void {
     this.currentTheme = theme;
-    localStorage.setItem('currentTheme', JSON.stringify(theme)); 
+    localStorage.setItem('current_theme_local', JSON.stringify(theme)); 
   }
  
 
   public loadPersistedTheme(): void {
-     this.persistedTheme = localStorage.getItem('currentTheme');
+     this.persistedTheme = localStorage.getItem('current_theme_local');
       if (this.persistedTheme) {
       this.currentTheme = JSON.parse(this.persistedTheme);
       this.color$.next(this.currentTheme);

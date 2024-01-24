@@ -5,6 +5,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { ConfirmDialogComponent } from '../confirm-dialog/confirm-dialog.component';
 import { UserTable } from './usertable';
 import { Subscription, Observable, of, BehaviorSubject, Subject } from 'rxjs';
+import { LOCAL_APP } from '../common/common';
 
 
 @Injectable({
@@ -41,7 +42,7 @@ export class LoginService {
   }
 
   loggedin(): any {
-    this.tok = localStorage.getItem('token-local-app');
+    this.tok = localStorage.getItem(LOCAL_APP.TOKEN);
     if (this.tok == 'xyz123' && this.tok != null && this.tok != undefined) {
       return true;
     }
@@ -70,8 +71,8 @@ export class LoginService {
   }
 
   signOut(){
-    localStorage.removeItem('token-local-app');
-    localStorage.removeItem('current-user');
+    localStorage.removeItem(LOCAL_APP.TOKEN);
+    localStorage.removeItem(LOCAL_APP.USER);
     this.router.navigate(['/login']);
   }
 
@@ -80,13 +81,13 @@ export class LoginService {
     if (foundUser?.name == data.userName && foundUser?.password == data.password) {
       this.status = 'xyz123';
       const strngify = JSON.stringify(foundUser);
-      localStorage.setItem('current-user',strngify);
-      localStorage.setItem('token-local-app', this.status);
+      localStorage.setItem(LOCAL_APP.USER,strngify);
+      localStorage.setItem(LOCAL_APP.TOKEN, this.status);
       this.router.navigate(['/home']);
       this.snackbarservice.show('Logged In SuccessFully!!');
       return of(true);
     } else {
-      localStorage.removeItem('token-local-app');
+      localStorage.removeItem(LOCAL_APP.TOKEN);
       this.snackbarservice.show('Invalid UserName/Password');
       return of(false);
     }

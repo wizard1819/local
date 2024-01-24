@@ -17,15 +17,15 @@ export class SettingsComponent implements OnInit {
   colorForm !: FormGroup;
   inColor :any;
   ngOnInit(): void {
-    this.inColor= localStorage.getItem('currentTheme');
+    this.inColor= localStorage.getItem('current_theme_local');
     let col = JSON.parse(this.inColor);
-
+    console.log(col);
     this.colorForm = this.fb.group({
-      h:new FormControl(null, [Validators.required]),
-      s:new FormControl(null,[Validators.required]),
-      c:new FormControl(null,[Validators.required]),
+      h:new FormControl(col?.h, [Validators.required]),
+      s:new FormControl(col?.s,[Validators.required]),
+      c:new FormControl(col?.c,[Validators.required]),
     });
-    this.colorForm.patchValue(col);
+    // this.colorForm.patchValue(col);
   }
 
   apply(){

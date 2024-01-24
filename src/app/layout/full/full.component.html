@@ -1,5 +1,5 @@
 <div class="custom-scrollbar">
-    <mat-toolbar [ngClass]="currentTheme.h" class="topbar">
+    <mat-toolbar [ngClass]="currentTheme?.h" class="topbar">
 
         <button (click)="togglesidebar()"><mat-icon>menu</mat-icon></button>
         <button routerLink="/home"><mat-icon>home</mat-icon></button>
@@ -27,11 +27,11 @@
     </mat-toolbar>
 
     <mat-sidenav-container style="height: 92vh;">
-        <mat-sidenav [(opened)]="opened" mode="side" [ngClass]="currentTheme.s">
+        <mat-sidenav [(opened)]="opened" mode="side" [ngClass]="currentTheme?.s">
             <app-sidebar></app-sidebar>
 
         </mat-sidenav>
-        <mat-sidenav-content [ngClass]="currentTheme.c">
+        <mat-sidenav-content [ngClass]="currentTheme?.c">
             <router-outlet></router-outlet>
             <!-- <button class="nd" mat-raised-button color="accent" [matMenuTriggerFor]="menu"> <mat-icon>edit</mat-icon>
                 Theme</button> -->
