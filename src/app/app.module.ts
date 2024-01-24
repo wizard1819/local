@@ -88,6 +88,7 @@ import { OpenLoaderComponent } from './open-loader/open-loader.component';
 import { BslComponent } from './layout/bsl/bsl.component';
 import { SettingsComponent } from './settings/settings.component';
 import { ShowAllComponent } from './show-all/show-all.component';
+import { WorkoutTestComponent } from './workout-test/workout-test.component';
 
 @NgModule({
   declarations: [
@@ -136,6 +137,7 @@ import { ShowAllComponent } from './show-all/show-all.component';
     BslComponent,
     SettingsComponent,
     ShowAllComponent,
+    WorkoutTestComponent,
     
   ],
   imports: [

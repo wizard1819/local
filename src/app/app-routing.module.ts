@@ -32,6 +32,7 @@ import { FormcheckComponent } from './formcheck/formcheck.component';
 import { GunaComponent } from './test and study/guna/guna.component';
 import { TesingRxjsComponent } from './test and study/tesing-rxjs/tesing-rxjs.component';
 import { SettingsComponent } from './settings/settings.component';
+import { WorkoutTestComponent } from './workout-test/workout-test.component';
 const routes: Routes = [
   {
     path: '',
@@ -175,6 +176,10 @@ const routes: Routes = [
           {
             path: 'bu',
             component: BuComponent
+          },
+          {
+            path: 'wt',
+            component: WorkoutTestComponent
           },
           {
             path:'test-component',

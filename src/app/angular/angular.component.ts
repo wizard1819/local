@@ -1,7 +1,7 @@
 import { AfterViewInit, Component, ElementRef, OnInit } from '@angular/core';
-import { FormControl, UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
 import { Observable } from 'rxjs';
-import { map, startWith } from 'rxjs/operators';
+import { map, startWith, take } from 'rxjs/operators';
 import { VehicleService } from '../vehicle/vehicle.service';
 import { Hero } from '../hero';
 import { HEROES } from '../mock-heroes';
@@ -30,9 +30,11 @@ export class AngularComponent{
     }
   }
 
+  ab :any;
 
   constructor(
-    private ref : ElementRef
+    private ref : ElementRef,
+    private fb : FormBuilder
   ){}
 
   names =[
@@ -43,8 +45,15 @@ export class AngularComponent{
     {name:'guna',age:20,gender:'Male'},
     {name:'guna',age:20,gender:'Male'},
   ]
+  rad!:FormGroup;
   ngOnInit(): void {
-   
+    this.rad =this.fb.group({
+      nms : [false]
+    });
+   this.ab = new Observable((sub)=>{
+    sub.next(1);
+   });
+   this.ab.pipe(take(2)).subscribe((r:any)=> console.log(r));
   }
 
 
