@@ -52,7 +52,7 @@ h1 {
   color: #fffdfd;
 }
 
-.dark {
+.black {
   background-color: #000;
   color: #fff;
 }
@@ -62,9 +62,14 @@ h1 {
   color: ghostwhite;
 }
 
+.blue{
+  background-color: cornflowerblue;
+  color: black;
+}
+
 .red{
- background: url(https://assets.hongkiat.com/uploads/minimalist-dekstop-wallpapers/4k/original/18.jpg?3);
- color: ghostwhite;
+ background-color: red;
+ color: black;
 }
 
 .picture{

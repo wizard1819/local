@@ -1,1 +1,58 @@
-<p>settings works!</p>
+<mat-card>
+    <mat-card-content>
+        <div fxLayout="row" fxLayoutAlign="space-between center">
+            <div>
+                <mat-card-title>Settings</mat-card-title>
+            </div>
+        </div>
+        <form [formGroup]="colorForm">
+            <div class="dv" fxLayout="column">
+                <div fxFlex="100">
+                    <p>Themes</p>
+                </div>
+                <div fxLayout="row">
+                    <div fxFlex="30">
+                        SIDEBAR
+                    </div>
+                    <div fxFlex="40">
+                        <mat-radio-group formControlName="s" fxLayout="row" aria-label="Select an option">
+                            <mat-radio-button value="red">RED</mat-radio-button>
+                            <mat-radio-button value="black">BLACK</mat-radio-button>
+                            <mat-radio-button value="gray">GRAY</mat-radio-button>
+                            <mat-radio-button value="blue">BLUE</mat-radio-button>
+                        </mat-radio-group>
+                    </div>
+                </div>
+                <div fxLayout="row">
+                    <div fxFlex="30">
+                        HEADER
+                    </div>
+                    <div fxFlex="40">
+                        <mat-radio-group formControlName="h" fxLayout="row" aria-label="Select an option">
+                            <mat-radio-button value="red">RED</mat-radio-button>
+                            <mat-radio-button value="black">BLACK</mat-radio-button>
+                            <mat-radio-button value="gray">GRAY</mat-radio-button>
+                            <mat-radio-button value="blue">BLUE</mat-radio-button>
+                        </mat-radio-group>
+                    </div>
+                </div>
+                <div fxLayout="row">
+                    <div fxFlex="30">
+                        CONTAINER
+                    </div>
+                    <div fxFlex="40">
+                        <mat-radio-group formControlName="c" fxLayout="row" aria-label="Select an option">
+                            <mat-radio-button value="red">RED</mat-radio-button>
+                            <mat-radio-button value="black">BLACK</mat-radio-button>
+                            <mat-radio-button value="gray">GRAY</mat-radio-button>
+                            <mat-radio-button value="blue">BLUE</mat-radio-button>
+                        </mat-radio-group>
+                    </div>
+                </div>
+                <div fxLayout="row" fxFlex="100" fxLayoutAlign="end center">
+                    <button mat-raised-button (click)="apply()">Apply</button>
+                </div>
+            </div>
+        </form>
+    </mat-card-content>
+</mat-card>

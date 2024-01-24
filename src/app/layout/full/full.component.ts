@@ -13,7 +13,7 @@ import { BslComponent } from '../bsl/bsl.component';
 })
 export class FullComponent implements OnInit, AfterViewInit {
   // colorr="black"
-  public currentTheme!: string;
+  public currentTheme!: any;
 mykey:any;
   colorrr:any={bg:'gray',nav:'black',sb:'lightgrey'}
 
@@ -42,7 +42,9 @@ mykey:any;
   }
   public ngOnInit(): void {
     this.service.loadPersistedTheme();
-    this.currentTheme = this.service.getCurrentTheme();
+    this.service.color$.subscribe((res)=>{
+      this.currentTheme=res;
+    })
     console.log(this.currentTheme);
   }
 
@@ -58,10 +60,7 @@ mykey:any;
  
 
 
-  theme(){
-    this.renderer.setStyle(document.body, 'background-color', 'red');
-    
-  }
+ 
 
 
   logOut(){
