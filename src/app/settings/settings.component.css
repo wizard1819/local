@@ -1,5 +1,6 @@
 mat-card{
     color: black;
+    font-family: sans-serif;
 }
 .b1{
     font-size: 15px;
@@ -8,4 +9,9 @@ mat-card{
 
 .dv{
     margin: 20px;
+}
+
+.pl{
+    font-size: 20px;
+    font-family: ui-serif;
 }
