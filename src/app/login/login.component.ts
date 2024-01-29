@@ -31,6 +31,7 @@ export class LoginComponent implements OnInit {
 
     console.log(localStorage.getItem(LOCAL_APP.TOKEN), 'tokenss');
     this.tok = localStorage.getItem(LOCAL_APP.TOKEN);
+    console.log(this.tok);
     if (this.tok == 'xyz123' && this.tok != null && this.tok != undefined) {
       this.router.navigate(['/home']);
     } else {

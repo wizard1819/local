@@ -6,6 +6,7 @@ import { Router } from '@angular/router';
 import { LoginService } from 'src/app/login/login.service';
 import { MatBottomSheet } from '@angular/material/bottom-sheet';
 import { BslComponent } from '../bsl/bsl.component';
+import { LOCAL_APP } from 'src/app/common/common';
 @Component({
   selector: 'app-full',
   templateUrl: './full.component.html',
@@ -29,7 +30,7 @@ mykey:any;
     private logout : LoginService,
     private bs : MatBottomSheet
   ){
-     this.jsonobj = localStorage.getItem('current-user');
+     this.jsonobj = localStorage.getItem(LOCAL_APP.USER);
     this.items = JSON.parse(this.jsonobj);
    }
  
