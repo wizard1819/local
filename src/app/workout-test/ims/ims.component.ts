@@ -27,8 +27,8 @@ export class ImsComponent {
   opend(){
     this.d.open(ImgDialogComponent,{
       data:this.images.img,
-      height:'80vh',
-      width:'100vw'
+      height:'auto',
+      width:'auto'
     })
   }
 }
