@@ -39,6 +39,7 @@ export class WorkoutTestComponent implements OnInit {
         let b = { img: this.selectedFile, details: inputElement };
         this.imgs.push(b);
         console.log(this.imgs);
+        this.ip.nativeElement.value =  null;
       };
       reader.readAsDataURL(this.file);
       console.log(this.file, 'common');
