@@ -1,6 +1,6 @@
 <input #inp type="file" (change)="fileSelect($event)" name="" id="">
 
-<button mat-raised-button (click)="inp.click()">Upload</button>
+<button mat-raised-button (click)="inp.click()">Upload Image</button>
 <div *ngFor="let i of imgs;let j = index">
 <app-ims [images]="i" [index]="j" (delete)="remFile($event)"></app-ims>
 <!-- <div>

@@ -90,6 +90,7 @@ import { SettingsComponent } from './settings/settings.component';
 import { ShowAllComponent } from './show-all/show-all.component';
 import { WorkoutTestComponent } from './workout-test/workout-test.component';
 import { ImsComponent } from './workout-test/ims/ims.component';
+import { ImgDialogComponent } from './workout-test/img-dialog/img-dialog.component';
 
 @NgModule({
   declarations: [
@@ -140,6 +141,7 @@ import { ImsComponent } from './workout-test/ims/ims.component';
     ShowAllComponent,
     WorkoutTestComponent,
     ImsComponent,
+    ImgDialogComponent,
     
   ],
   imports: [
