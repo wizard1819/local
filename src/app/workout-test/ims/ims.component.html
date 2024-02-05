@@ -1,8 +1,9 @@
 <div fxLayout="row" fxLayoutAlign="center center">
-    <div  fxLayout="column" fxLayoutAlign="center center">
+    <div class="as" fxLayout="column">
+        <div fxLayout="column" fxLayoutAlign="center end">
+        <mat-icon  (click)="fileRemove()">clear</mat-icon> </div>
         <img [src]="images?.img" alt="" (click)="opend()">
-        <p style="color: white;">{{images?.details?.name}}</p>
+        <p fxLayoutAlign="center center" style="color: white;">{{images?.details?.name}}</p>
         <!-- <button mat-raised-button >X</button> -->
-        <mat-icon (click)="fileRemove()">clear</mat-icon>
     </div>
 </div>

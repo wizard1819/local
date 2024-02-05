@@ -1,9 +1,18 @@
 img{
-    width: 300px;
-    height: 200px;
+    width: 200px;
+    height: 100px;
 }
 
 div
 {
     margin: 10px;
+}
+
+.as{
+    border: 1px solid rgb(248, 245, 245);
+    padding: 5px;
+}
+
+mat-icon{
+    cursor: pointer;
 }
