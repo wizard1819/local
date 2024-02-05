@@ -1,9 +1,10 @@
 <div fxLayout="row" fxLayoutAlign="center center">
     <div class="as" fxLayout="column">
-        <div fxLayout="column" fxLayoutAlign="center end">
-        <mat-icon  (click)="fileRemove()">clear</mat-icon> </div>
+        <div fxLayout="row" fxLayoutAlign="space-between center">
+        <mat-icon (click)="ip.click()">mode_edit</mat-icon> <mat-icon  (click)="fileRemove()">clear</mat-icon> </div>
         <img [src]="images?.img" alt="" (click)="opend()">
         <p fxLayoutAlign="center center" style="color: white;">{{images?.details?.name}}</p>
         <!-- <button mat-raised-button >X</button> -->
     </div>
 </div>
+<input (change)="changeImage($event)" type="file" #ip style="display: none;">

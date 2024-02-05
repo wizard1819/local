@@ -8,7 +8,7 @@ import { Observable, Subject, asyncScheduler, from, observeOn, of, queueSchedule
 })
 export class WorkoutTestComponent implements OnInit {
 
- @ViewChild('inp') ip! :ElementRef;
+  @ViewChild('inp') ip!: ElementRef;
 
   constructor() { }
 
@@ -19,7 +19,6 @@ export class WorkoutTestComponent implements OnInit {
   ngOnInit(): void {
 
 
-    console.log(this.urls);
 
   }
 
@@ -30,29 +29,29 @@ export class WorkoutTestComponent implements OnInit {
   fileSelect(event: any) {
     const inputElement = event.target.files[0];
     this.file = inputElement;
-    console.log(this.file);
     if (this.file) {
       const reader = new FileReader();
       reader.onload = (e) => {
         this.selectedFile = e.target?.result;
-        console.log(this.selectedFile, 'file');
         let b = { img: this.selectedFile, details: inputElement };
         this.imgs.push(b);
-        console.log(this.imgs);
-        this.ip.nativeElement.value =  null;
+        this.ip.nativeElement.value = null;
       };
       reader.readAsDataURL(this.file);
-      console.log(this.file, 'common');
 
     }
   }
 
 
-  remFile(event?:any){
-    this.imgs.splice(event,1);
-    if(this.imgs.length == 0){
-      this.ip.nativeElement.value =  null;
+  remFile(event?: any) {
+    this.imgs.splice(event, 1);
+    if (this.imgs.length == 0) {
+      this.ip.nativeElement.value = null;
     }
+  }
+
+  edit(event: any) {
+   console.log(this.imgs);
   }
 
 }

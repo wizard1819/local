@@ -9,8 +9,9 @@ div
 }
 
 .as{
-    border: 1px solid rgb(248, 245, 245);
+    border: 1px solid white;
     padding: 5px;
+    border-radius: 20px 0px;
 }
 
 mat-icon{

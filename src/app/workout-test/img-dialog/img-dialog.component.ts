@@ -21,7 +21,6 @@ export class ImgDialogComponent implements OnInit {
   }
 
   inc() {
-    console.log(this.num);
     if (this.num <= 3) {
       this.num++;
       if (this.num == 1) {
@@ -41,7 +40,6 @@ export class ImgDialogComponent implements OnInit {
   }
 
   dec() {
-    console.log(this.num);
     if (this.num >= 2) {
       this.num--;
       if (this.num == 1) {

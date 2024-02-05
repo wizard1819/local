@@ -2,7 +2,7 @@
 
 <button mat-raised-button (click)="inp.click()">Upload Image</button>
 <div *ngFor="let i of imgs;let j = index">
-<app-ims [images]="i" [index]="j" (delete)="remFile($event)"></app-ims>
+<app-ims [images]="i" [index]="j" (delete)="remFile($event)" (edits)="edit($event)"></app-ims>
 <!-- <div>
     <img [src]="i?.img" alt="">
     <p style="color: white;">{{i?.details?.name}}</p>
