@@ -1,5 +1,6 @@
 <p>read-xml works!</p>
 <button (click)="logIt()">log</button>
+<button (click)="export()">Export</button>
 <input (change)="onSelectFile($event)" type="file" name="" id="">
 
 <!-- {{val}} -->
@@ -7,19 +8,17 @@
     <table>
         <tr>
             <td (click)="des()">Sr no</td>
-            <td >id</td>
             <td>Date</td>
             <td>Name</td>
             <td>Comment ID</td>
-            <td>Action</td>
+            <td>Redirect</td>
         </tr>
         <tr *ngFor="let i of tct; let l =index">
-            <td>{{l+1}}</td>
             <td>{{i.SrNo}}</td>
             <td>{{i.date}}</td>
             <td>{{i.name}}</td>
             <td>{{i.commentId}}</td>
-            <td><mat-icon (click)="copy(i.commentId)">content_copy</mat-icon></td>
+            <td><mat-icon (click)="openAslink(i.commentId)">content_copy</mat-icon></td>
         </tr>
     </table>
 </mat-card>

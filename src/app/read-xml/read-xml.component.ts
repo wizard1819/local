@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { Clipboard } from '@angular/cdk/clipboard';
+import * as XLSX from 'xlsx';
+import * as FileSaver from 'file-saver';
 
 @Component({
   selector: 'app-read-xml',
@@ -31,7 +33,7 @@ export class ReadXmlComponent {
   mxl!: any;
   val: any;
   details = new Array<any>;
-  tct: any[]=[] ;
+  tct: any[] = [];
   displayXmlDetails(xmlString: String | ArrayBuffer | any) {
     console.log('XML Content:', xmlString);
     let names = ['Ayyasamy', 'Guna', 'Praveen', 'Rathees', 'Velu', 'Mohammed Fathauddin'];
@@ -89,17 +91,54 @@ export class ReadXmlComponent {
     this.clipboard.copy(data);
   }
 
-  copyAllData(){
+  copyAllData() {
     // this.clipboard.copy(this.tct);
   }
 
-  dec:boolean = false;
-  des(){
-    this.dec = ! this.dec;
-    if(this.dec){
-      this.tct.sort((a,b)=> b.SrNo - a.SrNo);
-    }else{
-      this.tct.sort((a,b)=> a.SrNo - b.SrNo);
+  dec: boolean = false;
+  des() {
+    this.dec = !this.dec;
+    if (this.dec) {
+      this.tct.sort((a, b) => b.SrNo - a.SrNo);
+    } else {
+      this.tct.sort((a, b) => a.SrNo - b.SrNo);
     }
+  }
+
+  openAslink(url: any) {
+    window.open(url);
+  }
+
+  open() {
+    let val = this.tct.filter((item: any) => item.name == 'Jagadeesh.R');
+    val.forEach((k?: any) => {
+      window.open(k.commentId);
+
+    })
+  }
+
+  det: any[] = [];
+  export() {
+    const data: any[] = [
+      ['Name', 'Date', 'CommentId']
+      // Add your list items here
+    ];
+
+    this.tct.forEach((key) => {
+      this.det=[];
+      this.det.push(key.name);
+      this.det.push(key.date);
+      this.det.push(key.commentId);
+      data.push(this.det);
+    })
+
+    console.log(data);
+    const ws: XLSX.WorkSheet = XLSX.utils.aoa_to_sheet(data);
+
+    const wb: XLSX.WorkBook = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(wb, ws, 'Sheet1');
+
+    const wbout: ArrayBuffer = XLSX.write(wb, { type: 'array', bookType: 'xlsx' });
+    FileSaver.saveAs(new Blob([wbout], { type: 'application/octet-stream' }), 'exported_list.xlsx');
   }
 }

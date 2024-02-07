@@ -4,4 +4,6 @@ mat-card{
 
 td{
     border: 1px solid black;
+    color: black;
+    padding: 10px;
 }
