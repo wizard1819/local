@@ -1,17 +1,27 @@
-mat-card{
+mat-card {
     padding: 10px;
 }
 
-td{
+td {
     border: 1px solid black;
     color: black;
     padding: 2px;
 }
 
-input{
+input {
     display: none;
 }
 
-button{
+button {
     margin: 5px;
 }
+
+td:nth-child(4),
+td:nth-child(5) {
+    cursor: pointer;
+}
+
+.onh {
+    display: none;
+}
+

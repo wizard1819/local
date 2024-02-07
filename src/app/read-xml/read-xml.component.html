@@ -1,5 +1,5 @@
 <button mat-raised-button (click)="ip.click()">Upload</button>
-<button mat-raised-button (click)="logIt()">log</button>
+<button *ngIf="tct.length > 0" mat-raised-button (click)="logIt()">log</button>
 <button *ngIf="tct.length > 0" mat-raised-button (click)="export()">Export</button>
 <input #ip (change)="onSelectFile($event)" type="file" name="" id="">
 
@@ -17,8 +17,9 @@
             <td>{{i.SrNo}}</td>
             <td>{{i.date}}</td>
             <td>{{i.name}}</td>
-            <td (click)="copy(i.commentId)">{{i.commentId}}</td>
-            <td><mat-icon (click)="openAslink(i.commentId)">content_copy</mat-icon></td>
+            <td (mouseenter)="showCopyButton()" (mouseleave)="hideCopyButton()">{{i.commentId}} <mat-icon
+                    class="isHovered ? '':'onh'" (click)="copy(i.commentId)">link</mat-icon></td>
+            <td><mat-icon (click)="openAslink(i.commentId)">logout</mat-icon></td>
         </tr>
     </table>
 </mat-card>

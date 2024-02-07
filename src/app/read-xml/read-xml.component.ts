@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
 import { Clipboard } from '@angular/cdk/clipboard';
 import * as XLSX from 'xlsx';
 import * as FileSaver from 'file-saver';
@@ -7,15 +7,35 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 @Component({
   selector: 'app-read-xml',
   templateUrl: './read-xml.component.html',
-  styleUrls: ['./read-xml.component.css']
+  styleUrls: ['./read-xml.component.css'],
+
 })
 export class ReadXmlComponent {
+
+  hoverState = 'initial';
+  isHovered: boolean = false;
+
+  @HostListener('mouseenter') onMouseEnter() {
+    this.showCopyButton();  }
+
+  // Hide copy button on mouse leave
+  @HostListener('mouseleave') onMouseLeave() {
+    this.hideCopyButton();  }
+  
 
   @ViewChild('ip') ip !: ElementRef;
   constructor(
     private clipboard: Clipboard,
-    private snackbar : MatSnackBar
+    private snackbar: MatSnackBar
   ) { }
+
+  showCopyButton(){
+    this.isHovered = true;
+  }
+
+  hideCopyButton(){
+    this.isHovered = false;
+  }
 
   onSelectFile(event: any) {
     const file: File = event.target.files[0];
@@ -92,8 +112,9 @@ export class ReadXmlComponent {
 
   copy(data: any) {
     this.clipboard.copy(data);
-    this.snackbar.open('link copied to clipboard','',{
-      duration:2000
+    this.snackbar.open('link copied to clipboard', '', {
+      duration: 2000,
+      horizontalPosition: 'start'
     })
   }
 
