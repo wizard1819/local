@@ -34,6 +34,7 @@ import { TesingRxjsComponent } from './test and study/tesing-rxjs/tesing-rxjs.co
 import { SettingsComponent } from './settings/settings.component';
 import { WorkoutTestComponent } from './workout-test/workout-test.component';
 import { ReadXmlComponent } from './read-xml/read-xml.component';
+import { ReadPdfComponent } from './read-pdf/read-pdf.component';
 const routes: Routes = [
   {
     path: '',
@@ -70,6 +71,10 @@ const routes: Routes = [
           {
             path: 'home',
             component: HomeComponent
+          },
+          {
+            path: 'pdf',
+            component: ReadPdfComponent
           },
           {
             path: 'xml',

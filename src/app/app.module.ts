@@ -92,6 +92,7 @@ import { WorkoutTestComponent } from './workout-test/workout-test.component';
 import { ImsComponent } from './workout-test/ims/ims.component';
 import { ImgDialogComponent } from './workout-test/img-dialog/img-dialog.component';
 import { ReadXmlComponent } from './read-xml/read-xml.component';
+import { ReadPdfComponent } from './read-pdf/read-pdf.component';
 
 @NgModule({
   declarations: [
@@ -144,6 +145,7 @@ import { ReadXmlComponent } from './read-xml/read-xml.component';
     ImsComponent,
     ImgDialogComponent,
     ReadXmlComponent,
+    ReadPdfComponent,
     
   ],
   imports: [
