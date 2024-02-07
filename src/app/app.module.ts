@@ -91,6 +91,7 @@ import { ShowAllComponent } from './show-all/show-all.component';
 import { WorkoutTestComponent } from './workout-test/workout-test.component';
 import { ImsComponent } from './workout-test/ims/ims.component';
 import { ImgDialogComponent } from './workout-test/img-dialog/img-dialog.component';
+import { ReadXmlComponent } from './read-xml/read-xml.component';
 
 @NgModule({
   declarations: [
@@ -142,6 +143,7 @@ import { ImgDialogComponent } from './workout-test/img-dialog/img-dialog.compone
     WorkoutTestComponent,
     ImsComponent,
     ImgDialogComponent,
+    ReadXmlComponent,
     
   ],
   imports: [

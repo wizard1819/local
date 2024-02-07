@@ -1,0 +1,23 @@
+<p>read-xml works!</p>
+<button (click)="logIt()">log</button>
+<input (change)="onSelectFile($event)" type="file" name="" id="">
+
+<!-- {{val}} -->
+<mat-card>
+    <table>
+        <tr>
+            <td>Sr no</td>
+            <td>Date</td>
+            <td>Name</td>
+            <td>Comment ID</td>
+            <td>Action</td>
+        </tr>
+        <tr *ngFor="let i of tct; let l =index">
+            <td>{{l+1}}</td>
+            <td>{{i.date}}</td>
+            <td>{{i.name}}</td>
+            <td>{{i.commentId}}</td>
+            <td><mat-icon (click)="copy(i.commentId)">content_copy</mat-icon></td>
+        </tr>
+    </table>
+</mat-card>

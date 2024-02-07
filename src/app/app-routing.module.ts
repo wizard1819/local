@@ -33,6 +33,7 @@ import { GunaComponent } from './test and study/guna/guna.component';
 import { TesingRxjsComponent } from './test and study/tesing-rxjs/tesing-rxjs.component';
 import { SettingsComponent } from './settings/settings.component';
 import { WorkoutTestComponent } from './workout-test/workout-test.component';
+import { ReadXmlComponent } from './read-xml/read-xml.component';
 const routes: Routes = [
   {
     path: '',
@@ -69,6 +70,10 @@ const routes: Routes = [
           {
             path: 'home',
             component: HomeComponent
+          },
+          {
+            path: 'xml',
+            component: ReadXmlComponent
           },
           {
             path: 'text',
