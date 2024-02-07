@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { Clipboard } from '@angular/cdk/clipboard';
 import * as XLSX from 'xlsx';
 import * as FileSaver from 'file-saver';
@@ -10,6 +10,7 @@ import * as FileSaver from 'file-saver';
 })
 export class ReadXmlComponent {
 
+  @ViewChild('ip') ip !: ElementRef;
   constructor(
     private clipboard: Clipboard
   ) { }
@@ -26,6 +27,7 @@ export class ReadXmlComponent {
     reader.onload = () => {
       const xmlString: string | ArrayBuffer | any = reader.result;
       this.displayXmlDetails(xmlString);
+      this.ip.nativeElement.value = null;
     };
     reader.readAsText(file);
   }
@@ -125,7 +127,7 @@ export class ReadXmlComponent {
     ];
 
     this.tct.forEach((key) => {
-      this.det=[];
+      this.det = [];
       this.det.push(key.name);
       this.det.push(key.date);
       this.det.push(key.commentId);
