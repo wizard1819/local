@@ -31,7 +31,7 @@ export class ReadXmlComponent {
   mxl!: any;
   val: any;
   details = new Array<any>;
-  tct: any[] = [];
+  tct: any[]=[] ;
   displayXmlDetails(xmlString: String | ArrayBuffer | any) {
     console.log('XML Content:', xmlString);
     let names = ['Ayyasamy', 'Guna', 'Praveen', 'Rathees', 'Velu', 'Mohammed Fathauddin'];
@@ -75,6 +75,7 @@ export class ReadXmlComponent {
     this.tct = this.tct.concat(this.details.filter((item) => item.name == 'tamil.arivu'));
     this.tct = this.tct.concat(this.details.filter((item) => item.name == 'Jagadeesh.R'));
     this.tct = this.tct.concat(this.details.filter((item) => item.name == 'Arnesh R'));
+    this.tct = this.tct.map((item: any, index: number) => ({ SrNo: index + 1, name: item.name, date: item.date, commentId: item.commentId }));
     // })
 
   }
@@ -86,5 +87,19 @@ export class ReadXmlComponent {
 
   copy(data: any) {
     this.clipboard.copy(data);
+  }
+
+  copyAllData(){
+    // this.clipboard.copy(this.tct);
+  }
+
+  dec:boolean = false;
+  des(){
+    this.dec = ! this.dec;
+    if(this.dec){
+      this.tct.sort((a,b)=> b.SrNo - a.SrNo);
+    }else{
+      this.tct.sort((a,b)=> a.SrNo - b.SrNo);
+    }
   }
 }
