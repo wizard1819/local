@@ -2,6 +2,7 @@ import { Component, ElementRef, ViewChild } from '@angular/core';
 import { Clipboard } from '@angular/cdk/clipboard';
 import * as XLSX from 'xlsx';
 import * as FileSaver from 'file-saver';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-read-xml',
@@ -12,7 +13,8 @@ export class ReadXmlComponent {
 
   @ViewChild('ip') ip !: ElementRef;
   constructor(
-    private clipboard: Clipboard
+    private clipboard: Clipboard,
+    private snackbar : MatSnackBar
   ) { }
 
   onSelectFile(event: any) {
@@ -37,13 +39,12 @@ export class ReadXmlComponent {
   details = new Array<any>;
   tct: any[] = [];
   displayXmlDetails(xmlString: String | ArrayBuffer | any) {
-    console.log('XML Content:', xmlString);
-    let names = ['Ayyasamy', 'Guna', 'Praveen', 'Rathees', 'Velu', 'Mohammed Fathauddin'];
     this.mxl = xmlString.split('<item>');
-    console.log(this.mxl[10], '100');
+    let gh = this.mxl[1].split('<description>');
+    let hg = gh[1].split('</description>')
+    console.log(hg[0].trim(), '100');
     this.val = this.mxl;
     this.val.splice(0, 1);
-
 
     this.val.forEach((key: any, index: number) => {
 
@@ -60,12 +61,12 @@ export class ReadXmlComponent {
       let splitNyLink = splitLink[0].split('<link>');
       let a = splitNyLink[1].trim();
       let comment = a.split('#');
-      console.log(`${index} ${splitByAuthor[1]} => ${comment[0]} date => ${dateSplitAgain[1]}`);
+      // console.log(`${index} ${splitByAuthor[1]} => ${comment[0]} date => ${dateSplitAgain[1]}`);
       let jso = { name: splitByAuthor[1], date: dateSplitAgain[1], commentId: comment[0] };
       this.details.push(jso);
 
     });
-    console.log(this.details);
+    // console.log(this.details);
 
 
     this.tct = this.details.filter((item) => item.name == 'Ayyasamy Palanisamy');
@@ -91,10 +92,14 @@ export class ReadXmlComponent {
 
   copy(data: any) {
     this.clipboard.copy(data);
+    this.snackbar.open('link copied to clipboard','',{
+      duration:2000
+    })
   }
 
   copyAllData() {
-    // this.clipboard.copy(this.tct);
+    // let v= this.tct;
+    // this.clipboard.copy(v);
   }
 
   dec: boolean = false;

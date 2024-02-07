@@ -35,7 +35,7 @@ mykey:any;
    }
  
   ngAfterViewInit() {}
-  opened=true;
+  opened=false;
 
   togglesidebar(){
     this.opened = ! this.opened;
