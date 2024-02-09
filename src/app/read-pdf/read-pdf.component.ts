@@ -50,8 +50,6 @@ export class ReadPdfComponent {
     });
   }
 
-  logie(){
-    console.log('wsdjgcyhdcwuwjdhvcd');
-  }
+
 
 }
