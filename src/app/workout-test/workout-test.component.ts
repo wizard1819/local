@@ -14,10 +14,17 @@ export class WorkoutTestComponent implements OnInit {
 
 
 
+  percent =0;
 
+  p= 75;
   urls = new Array<string>();
   ngOnInit(): void {
 
+    setInterval(()=>{
+      if(this.percent < this.p){
+        this.percent++;
+      }
+    },30)
 
 
   }
