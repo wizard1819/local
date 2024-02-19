@@ -27,6 +27,9 @@ export class WorkoutTestComponent implements OnInit {
     },30);
   }
 
+  show(){
+    console.log('velu is going to take mt-15 tomorrow');
+  }
 
   selectedFile: any;
   file: any;
