@@ -24,9 +24,7 @@ export class WorkoutTestComponent implements OnInit {
       if(this.percent < this.p){
         this.percent++;
       }
-    },30)
-
-
+    },30);
   }
 
 
