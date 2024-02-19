@@ -7,34 +7,29 @@ import { TestService } from '../test.service';
   templateUrl: './test-component.component.html',
   styleUrls: ['./test-component.component.css']
 })
-export class TestComponentComponent {
+export class TestComponentComponent implements OnInit {
 
 
-  a = new Date();
-  b = new Date(2010, 1, 23);
   constructor(
-    private service: TestService
   ) {
-    console.log(this.a, this.b);
-    console.log(this.dateDiffInYears(this.b, this.a));
+
 
   }
-
-  dateDiffInYears(dateold?: any, datenew?: any) {
-    var ynew = datenew.getFullYear();
-    var mnew = datenew.getMonth();
-    var dnew = datenew.getDate();
-    var yold = dateold.getFullYear();
-    var mold = dateold.getMonth();
-    var dold = dateold.getDate();
-    var diff = ynew - yold;
-    if (mold > mnew) { diff--; }
-    else {
-      if (mold == mnew) {
-        if (dold > dnew) { diff--; }
-      }
-    }
-    return diff;
+  f: any;
+  ngOnInit(): void {
+    let date = new Date();
+    let d = date.getMonth();
+    let g = date.getFullYear();
+    this.f = new Date(g, d + 1, 1);
+    let val = new Date(this.f - 1);
+    console.log(val);
+    console.log(typeof g);
   }
 
+  v: any;
+  logg() {
+    let cmds = ['guna', 'vels', 'praveen', 'arnes', 'rathees', 'rajes', 'viswa'];
+    this.v = cmds[Math.floor(Math.random() * 7)];
+    console.log(this.v);
+  }
 }

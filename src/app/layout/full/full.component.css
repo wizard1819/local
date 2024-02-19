@@ -63,8 +63,7 @@ h1 {
 }
 
 .blue{
-  background-color: cornflowerblue;
-  color: black;
+  background-image: linear-gradient(rgb(32, 238, 32), yellow);
 }
 
 .red{

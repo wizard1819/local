@@ -25,6 +25,10 @@ export class WorkoutTestComponent implements OnInit {
         this.percent++;
       }
     },30);
+
+
+    let date = new Date();
+    console.log(date);
   }
 
   show(){
