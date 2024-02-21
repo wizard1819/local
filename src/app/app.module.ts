@@ -93,6 +93,7 @@ import { ImsComponent } from './workout-test/ims/ims.component';
 import { ImgDialogComponent } from './workout-test/img-dialog/img-dialog.component';
 import { ReadXmlComponent } from './read-xml/read-xml.component';
 import { ReadPdfComponent } from './read-pdf/read-pdf.component';
+import { FolderUlpoadComponent } from './folder-ulpoad/folder-ulpoad.component';
 
 @NgModule({
   declarations: [
@@ -146,6 +147,7 @@ import { ReadPdfComponent } from './read-pdf/read-pdf.component';
     ImgDialogComponent,
     ReadXmlComponent,
     ReadPdfComponent,
+    FolderUlpoadComponent,
     
   ],
   imports: [

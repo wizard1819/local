@@ -35,6 +35,7 @@ import { SettingsComponent } from './settings/settings.component';
 import { WorkoutTestComponent } from './workout-test/workout-test.component';
 import { ReadXmlComponent } from './read-xml/read-xml.component';
 import { ReadPdfComponent } from './read-pdf/read-pdf.component';
+import { FolderUlpoadComponent } from './folder-ulpoad/folder-ulpoad.component';
 const routes: Routes = [
   {
     path: '',
@@ -190,6 +191,10 @@ const routes: Routes = [
           {
             path: 'wt',
             component: WorkoutTestComponent
+          },
+          {
+            path: 'fu',
+            component: FolderUlpoadComponent
           },
           {
             path:'test-component',
