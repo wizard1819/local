@@ -1,12 +1,3 @@
-<div #load class="oader"></div>
-<div *ngFor="let item of names">
-  <mat-card>
-    <app-show-all [name]="item.name" [age]="item.age" [gender]="item.gender"></app-show-all>
-  </mat-card>
-</div>
-<div [formGroup]="rad">
-  <mat-radio-group formControlName="nms"  class="radioGroup" aria-label="Select an option">
-    <mat-radio-button [value]="true">I'm a Giver</mat-radio-button>
-    <mat-radio-button [value]="false">I'm a Buyer</mat-radio-button>
-  </mat-radio-group>
+<div style="position: relative;top: 20%;left: 20%;">
+  <div #load class="oader"></div>
 </div>
