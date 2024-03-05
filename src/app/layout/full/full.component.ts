@@ -1,6 +1,6 @@
-import { Component , OnInit, Renderer2 } from '@angular/core';
+import { Component, OnInit, Renderer2 } from '@angular/core';
 import { MediaMatcher } from '@angular/cdk/layout';
-import {ChangeDetectorRef,OnDestroy,AfterViewInit} from '@angular/core';
+import { ChangeDetectorRef, OnDestroy, AfterViewInit } from '@angular/core';
 import { ThemeService } from 'src/app/theme/theme.service';
 import { Router } from '@angular/router';
 import { LoginService } from 'src/app/login/login.service';
@@ -15,35 +15,46 @@ import { LOCAL_APP } from 'src/app/common/common';
 export class FullComponent implements OnInit, AfterViewInit {
   // colorr="black"
   public currentTheme!: any;
-mykey:any;
-  colorrr:any={bg:'gray',nav:'black',sb:'lightgrey'}
+  mykey: any;
+  colorrr: any = { bg: 'gray', nav: 'black', sb: 'lightgrey' }
 
-  items : any;
-  jsonobj : any;
+
+  show:boolean = false;
+
+
+  items: any;
+  jsonobj: any;
   publicRoute: boolean = false;
   constructor(
     changeDetectorRef: ChangeDetectorRef,
     media: MediaMatcher,
-    private service : ThemeService,
-    private _router : Router,
-    private renderer : Renderer2,
-    private logout : LoginService,
-    private bs : MatBottomSheet
-  ){
-     this.jsonobj = localStorage.getItem(LOCAL_APP.USER);
+    private service: ThemeService,
+    private _router: Router,
+    private renderer: Renderer2,
+    private logout: LoginService,
+    private bs: MatBottomSheet
+  ) {
+    this.jsonobj = localStorage.getItem(LOCAL_APP.USER);
     this.items = JSON.parse(this.jsonobj);
-   }
- 
-  ngAfterViewInit() {}
-  opened=false;
 
-  togglesidebar(){
-    this.opened = ! this.opened;
+
+    logout.show$.subscribe((res)=>{
+      this.show = res;
+    });
+
+    
+  }
+
+  ngAfterViewInit() { }
+  opened = false;
+
+  togglesidebar() {
+    this.opened = !this.opened;
   }
   public ngOnInit(): void {
     this.service.loadPersistedTheme();
-    this.service.color$.subscribe((res)=>{
-      this.currentTheme=res;
+    this.service.color$.subscribe((res) => {
+      this.currentTheme = res;
     })
   }
 
@@ -52,17 +63,21 @@ mykey:any;
     this.service.setCurrentTheme(theme);
   }
 
- 
-  signout(){
+
+  signout() {
     this.logout.signout();
   }
- 
 
 
- 
 
 
-  logOut(){
+  close(){
+    clearTimeout(this.logout.timeo);
+    this.logout.show$.next(false);
+  }
+
+
+  logOut() {
     this.bs.open(BslComponent);
   }
 

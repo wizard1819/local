@@ -35,6 +35,13 @@
             <router-outlet></router-outlet>
             <!-- <button class="nd" mat-raised-button color="accent" [matMenuTriggerFor]="menu"> <mat-icon>edit</mat-icon>
                 Theme</button> -->
+
+                <mat-card *ngIf="show" class="nd">
+                    <div>
+                        hello guyssss....... how are you welcome to this pplication..
+                    </div>
+                    <div> <button mat-raised-button (click)="close()">close</button></div>
+                </mat-card>
         </mat-sidenav-content>
     </mat-sidenav-container>
 </div>

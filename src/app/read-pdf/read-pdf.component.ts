@@ -1,6 +1,7 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
+import { LoginService } from '../login/login.service';
 
 @Component({
   selector: 'app-read-pdf',
@@ -8,6 +9,10 @@ import html2canvas from 'html2canvas';
   styleUrls: ['./read-pdf.component.css']
 })
 export class ReadPdfComponent {
+
+  constructor(
+    private se : LoginService
+  ){}
 
   @ViewChild('content', { static: false }) content!: ElementRef; // Reference to the HTML content to convert
 
@@ -52,6 +57,13 @@ export class ReadPdfComponent {
 
   logie(){
     console.log('wsdjgcyhdcwuwjdhvcd');
+
   }
+
+
+  showSnack(){
+    this.se.showMessage();
+  }
+
 
 }

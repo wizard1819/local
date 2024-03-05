@@ -62,43 +62,92 @@ h1 {
   color: ghostwhite;
 }
 
-.blue{
+.blue {
   background-image: linear-gradient(rgb(32, 238, 32), yellow);
 }
 
-.red{
- background-color: red;
- color: black;
+.red {
+  background-color: red;
+  color: black;
 }
 
-.picture{
+.picture {
   background: url('../../../assets/bg/wp10045409-technology-hd-desktop-wallpapers.jpg');
   color: whitesmoke;
 }
 
-
-.nd{
+.md {
   position: fixed;
-  top: 88%;
-  left: 88%;
+  right: 2%;
+  bottom: 2%;
+  color: black;
+  padding: 20px;
+  background-color: yellowgreen;
+  animation-name: sd;
+  animation-timing-function: ease-in-out;
+  animation-duration: 0.3s;
+  animation-delay: 0.1s;
 }
+
+@keyframes sd {
+  0% {
+   
+  }
+
+  100% {
+    opacity: 0;
+  }
+
+}
+
+
+.nd {
+  position: fixed;
+  right: 2%;
+  bottom: 2%;
+  color: black;
+  padding: 20px;
+  background-color: yellowgreen;
+  animation-duration: 0.07s;
+  animation-name: sh;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes sh {
+  from {
+    bottom: -30%;
+    opacity: 0.5;
+  }
+
+  to {
+    bottom: 2%;
+    opacity: 1;
+  }
+}
+
 
 /* Style the container to enable scrolling */
 .custom-scrollbar {
-  height: 100vh; /* Set a fixed height to enable scrolling */
-  overflow-y: auto; /* Enable vertical scrollbar when content overflows */
-  scrollbar-width: thin; /* Set the width of the scrollbar (supported in some browsers) */
+  height: 100vh;
+  /* Set a fixed height to enable scrolling */
+  overflow-y: auto;
+  /* Enable vertical scrollbar when content overflows */
+  scrollbar-width: thin;
+  /* Set the width of the scrollbar (supported in some browsers) */
 }
 
 /* Track */
 .custom-scrollbar::-webkit-scrollbar {
-  width: 5px; /* Set the width of the scrollbar (supported in some browsers) */
+  width: 5px;
+  /* Set the width of the scrollbar (supported in some browsers) */
 }
 
 /* Handle */
 .custom-scrollbar::-webkit-scrollbar-thumb {
-  background-color: gray; /* Color of the scrollbar handle */
-  border-radius: 4px; /* Round the edges of the scrollbar handle */
+  background-color: gray;
+  /* Color of the scrollbar handle */
+  border-radius: 4px;
+  /* Round the edges of the scrollbar handle */
 }
 
 /* On hover, add a darker background color */

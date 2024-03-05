@@ -20,13 +20,15 @@ export class LoginService {
     private router: Router,
     private snackbarservice: SnackbarService,
     private dialog: MatDialog,
-    private rout : ActivatedRoute
+    private rout: ActivatedRoute
   ) { }
 
   public num: BehaviorSubject<number> = new BehaviorSubject<number>(0);
+  public show$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
+  public message: BehaviorSubject<any> = new BehaviorSubject<any>('');
   public ct = this.num.asObservable();
 
-  check(data: any){
+  check(data: any) {
     if (data.userName == '1111' && data.password == '1111') {
       this.status = 'xyz123';
       localStorage.setItem('token-local-app', this.status);
@@ -70,18 +72,18 @@ export class LoginService {
 
   }
 
-  signOut(){
+  signOut() {
     localStorage.removeItem(LOCAL_APP.TOKEN);
     localStorage.removeItem(LOCAL_APP.USER);
     this.router.navigate(['/login']);
   }
 
-  submit(data?: any){
+  submit(data?: any) {
     const foundUser = UserTable.find(user => user.name === data.userName);
     if (foundUser?.name == data.userName && foundUser?.password == data.password) {
       this.status = 'xyz123';
       const strngify = JSON.stringify(foundUser);
-      localStorage.setItem(LOCAL_APP.USER,strngify);
+      localStorage.setItem(LOCAL_APP.USER, strngify);
       localStorage.setItem(LOCAL_APP.TOKEN, this.status);
       this.router.navigate(['/home']);
       this.snackbarservice.show('Logged In SuccessFully!!');
@@ -91,5 +93,22 @@ export class LoginService {
       this.snackbarservice.show('Invalid UserName/Password');
       return of(false);
     }
+  }
+
+  timeo: any;
+  showMessage() {
+
+    clearTimeout(this.timeo);
+    this.show$.next(false);
+    this.show$.next(true);
+
+    this.timeo = setTimeout(() => {
+          this.show$.next(false);
+          clearTimeout(this.timeo);
+    }, 4000);
+
+   
+
+
   }
 }
