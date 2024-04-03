@@ -39,5 +39,7 @@ export class VehicleService<T=any> {
   }
 
 
-  
+  getAlllValues(){
+    
+  }
 }
