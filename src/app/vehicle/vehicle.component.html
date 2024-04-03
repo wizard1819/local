@@ -5,8 +5,8 @@
                 <mat-card-title>Vehicles</mat-card-title>
             </div>
             <div>
-                <button mat-raised-button class="px-4" color="primary" (click)="openAddvehicleComponent()">
-                    Add component
+                <button mat-raised-button class="px-4" color="primary" (click)="update()">
+                    Add 
                 </button>
                 <!-- <button mat-raised-button color="primary" (click)="update()">
                     Add vehicle
@@ -22,19 +22,19 @@
                         <ng-container matColumnDef="id">
                             <mat-header-cell *matHeaderCellDef mat-sort-header> <strong>ID</strong>
                             </mat-header-cell>
-                            <mat-cell *matCellDef="let row"> {{row.id}} </mat-cell>
+                            <mat-cell *matCellDef="let row" (click)="detail(row)"> {{row.id}} </mat-cell>
                         </ng-container>
 
                         <ng-container matColumnDef="brand">
                             <mat-header-cell *matHeaderCellDef mat-sort-header> <strong>Brand</strong>
                             </mat-header-cell>
-                            <mat-cell *matCellDef="let row" class="caps"> {{row.brand}} </mat-cell>
+                            <mat-cell *matCellDef="let row" class="caps" (click)="detail(row)"> {{row.brand}} </mat-cell>
                         </ng-container>
 
                         <ng-container matColumnDef="model">
                             <mat-header-cell *matHeaderCellDef mat-sort-header> <strong>Model</strong>
                             </mat-header-cell>
-                            <mat-cell *matCellDef="let row"> {{row.model}} </mat-cell>
+                            <mat-cell *matCellDef="let row" (click)="detail(row)"> {{row.model}} </mat-cell>
                         </ng-container>
 
 
@@ -48,7 +48,7 @@
                         <ng-container matColumnDef="type">
                             <mat-header-cell *matHeaderCellDef mat-sort-header> <strong>Type</strong>
                             </mat-header-cell>
-                            <mat-cell *matCellDef="let row"> {{row.type}} </mat-cell>
+                            <mat-cell *matCellDef="let row" (click)="detail(row)"> {{row.type}} </mat-cell>
                         </ng-container>
 
                         <ng-container matColumnDef="status">
@@ -84,7 +84,7 @@
                         </ng-container>
 
                         <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-                        <mat-row *matRowDef="let row; columns: displayedColumns;">
+                        <mat-row *matRowDef="let row; columns: displayedColumns;" >
                         </mat-row>
                     </mat-table>
 

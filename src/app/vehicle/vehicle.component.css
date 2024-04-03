@@ -8,12 +8,7 @@
   white-space: nowrap;
 }
 
-.tabble {
-  white-space: pre-wrap;
-  max-height: calc(100vh - 40vh);
-  overflow: scroll;
 
-}
 
 .table-header {
   min-height: 64px;

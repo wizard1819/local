@@ -13,7 +13,7 @@ export class Httpinterceptor implements HttpInterceptor {
   ) { }
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    const newReq = req.clone({ url: "http://localhost:2020/api/vehicle" + req.url, headers: req.headers.set('authentication', 'token')})
+    const newReq = req.clone({ url: "http://localhost:8080/api/local" + req.url, headers: req.headers.set('authentication', 'token')})
     return next.handle(newReq).pipe(
       // tap(
       //   result => {

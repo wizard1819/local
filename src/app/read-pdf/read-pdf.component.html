@@ -1,8 +1,5 @@
-<button (click)="generatePDF()">Generate PDF</button>
-
-
-<div #content>
-    hello guys how are you ;
-</div>
-
-<button mat-raised-button (click)="showSnack()">showw</button>
+<mat-radio-group aria-label="Select an option" [formControl]="forms">
+    <mat-radio-button [value]="false">Filter</mat-radio-button>
+    <mat-radio-button [value]="true">Upload</mat-radio-button>
+  </mat-radio-group>
+  
