@@ -12,6 +12,7 @@ import { BsComponent } from './bs/bs.component';
 import { SbComponent } from './sb/sb.component';
 import {MatListModule} from '@angular/material/list';
 import {MatExpansionModule} from '@angular/material/expansion';
+import { FlexLayoutModule } from '@angular/flex-layout';
 const routes:Routes=[
   {
     path:'',
@@ -36,7 +37,7 @@ const routes:Routes=[
     MatSidenavModule,
     MatBottomSheetModule,
     RouterModule.forChild(routes),
-    
+    FlexLayoutModule    
   ],
 })
 export class LayouttModule { }

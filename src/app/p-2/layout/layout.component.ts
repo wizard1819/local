@@ -1,6 +1,7 @@
-import { Component , HostListener} from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { MatBottomSheet, MatBottomSheetRef } from '@angular/material/bottom-sheet';
 import { BsComponent } from './bs/bs.component';
+import { LoginService } from 'src/app/login/login.service';
 @Component({
   selector: 'app-layout',
   templateUrl: './layout.component.html',
@@ -9,23 +10,24 @@ import { BsComponent } from './bs/bs.component';
 export class LayoutComponent {
 
   //sidenav
-  opened=true;
+  opened = true;
 
   contentHeight!: string;
   //constructor
   constructor(
     private _bottomSheet: MatBottomSheet,
-  ){
+    private login: LoginService
+  ) {
     this.updateContentHeight();
   }
- //bottom sheet
+  //bottom sheet
   openBottomSheet() {
     this._bottomSheet.open(BsComponent);
   }
 
   //togglesidebar
-  togglesidebar(){
-    this.opened = ! this.opened;
+  togglesidebar() {
+    this.opened = !this.opened;
 
   }
   @HostListener('window:resize', ['$event'])
@@ -37,8 +39,12 @@ export class LayoutComponent {
     if (window.innerWidth >= 768) {
       this.contentHeight = 'calc(100vh - 64px)';
     } else {
-      this.contentHeight = 'calc(100vh - 56px)'; 
+      this.contentHeight = 'calc(100vh - 56px)';
     }
+  }
+
+  logOut() {
+    this.login.signOut();
   }
 
 }
