@@ -35,6 +35,7 @@
     "jspdf": "^2.5.1",
     "ng-form-group": "^1.4.2",
     "ng-material-multilevel-menu": "^6.0.2",
+    "ng-pdf-make": "^0.1.1",
     "ng-sidebar": "^9.4.3",
     "ngx-owl-carousel-o": "^16.0.0",
     "rxjs": "~7.8.0",

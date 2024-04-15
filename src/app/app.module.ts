@@ -94,6 +94,8 @@ import { ImgDialogComponent } from './workout-test/img-dialog/img-dialog.compone
 import { ReadXmlComponent } from './read-xml/read-xml.component';
 import { ReadPdfComponent } from './read-pdf/read-pdf.component';
 import { FolderUlpoadComponent } from './folder-ulpoad/folder-ulpoad.component';
+import { PdfMakeComponent } from './p-2/workout/pdf-make/pdf-make.component';
+import { PdfmakeModule } from 'ng-pdf-make';
 
 @NgModule({
   declarations: [
@@ -148,6 +150,7 @@ import { FolderUlpoadComponent } from './folder-ulpoad/folder-ulpoad.component';
     ReadXmlComponent,
     ReadPdfComponent,
     FolderUlpoadComponent,
+    PdfMakeComponent,
     
   ],
   imports: [
@@ -193,7 +196,8 @@ import { FolderUlpoadComponent } from './folder-ulpoad/folder-ulpoad.component';
     MatTooltipModule,
     NgbModalModule,
     MatStepperModule,
-    MatRadioModule
+    MatRadioModule,
+    
   ],
   exports:[
     HostDirective
