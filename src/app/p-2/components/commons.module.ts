@@ -4,6 +4,7 @@ import { ObservablComponent } from '../components/observabl/observabl.component'
 import { RouterModule, Routes } from '@angular/router';
 import { RxjsoverviewComponent } from './rxjsoverview/rxjsoverview.component';
 import { blue } from 'src/app/directive';
+import { UserComponent } from './user/user.component';
 export const route : Routes=([
   {
     path:'obb',
@@ -12,6 +13,10 @@ export const route : Routes=([
   {
     path:'rxjsoverview',
     component:RxjsoverviewComponent
+  },
+  {
+    path:'user',
+    component: UserComponent
   }
 ])
 
