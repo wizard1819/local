@@ -95,7 +95,7 @@ import { ReadXmlComponent } from './read-xml/read-xml.component';
 import { ReadPdfComponent } from './read-pdf/read-pdf.component';
 import { FolderUlpoadComponent } from './folder-ulpoad/folder-ulpoad.component';
 import { PdfMakeComponent } from './p-2/workout/pdf-make/pdf-make.component';
-import { PdfmakeModule } from 'ng-pdf-make';
+import { NgApexchartsModule } from 'ng-apexcharts';
 
 @NgModule({
   declarations: [
@@ -200,7 +200,8 @@ import { PdfmakeModule } from 'ng-pdf-make';
     
   ],
   exports:[
-    HostDirective
+    HostDirective,
+
   ],
   providers: [LoginService, { provide: HTTP_INTERCEPTORS, useClass: Httpinterceptor, multi: true }],
   bootstrap: [AppComponent],
