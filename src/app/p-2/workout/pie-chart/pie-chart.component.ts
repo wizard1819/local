@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-pie-chart',
@@ -7,8 +8,14 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 })
 export class PieChartComponent implements OnInit {
 
+
+
+  form!: FormGroup;
+  radio!: FormGroup
   
-  constructor() {
+  constructor(
+    private  fb : FormBuilder
+  ) {
   
   }
 
@@ -18,27 +25,21 @@ export class PieChartComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.chartOptions = {
-      series: [44, 55, 13, 43, 22],
-      chart: {
-        width: 380,
-        type: "pie"
-      },
-      labels: ["Placed", "Delivered", "Ordered", "New", "Pending"],
-      responsive: [
-        {
-          breakpoint: 480,
-          options: {
-            chart: {
-              width: 200
-            },
-            legend: {
-              position: "bottom"
-            }
-          }
-        }
-      ]
-    };
+
+    this.radio = this.fb.group({
+     
+    });
+
+
+    this.form = this.fb.group({
+      need : new FormControl(null,Validators.required),
+      name: new FormControl(null,Validators.required),
+      age: new FormControl(null,Validators.required),
+    });
   }
+
+
+
+ 
 
 }
