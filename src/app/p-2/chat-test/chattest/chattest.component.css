@@ -1,0 +1,9 @@
+.ipt{
+    position: fixed;
+    bottom: 5%;
+    right: 5%
+}
+
+.box{
+    min-height: 100vh;
+}
