@@ -1,5 +1,6 @@
 export const LOCAL_APP ={
     TOKEN :'LOCAL_APP_TOKEN',
     USER : 'LOCAL_APP_USER',
-    THEME : 'LOCAL_APP_THEME'
+    THEME : 'LOCAL_APP_THEME',
+    RBAC : 'LOCAL_APP_RBACS'
 }

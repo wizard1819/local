@@ -17,9 +17,11 @@ export class SettingsComponent implements OnInit {
   colorForm !: FormGroup;
   inColor :any;
   ngOnInit(): void {
-    this.inColor= localStorage.getItem('current_theme_local');
-    let col = JSON.parse(this.inColor);
-    console.log(col);
+    this.theme.color$.subscribe((res)=>{
+      this.inColor = res;
+    });
+    
+    let col = this.inColor;
     this.colorForm = this.fb.group({
       h:new FormControl(col?.h, [Validators.required]),
       hh:new FormControl(col?.hh, [Validators.required]),
@@ -28,15 +30,7 @@ export class SettingsComponent implements OnInit {
       c:new FormControl(col?.c,[Validators.required]),
       hc:new FormControl(col?.hc,[Validators.required]),
     });
-    // this.colorForm.patchValue(col);
-
-
-    this.colorForm.valueChanges.subscribe((res)=>{
-      for(let r in res){
-        console.log(`${r}  ${res[r]}`);
-        
-      }
-    });
+   
 
   }
 
@@ -44,7 +38,7 @@ export class SettingsComponent implements OnInit {
   apply(){
     if(this.colorForm.valid){
       this.theme.setCurrentTheme(this.colorForm.value);
-      this.theme.loadPersistedTheme();
+      // this.theme.loadPersistedTheme();
     }
   }
 

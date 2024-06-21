@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
+import { LOCAL_APP } from '../common/common';
 @Injectable({
   providedIn: 'root'
 })
@@ -14,12 +15,13 @@ export class ThemeService {
   }
   public setCurrentTheme(theme: any): void {
     this.currentTheme = theme;
-    localStorage.setItem('current_theme_local', JSON.stringify(theme)); 
+    localStorage.setItem(LOCAL_APP.THEME, JSON.stringify(theme)); 
+    this.color$.next(theme);
   }
  
 
   public loadPersistedTheme(): void {
-     this.persistedTheme = localStorage.getItem('current_theme_local');
+     this.persistedTheme = localStorage.getItem(LOCAL_APP.THEME);
       if (this.persistedTheme) {
       this.currentTheme = JSON.parse(this.persistedTheme);
       this.color$.next(this.currentTheme);

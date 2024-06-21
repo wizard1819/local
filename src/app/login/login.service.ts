@@ -74,7 +74,9 @@ export class LoginService {
 
   signOut() {
     localStorage.removeItem(LOCAL_APP.TOKEN);
+    localStorage.removeItem(LOCAL_APP.RBAC);
     localStorage.removeItem(LOCAL_APP.USER);
+    localStorage.removeItem(LOCAL_APP.THEME);
     this.router.navigate(['/login']);
   }
 
@@ -82,9 +84,12 @@ export class LoginService {
     const foundUser = UserTable.find(user => user.name === data.userName);
     if (foundUser?.name == data.userName && foundUser?.password == data.password) {
       this.status = 'xyz123';
+      console.log(foundUser,'found userrr');
+      
       const strngify = JSON.stringify(foundUser);
       localStorage.setItem(LOCAL_APP.USER, strngify);
       localStorage.setItem(LOCAL_APP.TOKEN, this.status);
+      localStorage.setItem(LOCAL_APP.RBAC, JSON.stringify(foundUser?.rbacs));
       this.router.navigate(['/home']);
       this.snackbarservice.show('Logged In SuccessFully!!');
       return of(true);

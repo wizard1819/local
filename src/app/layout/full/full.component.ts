@@ -7,6 +7,7 @@ import { LoginService } from 'src/app/login/login.service';
 import { MatBottomSheet } from '@angular/material/bottom-sheet';
 import { BslComponent } from '../bsl/bsl.component';
 import { LOCAL_APP } from 'src/app/common/common';
+import { RbacService } from 'src/app/rbac-service/rbac.service';
 @Component({
   selector: 'app-full',
   templateUrl: './full.component.html',
@@ -32,7 +33,8 @@ export class FullComponent implements OnInit, AfterViewInit {
     private _router: Router,
     private renderer: Renderer2,
     private logout: LoginService,
-    private bs: MatBottomSheet
+    private bs: MatBottomSheet,
+    public rbacService : RbacService
   ) {
     this.jsonobj = localStorage.getItem(LOCAL_APP.USER);
     this.items = JSON.parse(this.jsonobj);
@@ -52,6 +54,9 @@ export class FullComponent implements OnInit, AfterViewInit {
     this.opened = !this.opened;
   }
   public ngOnInit(): void {
+    let svv =    this.rbacService.checkRbac('VEHICLE');
+    console.log(svv, 'rbac checj');
+    
     this.service.loadPersistedTheme();
     this.service.color$.subscribe((res) => {
       this.currentTheme = res;
