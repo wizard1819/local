@@ -53,6 +53,43 @@
                     <button mat-raised-button (click)="apply()">Apply</button>
                 </div>
             </div>
+
+            <div class="dv" fxLayout="column">
+                <div fxFlex="100" fxLayoutAlign="center center">
+                    <p class="pl">Themes</p>
+                </div>
+                <div fxLayout="row">
+                    <div fxFlex="30">
+                        SIDEBAR
+                    </div>
+                    <div fxFlex="40">
+                        <input formControlName="s" type="color" name="" id="">
+                        <input type="color" name="" id="">
+                    </div>
+                </div>
+                <div fxLayout="row">
+                    <div fxFlex="30">
+                            HEADER
+                    </div>
+                    <div fxFlex="40">
+                        <input formControlName="h" type="color" name="" id="">
+                        <input type="color" name="" id="">
+                    </div>
+                </div>
+                <div fxLayout="row">
+                    <div fxFlex="30">
+                            CONTAINER
+                    </div>
+                    <div fxFlex="40">
+                        <input formControlName="c" type="color" name="" id="">
+                        <input type="color" name="" id="">
+                    </div>
+                </div>
+                <div fxLayout="row" fxFlex="100" fxLayoutAlign="end center">
+                    <button mat-raised-button (click)="apply()">Apply</button>
+                </div>
+            </div>
+
         </form>
     </mat-card-content>
 </mat-card>

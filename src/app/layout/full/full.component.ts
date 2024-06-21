@@ -55,6 +55,8 @@ export class FullComponent implements OnInit, AfterViewInit {
     this.service.loadPersistedTheme();
     this.service.color$.subscribe((res) => {
       this.currentTheme = res;
+      console.log('theme ==>> ',res);
+      
     })
   }
 

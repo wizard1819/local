@@ -26,7 +26,17 @@ export class SettingsComponent implements OnInit {
       c:new FormControl(col?.c,[Validators.required]),
     });
     // this.colorForm.patchValue(col);
+
+
+    this.colorForm.valueChanges.subscribe((res)=>{
+      for(let r in res){
+        console.log(`${r}  ${res[r]}`);
+        
+      }
+    });
+
   }
+
 
   apply(){
     if(this.colorForm.valid){
