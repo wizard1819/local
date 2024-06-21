@@ -5,7 +5,7 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class ThemeService {
   
-  private currentTheme: any = {h:'#0a0a0b',s:'#3a3a3b',c:'#ed5b0c'};
+  private currentTheme: any = {h:'#0a0a0b',s:'#3a3a3b',c:'#ed5b0c',hh:'#FFFFFF',hs:'#FFFFFF',hc:'#FFFFFF'};
 
   color$ : BehaviorSubject<any> = new BehaviorSubject<any>(this.currentTheme);
   persistedTheme:any;

@@ -22,8 +22,11 @@ export class SettingsComponent implements OnInit {
     console.log(col);
     this.colorForm = this.fb.group({
       h:new FormControl(col?.h, [Validators.required]),
+      hh:new FormControl(col?.hh, [Validators.required]),
       s:new FormControl(col?.s,[Validators.required]),
+      hs:new FormControl(col?.hs,[Validators.required]),
       c:new FormControl(col?.c,[Validators.required]),
+      hc:new FormControl(col?.hc,[Validators.required]),
     });
     // this.colorForm.patchValue(col);
 

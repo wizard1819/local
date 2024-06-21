@@ -5,7 +5,6 @@
   
   .btn{
     width:90%;
-    color: ghostwhite;
     background-color:transparent;
     padding: 0px 20px;
     border-radius: 4px;
@@ -31,7 +30,7 @@
   padding: 20px;
   padding-bottom: 10px;
   font-family: sans-serif;
-  color: whitesmoke;  white-space: pre-wrap;
+   white-space: pre-wrap;
   max-height: calc(100vh - 40vh);
   text-align: center;
 }
