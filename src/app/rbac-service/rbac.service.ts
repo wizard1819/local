@@ -12,7 +12,6 @@ export class RbacService {
 
   checkRbac(rbac : string){
     let rbacs = localStorage.getItem(LOCAL_APP.RBAC);
-    console.log(rbacs,'LOCAL APP RBAC');
     if(rbacs?.includes(rbac)){
       return true;
     }else{

@@ -7,7 +7,7 @@ import { LoginService } from 'src/app/login/login.service';
 import { MatBottomSheet } from '@angular/material/bottom-sheet';
 import { BslComponent } from '../bsl/bsl.component';
 import { LOCAL_APP } from 'src/app/common/common';
-import { RbacService } from 'src/app/rbac-service/rbac.service';
+import { GetRbacService, rbacModel } from 'src/app/rbac-service/get-rbac.service';
 @Component({
   selector: 'app-full',
   templateUrl: './full.component.html',
@@ -34,7 +34,7 @@ export class FullComponent implements OnInit, AfterViewInit {
     private renderer: Renderer2,
     private logout: LoginService,
     private bs: MatBottomSheet,
-    public rbacService : RbacService
+    private rbacService : GetRbacService
   ) {
     this.jsonobj = localStorage.getItem(LOCAL_APP.USER);
     this.items = JSON.parse(this.jsonobj);
@@ -50,13 +50,20 @@ export class FullComponent implements OnInit, AfterViewInit {
   ngAfterViewInit() { }
   opened = false;
 
+
+
   togglesidebar() {
     this.opened = !this.opened;
   }
+
+  rbac! : rbacModel;
   public ngOnInit(): void {
-    let svv =    this.rbacService.checkRbac('VEHICLE');
-    console.log(svv, 'rbac checj');
     
+    this.rbacService.rbacSubject.subscribe((res)=>{
+      console.log('permission in', res);
+      this.rbac = res;
+    });
+
     this.service.loadPersistedTheme();
     this.service.color$.subscribe((res) => {
       this.currentTheme = res;
@@ -86,6 +93,10 @@ export class FullComponent implements OnInit, AfterViewInit {
 
   logOut() {
     this.bs.open(BslComponent);
+  }
+
+  get isDashboard(){
+    return this.rbac.dashboard.view;
   }
 
 }

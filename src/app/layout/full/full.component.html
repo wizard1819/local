@@ -4,7 +4,7 @@
         <button (click)="togglesidebar()"><mat-icon>menu</mat-icon></button>
         <button routerLink="/home"><mat-icon>home</mat-icon></button>
         <span>ANGULAR 15.1.5</span>
-        <button  mat-button routerLink="/dashboard">Dashboard</button>
+        <button *ngIf="isDashboard" mat-button routerLink="/dashboard">Dashboard</button>
         <span fxFlex></span>
         <span>{{items?.fullName}}</span>
         <button [matMenuTriggerFor]="men" mat-icon-button class="m-r-5"><mat-icon>settings</mat-icon></button>
