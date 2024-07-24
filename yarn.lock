@@ -175,7 +175,7 @@
     symbol-observable "4.0.0"
     yargs "17.6.2"
 
-"@angular/common@ ^16.0.0-rc.0 || ^16.0.0", "@angular/common@^15.0.0", "@angular/common@^15.0.0 || ^16.0.0", "@angular/common@^15.1.0", "@angular/common@^17.0.2", "@angular/common@>= 6.0.0-rc.0 || >= 6.0.0", "@angular/common@>=15.0.2", "@angular/common@>=17.0.0", "@angular/common@>=8.0.0", "@angular/common@15.2.10":
+"@angular/common@ ^16.0.0-rc.0 || ^16.0.0", "@angular/common@^15.0.0", "@angular/common@^15.0.0 || ^16.0.0", "@angular/common@^15.1.0", "@angular/common@^17.0.2", "@angular/common@>= 6.0.0-rc.0 || >= 6.0.0", "@angular/common@>=13.4.0", "@angular/common@>=15.0.2", "@angular/common@>=17.0.0", "@angular/common@>=8.0.0", "@angular/common@15.2.10":
   version "15.2.10"
   resolved "https://registry.npmjs.org/@angular/common/-/common-15.2.10.tgz"
   integrity sha512-jdBn3fctkqoNrJn9VLsUHpcCEhCxWSczdsR+BBbD6T0oLl6vMrAVNjPwfBejnlgfWN1KoRU9kgOYsMxa5apIWQ==
@@ -215,7 +215,7 @@
   resolved "https://registry.npmjs.org/@angular/compiler/-/compiler-2.4.10.tgz"
   integrity sha512-woq5GMFIV+50YebpZLqX1eV8X4lH2z8V692zx2Gi/eCzkWsGkvcRSTk+oMahlbCyM786zCe8oQvCZyGFxYLpfA==
 
-"@angular/core@^15.0.0", "@angular/core@^15.0.0 || ^16.0.0", "@angular/core@^15.1.0", "@angular/core@^16.0.0-rc.0 || ^16.0.0", "@angular/core@^17.0.2", "@angular/core@>= 6.0.0-rc.0 || >= 6.0.0", "@angular/core@>=15.0.2", "@angular/core@>=17.0.0", "@angular/core@>=8.0.0", "@angular/core@15.2.10":
+"@angular/core@^15.0.0", "@angular/core@^15.0.0 || ^16.0.0", "@angular/core@^15.1.0", "@angular/core@^16.0.0-rc.0 || ^16.0.0", "@angular/core@^17.0.2", "@angular/core@>= 6.0.0-rc.0 || >= 6.0.0", "@angular/core@>=13.4.0", "@angular/core@>=15.0.2", "@angular/core@>=17.0.0", "@angular/core@>=8.0.0", "@angular/core@15.2.10":
   version "15.2.10"
   resolved "https://registry.npmjs.org/@angular/core/-/core-15.2.10.tgz"
   integrity sha512-meGGidnitQJGDxYd9/LrqYiVlId+vGaLoiLgJdKBz+o2ZO6OmXQGuNw2VBqf17/Cc0/UjzrOY7+kILNFKkk/WQ==
@@ -234,7 +234,7 @@
   dependencies:
     tslib "^2.3.0"
 
-"@angular/forms@^15.0.0", "@angular/forms@^15.0.0 || ^16.0.0", "@angular/forms@^15.1.0":
+"@angular/forms@^15.0.0", "@angular/forms@^15.0.0 || ^16.0.0", "@angular/forms@^15.1.0", "@angular/forms@>=13.4.0":
   version "15.2.10"
   resolved "https://registry.npmjs.org/@angular/forms/-/forms-15.2.10.tgz"
   integrity sha512-NIntGsNcN6o8L1txsbWXOf6f3K/CUBizdKsxsYVYGJIXEW5qU6UnWmfAZffNNXsT/XvbgUCjgDwT0cAwcqZPuQ==
@@ -3358,6 +3358,19 @@ chrome-trace-event@^1.0.2:
   version "1.0.3"
   resolved "https://registry.npmjs.org/chrome-trace-event/-/chrome-trace-event-1.0.3.tgz"
   integrity sha512-p3KULyQg4S7NIHixdwbGX+nFHkoBiA4YQmyWtjb8XngSKV124nJmRysgAeujbUVb15vh+RvFUfCPqU7rXk+hZg==
+
+ckeditor4-angular@^5.1.0:
+  version "5.1.0"
+  resolved "https://registry.npmjs.org/ckeditor4-angular/-/ckeditor4-angular-5.1.0.tgz"
+  integrity sha512-/aLikcbjFKgPryvGhgPcWF646CW/ERRxbAFvK08oAjyXuKNQy8aXZ8r5R9GTX5xd59pSRIarB5otTr7zBNnWYg==
+  dependencies:
+    ckeditor4-integrations-common "^1.0.0"
+    tslib "^2.3.0"
+
+ckeditor4-integrations-common@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.npmjs.org/ckeditor4-integrations-common/-/ckeditor4-integrations-common-1.0.0.tgz"
+  integrity sha512-OAoQT/gYrHkg0qgzf6MS/rndYhq3SScLVQ3rtXQeuCE8ju7nFHg3qZ7WGA2XpFxcZzsMP6hhugXqdel5vbcC3g==
 
 clean-stack@^2.0.0:
   version "2.2.0"

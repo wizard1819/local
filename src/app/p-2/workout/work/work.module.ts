@@ -7,7 +7,6 @@ import {  NgApexchartsModule } from 'ng-apexcharts';
 import { PieChartComponent } from '../pie-chart/pie-chart.component';
 import { MatButtonModule } from '@angular/material/button';
 
-
 export const route: Routes = [
   {
     path: '',
@@ -32,6 +31,7 @@ export const route: Routes = [
     RouterModule.forChild(route),
     NgApexchartsModule,
     MatButtonModule,
+    
 
     
     
