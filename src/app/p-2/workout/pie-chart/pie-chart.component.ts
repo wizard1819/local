@@ -1,6 +1,6 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, ElementRef, OnInit, ViewChild,  } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { BehaviorSubject, distinctUntilChanged, Observable, switchMap } from 'rxjs';
 @Component({
   selector: 'app-pie-chart',
   templateUrl: './pie-chart.component.html',
@@ -8,7 +8,6 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 })
 export class PieChartComponent implements OnInit {
 
-  @ViewChild('img') img !: ElementRef;
 
 
   form!: FormGroup;
@@ -16,32 +15,34 @@ export class PieChartComponent implements OnInit {
   
   constructor(
     private  fb : FormBuilder,
-    private http : HttpClient
   ) {
   
   }
 
 
-  ckEditorConfig: any = { toolbar: [
-    ['Source', 'Templates', 'Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript', '-', 'CopyFormatting', 'RemoveFormat'],
-    [ 'Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', '-', 'Undo', 'Redo' ],
-    [ 'Find', 'Replace', '-', 'SelectAll', '-', 'Scayt' ],
-    [ 'NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'Blockquote', 'CreateDiv', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock', '-', 'BidiLtr', 'BidiRtl' ],
-    [ 'Link', 'Unlink', 'Anchor' ],
-    [ 'Image', 'Table', 'HorizontalRule', 'Smiley', 'SpecialChar', 'PageBreak', 'Iframe' ],
-    [ 'Styles', 'Format', 'Font', 'FontSize' ],
-    [ 'TextColor', 'BGColor' ],
-    [ 'Maximize', 'ShowBlocks' ]
-    ] };
+  typeInput$ = new BehaviorSubject<any>('');
 
-
-
+  typeWrite ! : FormControl;
   ngOnInit(): void {
 
-  
-  }
+    this.form = this.fb.group({
+      name : new FormControl(null)
+    })
+    this.typeWrite = new FormControl(null,Validators.nullValidator);
 
   
+  this.typeInput$.subscribe((res)=>{
+       
+  });
+    
+  }
+
+
+  changes(event : any){
+    this.typeInput$.next(event.target.value);
+  }
+  
+  // gunaseelan.ramasamy@turbocode.in
 
 
  

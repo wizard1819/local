@@ -6,6 +6,9 @@ import { PdfMakeComponent } from '../pdf-make/pdf-make.component';
 import {  NgApexchartsModule } from 'ng-apexcharts';
 import { PieChartComponent } from '../pie-chart/pie-chart.component';
 import { MatButtonModule } from '@angular/material/button';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
+import { CommonsModule } from '../../components/commons.module';
 
 export const route: Routes = [
   {
@@ -31,6 +34,9 @@ export const route: Routes = [
     RouterModule.forChild(route),
     NgApexchartsModule,
     MatButtonModule,
+    FormsModule,
+    ReactiveFormsModule,
+    
     
 
     
