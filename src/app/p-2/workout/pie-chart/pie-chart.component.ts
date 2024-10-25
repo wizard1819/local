@@ -1,6 +1,8 @@
-import { Component, ElementRef, OnInit, ViewChild,  } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { BehaviorSubject, distinctUntilChanged, Observable, switchMap } from 'rxjs';
+import { Component, OnInit } from '@angular/core';
+import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { BehaviorSubject, of, Subject, tap } from 'rxjs';
+import { fileAttach, logCat } from 'src/app/commons/utils/core.utils';
+
 @Component({
   selector: 'app-pie-chart',
   templateUrl: './pie-chart.component.html',
@@ -9,42 +11,17 @@ import { BehaviorSubject, distinctUntilChanged, Observable, switchMap } from 'rx
 export class PieChartComponent implements OnInit {
 
 
+  formGroup!: FormGroup;
 
-  form!: FormGroup;
-  radio!: FormGroup
-  
-  constructor(
-    private  fb : FormBuilder,
-  ) {
-  
-  }
+  constructor(private fb: FormBuilder) { }
 
-
-  typeInput$ = new BehaviorSubject<any>('');
-
-  typeWrite ! : FormControl;
   ngOnInit(): void {
+  }
 
-    this.form = this.fb.group({
-      name : new FormControl(null)
-    })
-    this.typeWrite = new FormControl(null,Validators.nullValidator);
-
-  
-  this.typeInput$.subscribe((res)=>{
-       
-  });
-    
+  fileAttach(data: any) {
+    console.log(fileAttach(data));
   }
 
 
-  changes(event : any){
-    this.typeInput$.next(event.target.value);
-  }
-  
-  // gunaseelan.ramasamy@turbocode.in
-
-
- 
 
 }
